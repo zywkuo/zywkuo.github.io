@@ -43,6 +43,28 @@
   </entry>
   
   <entry>
+    <title>vivo手机H5页面ERROR</title>
+    <link href="http://zhouyanwei.cn/2018/07/26/vivo-error/"/>
+    <id>http://zhouyanwei.cn/2018/07/26/vivo-error/</id>
+    <published>2018-07-25T16:00:00.000Z</published>
+    <updated>2018-08-02T02:28:11.121Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天收到用户反馈，vivo手机我们的app H5页面怎么显示的不对啊，让后我们就测试了好几个机型，华为、小米、oppo、酷派，都没有问题啊，安卓小哥虚拟机都用上了。<br><a id="more"></a></p><p>后来安卓小哥用vivo手机测试在log处发现了报错，让后打开js一看有这个 ` 符号，还有这个Array.from()，${ele}等。</p><p>这都是ES6语法啊，原来vivo手机居然不支持ES6</p><p>都这么久了vivo还不支持ES6！！！！！！</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天收到用户反馈，vivo手机我们的app H5页面怎么显示的不对啊，让后我们就测试了好几个机型，华为、小米、oppo、酷派，都没有问题啊，安卓小哥虚拟机都用上了。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="js" scheme="http://zhouyanwei.cn/categories/js/"/>
+    
+    
+      <category term="vivo error" scheme="http://zhouyanwei.cn/tags/vivo-error/"/>
+    
+  </entry>
+  
+  <entry>
     <title>AJAX error参数及状态码</title>
     <link href="http://zhouyanwei.cn/2018/07/11/ajax-error/"/>
     <id>http://zhouyanwei.cn/2018/07/11/ajax-error/</id>

@@ -105,7 +105,7 @@
 <meta property="og:site_name" content="Zyw">
 <meta property="og:description" content="磨叨两句上来先磨叨两句，用这个选择器已经很久了，但是一直用的都是:nth-of-type这个，:nth-child只是记得，几乎没有用过，最开始知道这两个选择器的时候，肯定两个都用过，但最后一直就用:nth-of-type了，原因我也忘记了，前几天用到:nth-of-type这个选择器，突然忘了他和:nth-child的具体区别是什么了，所以在这里，在回顾一下。 child和of-type 家族1">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://zhouyanwei.cn/img/2017-07-31/look1.jpg">
+<meta property="og:image" content="http://zhouyanwei.cn/images/2017-07-31/look1.jpg">
 <meta property="og:image" content="http://zhouyanwei.cn/images/2017-07-31/look2.png">
 <meta property="og:image" content="http://zhouyanwei.cn/images/2017-07-31/look3.jpg">
 <meta property="og:image" content="http://zhouyanwei.cn/images/2017-07-31/look4.png">
@@ -113,11 +113,11 @@
 <meta property="og:image" content="http://zhouyanwei.cn/images/2017-07-31/look6.png">
 <meta property="og:image" content="http://zhouyanwei.cn/images/2017-07-31/look7.png">
 <meta property="og:image" content="http://zhouyanwei.cn/images/2017-07-31/look8.png">
-<meta property="og:updated_time" content="2018-07-03T06:55:57.162Z">
+<meta property="og:updated_time" content="2018-08-07T02:23:03.038Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="css3选择器">
 <meta name="twitter:description" content="磨叨两句上来先磨叨两句，用这个选择器已经很久了，但是一直用的都是:nth-of-type这个，:nth-child只是记得，几乎没有用过，最开始知道这两个选择器的时候，肯定两个都用过，但最后一直就用:nth-of-type了，原因我也忘记了，前几天用到:nth-of-type这个选择器，突然忘了他和:nth-child的具体区别是什么了，所以在这里，在回顾一下。 child和of-type 家族1">
-<meta name="twitter:image" content="http://zhouyanwei.cn/img/2017-07-31/look1.jpg">
+<meta name="twitter:image" content="http://zhouyanwei.cn/images/2017-07-31/look1.jpg">
 
 
 
@@ -462,7 +462,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">of-type 家族</span><br><span class="line">:first-of-type          p:first-of-type         选择属于其父元素的首个 &lt;p&gt; 元素的每个 &lt;p&gt; 元素。</span><br><span class="line">:nth-of-type(n)         p:nth-of-type(2)        选择属于其父元素第二个 &lt;p&gt; 元素的每个 &lt;p&gt; 元素。</span><br><span class="line">:nth-last-of-type(n)	p:nth-last-of-type(2)   同上，但是从最后一个子元素开始计数。</span><br><span class="line">:last-of-type           p:last-of-type          选择属于其父元素的最后 &lt;p&gt; 元素的每个 &lt;p&gt; 元素。</span><br><span class="line">:only-of-type           p:only-of-type          选择属于其父元素唯一的 &lt;p&gt; 元素的每个 &lt;p&gt; 元素。</span><br></pre></td></tr></table></figure>
 <h1 id="nth-of-type-n-和-nth-child-n-对比"><a href="#nth-of-type-n-和-nth-child-n-对比" class="headerlink" title=":nth-of-type(n)和:nth-child(n)对比"></a>:nth-of-type(n)和:nth-child(n)对比</h1><p>这两个家族别的选择器还好说，就:nth-of-type(n)和:nth-child(n)他们俩用的时候还会有一些问题，下面用具体例子来体会一下。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">p:nth-child(2)&#123;</span><br><span class="line">    background: red;</span><br><span class="line">&#125;</span><br><span class="line">p:nth-of-type(2)&#123;</span><br><span class="line">    background: red;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;div&gt;</span><br><span class="line">    &lt;p&gt;我是p1&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;我是p2&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
-<p>此时分别使用这两个css选择器进行渲染时，页面显示的效果是一样的，look<br><img src="/img/2017-07-31/look1.jpg" alt=""></p>
+<p>此时分别使用这两个css选择器进行渲染时，页面显示的效果是一样的，look<br><img src="/images/2017-07-31/look1.jpg" alt=""></p>
 <p>然后我们稍稍改一下再看一下效果</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">p:nth-child(2)&#123;</span><br><span class="line">    background: red;</span><br><span class="line">&#125;</span><br><span class="line">p:nth-of-type(2)&#123;</span><br><span class="line">    background: red;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;div&gt;</span><br><span class="line">    &lt;div&gt;我是div1&lt;/div&gt;</span><br><span class="line">    &lt;p&gt;我是p1&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;我是p2&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
 <p><img src="/images/2017-07-31/look2.png" alt=""><br>这一下就不友好了，字面理解一下啊，child儿子嘛，第二个儿子，还是个p标签，正好给你变个色吧。而p:nth-of-type(2)他就会去找p标签的第二个，这样我的心里感觉才是我想要的结果<br>我们在加一个div看看啊<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">p:nth-child(2)&#123;</span><br><span class="line">    background: red;</span><br><span class="line">&#125;</span><br><span class="line">/*p:nth-of-type(2)&#123;</span><br><span class="line">    background: red;</span><br><span class="line">&#125;*/</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;div&gt;</span><br><span class="line">    &lt;div&gt;我是div1&lt;/div&gt;</span><br><span class="line">    &lt;div&gt;我是div2&lt;/div&gt;</span><br><span class="line">    &lt;p&gt;我是p1&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;我是p2&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure></p>
@@ -605,7 +605,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -616,7 +616,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -627,7 +627,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-count">28</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -760,7 +760,7 @@
   <div class="theme-info">
     <div class="powered-by"></div>
     <i class="fa fa-pencil"></i>
-    <span class="post-count">博客全站共20.3k字</span>
+    <span class="post-count">博客全站共20.4k字</span>
   </div>
 
 

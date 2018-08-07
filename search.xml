@@ -1,8 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[:focus-within选择器]]></title>
+    <url>%2F2018%2F08%2F07%2FfocusWithin%2F</url>
+    <content type="text"><![CDATA[看新闻看到了一个非常不错的选择器:focus-within，他可以做一些js的效果，focus是获取焦点，所以只能有focus状态的元素才可以使用。:focus-within选择器是在元素获取焦点的时候可以触发自身或者父元素的属性（冒泡）。 举一个小例子效果如图 css .parent{ width: 100%; height: 200px; background: #eeeeee; display: flex; justify-content: center; align-items: center; } .children{ width: 100px; height: 60px; background: #999; } .parent:focus-within{ background: #f60; }&gt; html &lt;div class="parent"&gt; &lt;button class="children"&gt;点我&lt;/button&gt; &lt;/div&gt; 写了一个选项卡的小例子效果可以看一下具体代码可以点击此链接前往codepen查看，效果也有哦！]]></content>
+      <categories>
+        <category>css</category>
+      </categories>
+      <tags>
+        <tag>:focus-within</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[sql语句学习]]></title>
-    <url>%2F2018%2F08%2F01%2Fsql%2F</url>
+    <url>%2F2018%2F08%2F03%2Fsql%2F</url>
     <content type="text"><![CDATA[sql学习记录从 “qc_record” 表中选取所有记录 (*qc_record为一个表的名称) select * from qc_record; 一些最重要的 SQL 命令（*SQL 对大小写不敏感：SELECT 与 select 是相同的。） SELECT - 从数据库中提取数据 UPDATE - 更新数据库中的数据 DELETE - 从数据库中删除数据 INSERT INTO - 向数据库中插入新数据 CREATE DATABASE - 创建新数据库 ALTER DATABASE - 修改数据库 CREATE TABLE - 创建新表 ALTER TABLE - 变更（改变）数据库表 DROP TABLE - 删除表 CREATE INDEX - 创建索引（搜索键） DROP INDEX - 删除索引 SELECT 语句SELECT 语句用于从数据库中选取数据。结果被存储在一个结果表中，称为结果集。 SQL SELECT 语法 select * from qc_record; 查询整个表内容 select column_name,column_name from qc_record; -- column_name(查询表内某一列名称可查询多个) SELECT DISTINCT 语句在表中，一个列可能会包含多个重复值，有时您也许希望仅仅列出不同（distinct）的值。DISTINCT 关键词用于返回唯一不同的值。 SQL SELECT DISTINCT 语法 select distinct column_name,column_name from qc_record; -- column_name(查询表内某一列名称可查询多个) WHERE 子句WHERE 子句用于提取那些满足指定标准的记录。 WHERE 语法 select * from qc_record where column_name operator value; -- 查找qc_record表中匹配column_name operator value（匹配表达式）的记录 select column_name,column_name from qc_record where column_name operator value; -- 查找qc_record表中对应名称的匹配column_name operator value（匹配表达式）的记录 SQL 使用单引号来环绕文本值（大部分数据库系统也接受双引号）。如果是数值字段，请不要使用引号。 WHERE 子句中的运算符 运算符 描述 = 等于 &lt;&gt; 不等于。注释：在 SQL 的一些版本中，该操作符可被写成 != &gt; 大于 &lt; 小于 &gt;= 大于等于 &lt;= 小于等于 BETWEEN 在某个范围内 LIKE 搜索某种模式 IN 指定针对某个列的多个可能值 AND &amp; OR 运算符AND &amp; OR 运算符用于基于一个以上的条件对记录进行过滤。如果第一个条件和第二个条件都成立，则 AND 运算符显示一条记录。如果第一个条件和第二个条件中只要有一个成立，则 OR 运算符显示一条记录。 AND 语法 select * from qc_record where test_user = 'zyw' and device_id = 19222; -- 与的关系，and连接的两个名称匹配都true才显示 OR 语法 select * from qc_record where test_user = 'zyw' or device_id = 19222; -- 或的关系，or连接的两个名称有一个匹配的就显示 AND OR 语法 select * from qc_record where test_user = 'zyw' and (device_id = 19121 or status = 1); -- 也可以把 AND 和 OR 结合起来（使用圆括号来组成复杂的表达式） ORDER BY 关键字ORDER BY 关键字用于对结果集进行排序。ORDER BY 关键字用于对结果集按照一个列或者多个列进行排序。ORDER BY 关键字默认按照升序对记录进行排序。如果需要按照降序对记录进行排序，您可以使用 DESC 关键字。 ORDER BY 语法 select * from qc_record order by create_date desc -- ASC--&gt;升序排列默认 DESC--&gt;降序排列要写这个关键字 INSERT INTO 语句INSERT INTO 语句用于向表中插入新记录。 INSERT INTO 语法(有两种编写形式) 第一种形式无需指定要插入数据的列名，只需提供被插入的值即可： insert into qc_record values (value1,value2,value3,...); 第二种形式需要指定列名及被插入的值： insert into qc_record (column1,column2,column3,...) values (value1,value2,value3,...); UPDATE 语句UPDATE 语句用于更新表中的记录。 UPDATE 语句 update qc_record set column1=value1,column2=value2,... where some_column=some_value; -- WHERE 子句规定哪条记录或者哪些记录需要更新。如果您省略了 WHERE 子句，所有的记录都将被更新！ DELETE 语句DELETE 语句用于删除表中的记录。 SQL DELETE 语法 delete from qc_record where some_column=some_value; -- 删除一条属性 delete from qc_record where some_column=some_value and some_column=some_value ...; -- 删除多条属性 delete from qc_record -- 删除所有 参考网址 SQL教程|菜鸟教程]]></content>
       <categories>
         <category>sql</category>

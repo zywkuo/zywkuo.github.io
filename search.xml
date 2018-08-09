@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[:focus-within选择器]]></title>
     <url>%2F2018%2F08%2F07%2FfocusWithin%2F</url>
-    <content type="text"><![CDATA[看新闻看到了一个非常不错的选择器:focus-within，他可以做一些js的效果，focus是获取焦点，所以只能有focus状态的元素才可以使用。:focus-within选择器是在元素获取焦点的时候可以触发自身或者父元素的属性（冒泡）。 举一个小例子效果如图 css .parent{ width: 100%; height: 200px; background: #eeeeee; display: flex; justify-content: center; align-items: center; } .children{ width: 100px; height: 60px; background: #999; } .parent:focus-within{ background: #f60; }&gt; html &lt;div class="parent"&gt; &lt;button class="children"&gt;点我&lt;/button&gt; &lt;/div&gt; 写了一个选项卡的小例子效果可以看一下具体代码可以点击此链接前往codepen查看，效果也有哦！ 在看一下兼容问题 数据来源于https://caniuse.com/ 虽然对浏览器的兼容效果还不是很好，但是用在H5页面是没有问题的。]]></content>
+    <content type="text"><![CDATA[看新闻看到了一个非常不错的选择器:focus-within，他可以做一些js的效果，focus是获取焦点，所以只能有focus状态的元素才可以使用。:focus-within选择器是在元素获取焦点的时候可以触发自身或者父元素的属性（冒泡）。 举一个小例子效果如图 css .parent{ width: 100%; height: 200px; background: #eeeeee; display: flex; justify-content: center; align-items: center; } .children{ width: 100px; height: 60px; background: #999; } .parent:focus-within{ background: #f60; }&gt; html &lt;div class="parent"&gt; &lt;button class="children"&gt;点我&lt;/button&gt; &lt;/div&gt; 写了一个选项卡的小例子效果可以看一下具体代码可以点击此链接前往codepen查看，效果也有哦！ 在看一下兼容问题 数据来源于https://caniuse.com/ 虽然对浏览器的兼容效果还不是很好，希望快快普及吧。]]></content>
       <categories>
         <category>css</category>
       </categories>

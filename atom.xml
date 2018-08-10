@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://zhouyanwei.cn/"/>
-  <updated>2018-08-10T02:14:54.245Z</updated>
+  <updated>2018-08-10T02:15:52.828Z</updated>
   <id>http://zhouyanwei.cn/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://zhouyanwei.cn/2018/08/10/distinct/"/>
     <id>http://zhouyanwei.cn/2018/08/10/distinct/</id>
     <published>2018-08-09T16:00:00.000Z</published>
-    <updated>2018-08-10T02:14:54.245Z</updated>
+    <updated>2018-08-10T02:15:52.828Z</updated>
     
     <content type="html"><![CDATA[<p>数组去重，老生常谈，记录我觉得比较好的方法<br><a id="more"></a></p><h1 id="ES5方法"><a href="#ES5方法" class="headerlink" title="ES5方法"></a>ES5方法</h1><h2 id="利用对象唯一属性进行去重"><a href="#利用对象唯一属性进行去重" class="headerlink" title="利用对象唯一属性进行去重"></a>利用对象唯一属性进行去重</h2><pre><code class="bash">var array = [1,1,2,3,4,5,5,6,6,7,8,8];Array.prototype.distinct = <span class="function"><span class="title">function</span></span> () {    var array = [];    var obj = {};    <span class="keyword">for</span>(var i=0;i&lt;this.length;i++){        <span class="keyword">if</span>(!obj[this[i]]){            array.push(this[i]);            obj[this[i]] = 1;        }    }    <span class="built_in">return</span> array;}console.log(array.distinct());//[1, 2, 3, 4, 5, 6, 7, 8]</code></pre><h2 id="利用indexOf属性进行判断"><a href="#利用indexOf属性进行判断" class="headerlink" title="利用indexOf属性进行判断"></a>利用indexOf属性进行判断</h2><pre><code class="bash">var array = [1,1,2,3,4,5,5,6,6,7,8,8];Array.prototype.distinct = <span class="function"><span class="title">function</span></span> () {    var array = [this[0]];    <span class="keyword">for</span>(var i=0;i&lt;this.length;i++){        <span class="keyword">if</span>(array.indexOf(this[i]) == -1){            array.push(this[i])        }    }    <span class="built_in">return</span> array;}console.log(array.distinct());//[1, 2, 3, 4, 5, 6, 7, 8]</code></pre><h1 id="ES6方法"><a href="#ES6方法" class="headerlink" title="ES6方法"></a>ES6方法</h1><p>ES6 提供了新的数据结构 Set。它类似于数组，但是成员的值都是唯一的，没有重复的值。利用他的唯一性就可以进行去重了。</p><pre><code class="bash">const array = [1,1,2,3,4,5,5,6,6,7,8,8];console.log(new Set(array));//{1, 2, 3, 4, 5, 6, 7, 8}</code></pre><p>此时可以看到原数组已经已经去重了，但是此时结构还不是数组的结构，因此我们还需要用到Array.from方法，Array.from方法可以将 Set 结构转为数组。</p><pre><code class="bash">const array = [1,1,2,3,4,5,5,6,6,7,8,8];console.log(Array.from(new Set(array)));//[1, 2, 3, 4, 5, 6, 7, 8]</code></pre><p>记录一个多个数组合并去重的好方法</p><pre><code class="bash"><span class="keyword">function</span> <span class="function"><span class="title">distinct</span></span>(){    <span class="built_in">let</span> arr = [].concat.apply([], arguments);    console.log(arr);    <span class="built_in">return</span> Array.from(new Set(arr));}const a = [1,2,3,5],b = [2,5,8,6],c = [7,8,9];console.log(distinct(a,b,c));//[1, 2, 3, 5, 8, 6, 7, 9]</code></pre>]]></content>
     
@@ -36,7 +36,7 @@
     
       <category term="js数组去重" scheme="http://zhouyanwei.cn/tags/js%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D/"/>
     
-      <category term="es6" scheme="http://zhouyanwei.cn/tags/es6/"/>
+      <category term="ES6" scheme="http://zhouyanwei.cn/tags/ES6/"/>
     
   </entry>
   

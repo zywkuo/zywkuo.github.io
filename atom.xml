@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://zhouyanwei.cn/"/>
-  <updated>2018-08-10T02:15:52.828Z</updated>
+  <updated>2018-08-21T07:24:28.203Z</updated>
   <id>http://zhouyanwei.cn/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>position:sticky</title>
+    <link href="http://zhouyanwei.cn/2018/08/21/sticky/"/>
+    <id>http://zhouyanwei.cn/2018/08/21/sticky/</id>
+    <published>2018-08-20T16:00:00.000Z</published>
+    <updated>2018-08-21T07:24:28.203Z</updated>
+    
+    <content type="html"><![CDATA[<p>css position属性的值有absolute、fixed、relative、static、inherit等，<br>今天发现一个新的值 sticky 粘性定位，该定位基于用户滚动的位置。</p><a id="more"></a><p>这个属性比较不错，遗憾的是兼容性还不是很好，先来张图看一下<br><img src="/images/2018-08-21/sticky.png" alt=""></p><p>再来看一下他能干什么，比如说我一片文章有6个标题，让后读者读到每个标题对应的内容的时候让标题在顶部显示，看demo。</p><p></p><p data-height="265" data-theme-id="0" data-slug-hash="YOzJoP" data-default-tab="css,result" data-user="zywkuo" data-pen-title="YOzJoP" class="codepen">See the Pen <a href="https://codepen.io/zywkuo/pen/YOzJoP/" target="_blank" rel="noopener">YOzJoP</a> by 周艳伟 (<a href="https://codepen.io/zywkuo" target="_blank" rel="noopener">@zywkuo</a>) on <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p><p></p><script async src="https://static.codepen.io/assets/embed/ei.js"></script><p>还有一些移动端页面标题固定顶部，看这个demo</p><p></p><p data-height="265" data-theme-id="0" data-slug-hash="dqywNV" data-default-tab="html,result" data-user="zywkuo" data-pen-title="sticky2" class="codepen">See the Pen <a href="https://codepen.io/zywkuo/pen/dqywNV/" target="_blank" rel="noopener">sticky2</a> by 周艳伟 (<a href="https://codepen.io/zywkuo" target="_blank" rel="noopener">@zywkuo</a>) on <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p><p></p><script async src="https://static.codepen.io/assets/embed/ei.js"></script><p>这个属性值还是很不错的，用起来是不是感觉很方便，如果用js的话还需要进行判断高度在做处理相对来说还是这个简便快捷。</p><p>希望赶快普及吧！</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;css position属性的值有absolute、fixed、relative、static、inherit等，&lt;br&gt;今天发现一个新的值 sticky 粘性定位，该定位基于用户滚动的位置。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="css" scheme="http://zhouyanwei.cn/categories/css/"/>
+    
+    
+      <category term="position:sticky" scheme="http://zhouyanwei.cn/tags/position-sticky/"/>
+    
+  </entry>
   
   <entry>
     <title>js数组去重</title>
@@ -497,31 +519,6 @@
     
     
       <category term="codepen兼容" scheme="http://zhouyanwei.cn/tags/codepen%E5%85%BC%E5%AE%B9/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>js和jq获取当前位置</title>
-    <link href="http://zhouyanwei.cn/2017/05/24/width+height/"/>
-    <id>http://zhouyanwei.cn/2017/05/24/width+height/</id>
-    <published>2017-05-23T16:00:00.000Z</published>
-    <updated>2018-07-03T06:55:57.154Z</updated>
-    
-    <content type="html"><![CDATA[<p>在写javascript的时候，有的时候需要判断盒子的当前位置，或者鼠标位置，在这里我就总结一下这些判断方法，先来一张直观图。<br><img src="/images/2017-05-24/wh.gif" alt=""><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">javascript原生写法</span><br><span class="line">BODY对象宽度：document.body.clientWidth</span><br><span class="line">BODY对象高度：document.body.clientHeight</span><br><span class="line">可见区域宽度：document.documentElement.clientWidth</span><br><span class="line">可见区域高度：document.documentElement.clientHeight</span><br><span class="line">网页可见区域宽：document.body.offsetWidth (包括边线的宽)</span><br><span class="line">网页可见区域高：document.body.offsetHeight (包括边线的高)</span><br><span class="line">网页正文全文宽：document.body.scrollWidth</span><br><span class="line">网页正文全文高：document.body.scrollHeight</span><br><span class="line">网页被卷去的高：document.body.scrollTop</span><br><span class="line">网页被卷去的左：document.body.scrollLeft</span><br><span class="line">网页正文部分上：window.screenTop</span><br><span class="line">网页正文部分左：window.screenLeft</span><br><span class="line">屏幕分辨率的高：window.screen.height</span><br><span class="line">屏幕分辨率的宽：window.screen.width</span><br><span class="line">屏幕可用工作区高度：window.screen.availHeight</span><br><span class="line">屏幕可用工作区宽度：window.screen.availWidth</span><br><span class="line">获取元素的宽度：obj.clientWidth</span><br><span class="line">元素的高度：obj.clientHeight</span><br><span class="line">偏移坐标left：obj.offsetLeft</span><br><span class="line">偏移坐标top：obj.offsetTop</span><br><span class="line">元素的宽度：obj.offsetWidth</span><br><span class="line">元素的高度：obj.offsetHeight</span><br></pre></td></tr></table></figure></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">jquery写法</span><br><span class="line">偏移坐标left：$(selector).offset().left</span><br><span class="line">偏移坐标top：$(selector).offset().top</span><br><span class="line">宽度：$(w).height() //可试区域w=window、页面的文档w=documene、元素w=obj</span><br><span class="line">高度：$(h).width(); //可试区域h=window、页面的文档h=documene、元素h=obj</span><br><span class="line">滚动高度：$(document).scrollTop()</span><br><span class="line">滚动宽度：$(document).scrollTop()</span><br></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">js原生+jquery写法</span><br><span class="line">偏移坐标left：$(selector)[0].offsetLeft</span><br><span class="line">偏移坐标top：$(selector)[0].offsetTop</span><br></pre></td></tr></table></figure><blockquote><p>持续更新。。。。。。</p></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;在写javascript的时候，有的时候需要判断盒子的当前位置，或者鼠标位置，在这里我就总结一下这些判断方法，先来一张直观图。&lt;br&gt;&lt;img src=&quot;/images/2017-05-24/wh.gif&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;figure class=&quot;highlig
-      
-    
-    </summary>
-    
-      <category term="JS" scheme="http://zhouyanwei.cn/categories/JS/"/>
-    
-    
-      <category term="js和jq判断位置" scheme="http://zhouyanwei.cn/tags/js%E5%92%8Cjq%E5%88%A4%E6%96%AD%E4%BD%8D%E7%BD%AE/"/>
     
   </entry>
   

@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="position:sticky," />
 
 
 
@@ -97,17 +97,20 @@
   </script>
 
 
-<meta name="description" content="周艳伟的个人博客">
-<meta name="keywords" content="周艳伟，博客，Hexo,NexT">
-<meta property="og:type" content="website">
-<meta property="og:title" content="周艳伟">
-<meta property="og:url" content="http://zhouyanwei.cn/tags/nth-child/index.html">
+<meta name="description" content="css position属性的值有absolute、fixed、relative、static、inherit等，今天发现一个新的值 sticky 粘性定位，该定位基于用户滚动的位置。">
+<meta name="keywords" content="position:sticky">
+<meta property="og:type" content="article">
+<meta property="og:title" content="position:sticky">
+<meta property="og:url" content="http://zhouyanwei.cn/2018/08/21/sticky/index.html">
 <meta property="og:site_name" content="周艳伟">
-<meta property="og:description" content="周艳伟的个人博客">
+<meta property="og:description" content="css position属性的值有absolute、fixed、relative、static、inherit等，今天发现一个新的值 sticky 粘性定位，该定位基于用户滚动的位置。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://zhouyanwei.cn/images/2018-08-21/sticky.png">
+<meta property="og:updated_time" content="2018-08-21T07:24:28.203Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="周艳伟">
-<meta name="twitter:description" content="周艳伟的个人博客">
+<meta name="twitter:title" content="position:sticky">
+<meta name="twitter:description" content="css position属性的值有absolute、fixed、relative、static、inherit等，今天发现一个新的值 sticky 粘性定位，该定位基于用户滚动的位置。">
+<meta name="twitter:image" content="http://zhouyanwei.cn/images/2018-08-21/sticky.png">
 
 
 
@@ -137,13 +140,13 @@
 
 
 
-  <link rel="canonical" href="http://zhouyanwei.cn/tags/nth-child/"/>
+  <link rel="canonical" href="http://zhouyanwei.cn/2018/08/21/sticky/"/>
 
 
 
 
 
-  <title>标签: :nth-child | 周艳伟</title>
+  <title>position:sticky | 周艳伟</title>
   
 
 
@@ -162,7 +165,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband">
       <a href="https://github.com/zywkuo" target="_black" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
     </div>
@@ -302,54 +305,224 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>:nth-child<small>标签</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zhouyanwei.cn/2018/08/21/sticky/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zyw">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="周艳伟">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2017/07/31/nth/" itemprop="url">
-              
-                <span itemprop="name">css3选择器</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">position:sticky</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-07-31T00:00:00+08:00"
-              content="2017-07-31" >
-          07-31
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-21T00:00:00+08:00">
+                2018-08-21
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/css/" itemprop="url" rel="index">
+                    <span itemprop="name">css</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/08/21/sticky/" class="leancloud_visitors" data-flag-title="position:sticky">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  217
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>css position属性的值有absolute、fixed、relative、static、inherit等，<br>今天发现一个新的值 sticky 粘性定位，该定位基于用户滚动的位置。</p>
+<a id="more"></a>
+<p>这个属性比较不错，遗憾的是兼容性还不是很好，先来张图看一下<br><img src="/images/2018-08-21/sticky.png" alt=""></p>
+<p>再来看一下他能干什么，比如说我一片文章有6个标题，让后读者读到每个标题对应的内容的时候让标题在顶部显示，看demo。</p>
+<p></p><p data-height="265" data-theme-id="0" data-slug-hash="YOzJoP" data-default-tab="css,result" data-user="zywkuo" data-pen-title="YOzJoP" class="codepen">See the Pen <a href="https://codepen.io/zywkuo/pen/YOzJoP/" target="_blank" rel="noopener">YOzJoP</a> by 周艳伟 (<a href="https://codepen.io/zywkuo" target="_blank" rel="noopener">@zywkuo</a>) on <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p><p></p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+
+<p>还有一些移动端页面标题固定顶部，看这个demo</p>
+<p></p><p data-height="265" data-theme-id="0" data-slug-hash="dqywNV" data-default-tab="html,result" data-user="zywkuo" data-pen-title="sticky2" class="codepen">See the Pen <a href="https://codepen.io/zywkuo/pen/dqywNV/" target="_blank" rel="noopener">sticky2</a> by 周艳伟 (<a href="https://codepen.io/zywkuo" target="_blank" rel="noopener">@zywkuo</a>) on <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p><p></p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+<p>这个属性值还是很不错的，用起来是不是感觉很方便，如果用js的话还需要进行判断高度在做处理相对来说还是这个简便快捷。</p>
+<p>希望赶快普及吧！</p>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/position-sticky/" rel="tag"># position:sticky</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/10/distinct/" rel="next" title="js数组去重">
+                <i class="fa fa-chevron-left"></i> js数组去重
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -357,6 +530,15 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNzc5My8xNDMyNA"></div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -661,6 +843,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -689,6 +875,17 @@
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 

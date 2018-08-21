@@ -321,6 +321,34 @@
 
       <h2 class="post-title">
         
+            <a class="post-title-link" href="/2018/08/21/sticky/" itemprop="url">
+              
+                <span itemprop="name">position:sticky</span>
+              
+            </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-08-21T00:00:00+08:00"
+              content="2018-08-21" >
+          08-21
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+      
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
             <a class="post-title-link" href="/2018/08/07/focusWithin/" itemprop="url">
               
                 <span itemprop="name">:focus-within选择器</span>
@@ -394,7 +422,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -416,7 +444,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-count">32</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -533,7 +561,7 @@
   <div class="theme-info">
     <div class="powered-by"></div>
     <i class="fa fa-pencil"></i>
-    <span class="post-count">博客全站共20.9k字</span>
+    <span class="post-count">博客全站共21.1k字</span>
   </div>
 
 
@@ -1150,27 +1178,7 @@
 
 </body>
 </html>
-ngth; i++) {
-            var url = entries[i];
-            var element = document.getElementById(url);
-            var countSpan = $(element).find(COUNT_CONTAINER_REF);
-            if( countSpan.text() == '') {
-              countSpan.text(0);
-            }
-          }
-        })
-        .fail(function (object, error) {
-          console.log("Error: " + error.code + " " + error.message);
-        });
-    }
-
-    function addCount(Counter) {
-      var $visitors = $(".leancloud_visitors");
-      var url = $visitors.attr('id').trim();
-      var title = $visitors.attr('data-flag-title').trim();
-      var query = new AV.Query(Counter);
-
-      query.equalTo("url", url);
+     query.equalTo("url", url);
       query.find({
         success: function(results) {
           if (results.length > 0) {

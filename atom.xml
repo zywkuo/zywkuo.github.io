@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://zhouyanwei.cn/"/>
-  <updated>2018-08-21T07:24:28.203Z</updated>
+  <updated>2018-08-23T02:57:47.509Z</updated>
   <id>http://zhouyanwei.cn/</id>
   
   <author>
@@ -15,6 +15,39 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>rest参数(...变量名)和扩展运算符(...)</title>
+    <link href="http://zhouyanwei.cn/2018/08/23/rest/"/>
+    <id>http://zhouyanwei.cn/2018/08/23/rest/</id>
+    <published>2018-08-22T16:00:00.000Z</published>
+    <updated>2018-08-23T02:57:47.509Z</updated>
+    
+    <content type="html"><![CDATA[<p>之前写的一篇数组去重的方法，这样写的。</p><pre><code class="bash">const array = [1,1,2,3,4,5,5,6,6,7,8,8];<span class="keyword">function</span> <span class="function"><span class="title">distinct</span></span>(){    <span class="built_in">let</span> arr = [].concat.apply([], arguments);    console.log(arr);    <span class="built_in">return</span> Array.from(new Set(arr));}const a = [1,2,3,5],b = [2,5,8,6],c = [7,8,9];console.log(distinct(a,b,c));//[1, 2, 3, 5, 8, 6, 7, 9]</code></pre><a id="more"></a><p>后来我一想，既然都用ES6了，不如都用ES6语法吧。然后我就把代码改成这样了。</p><pre><code class="bash">distinct = () =&gt; {    <span class="built_in">let</span> arr = [].concat.apply([], arguments);    <span class="built_in">return</span> Array.from(new Set(arr));}console.log(distinct(array));//Uncaught ReferenceError: arguments is not defined</code></pre><p>报错了，让后查找了一下原因，使用为箭头函数没有arguments，怎么办，这就需要用rest参数了。</p><pre><code class="bash">const a = [1,2,3,5],b = [2,5,8,6],c = [7,8,9];distinct = (...theArgs) =&gt; {    <span class="built_in">let</span> arr = [].concat.apply([], theArgs);    <span class="built_in">return</span> Array.from(new Set(arr));}console.log(distinct(a,b,c));//[1, 2, 3, 5, 8, 6, 7, 9]</code></pre><p>这个<code>...theArgs</code>就是rest参数了，theArgs是自定义的命名，可以随便起名字。</p><h1 id="rest参数-…变量名"><a href="#rest参数-…变量名" class="headerlink" title="rest参数(…变量名)"></a>rest参数(…变量名)</h1><p>最主要用于不定参数，用于获取函数多余的参数，将多余的逗号分隔的参数序列转换为数组参数</p><p>rest参数的语法</p><pre><code class="bash"><span class="keyword">function</span> f(a, b, ...theArgs) {  // ...}</code></pre><p>看一个小例子</p><pre><code class="bash">fun1 = (...theArgs) =&gt; {    console.log(theArgs);}fun1(1, 2, 3, 4, 5, 6);//[1, 2, 3, 4, 5, 6]fun2 = (a, b, ...theArgs) =&gt; {    console.log(theArgs);//[3, 4, 5, 6]}fun2(1, 2, 3, 4, 5, 6);</code></pre><p>注意：rest参数只能是最后一个参数，他代表除a,b以外的所有参数，如果后面在添加别参数，例如</p><pre><code class="bash">fun2 = (a, b, ...theArgs, c) =&gt; {    console.log(theArgs);}fun2(1, 2, 3, 4, 5, 6);Uncaught SyntaxError: Rest parameter must be last formal parameter</code></pre><p>这样是会报错的。</p><p>说到这里这个<code>...</code>还有一个作用就是作为扩展运算符</p><h1 id="扩展运算符-…"><a href="#扩展运算符-…" class="headerlink" title="扩展运算符(…)"></a>扩展运算符(…)</h1><p>扩展运算符可以理解为rest参数的逆运算，将数组转换为逗号分隔的参数序列</p><pre><code class="bash">const nums = [1, 2, 3];fun = (a, b, c) =&gt; {    console.log(`<span class="variable">${a}</span> <span class="variable">${b}</span> <span class="variable">${c}</span>`)}fun(...nums);//1 2 3</code></pre><p>ES5的话我们还需要这样调用</p><pre><code class="bash">fun.apply(null,nums);</code></pre><h1 id="扩展运算符应用"><a href="#扩展运算符应用" class="headerlink" title="扩展运算符应用"></a>扩展运算符应用</h1><h2 id="合并数组"><a href="#合并数组" class="headerlink" title="合并数组"></a>合并数组</h2><pre><code class="bash">const arr1 = [1, 2, 3]const arr2 = [5, 6]ES5console.log(arr1.concat(arr2));//[1, 2, 3, 5, 6]ES6console.log([...arr1, ...arr2]);//[1, 2, 3, 5, 6]</code></pre><h2 id="判断最大值最小值"><a href="#判断最大值最小值" class="headerlink" title="判断最大值最小值"></a>判断最大值最小值</h2><pre><code class="bash">const array = [1,1,2,3,4,5,5,6,6,7,8,8];ES5console.log( Math.max.apply(null, array));//8console.log( Math.min.apply(null, array));//1ES6console.log( Math.max(...array));//8console.log( Math.min(...array));//1</code></pre><h2 id="数组去重"><a href="#数组去重" class="headerlink" title="数组去重"></a>数组去重</h2><pre><code class="bash">const array = [1,1,2,3,4,5,5,6,6,7,8,8];const distinct = arr =&gt; [...new Set(arr)];console.log(distinct(array));//[1, 2, 3, 4, 5, 6, 7, 8]</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;之前写的一篇数组去重的方法，这样写的。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;const array = [1,1,2,3,4,5,5,6,6,7,8,8];
+&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;title&quot;&gt;distinct&lt;/span&gt;&lt;/span&gt;(){
+    &lt;span class=&quot;built_in&quot;&gt;let&lt;/span&gt; arr = [].concat.apply([], arguments);
+    console.log(arr);
+    &lt;span class=&quot;built_in&quot;&gt;return&lt;/span&gt; Array.from(new Set(arr));
+}
+const a = [1,2,3,5],b = [2,5,8,6],c = [7,8,9];
+console.log(distinct(a,b,c));//[1, 2, 3, 5, 8, 6, 7, 9]
+&lt;/code&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+      <category term="ES6" scheme="http://zhouyanwei.cn/categories/ES6/"/>
+    
+    
+      <category term="rest参数" scheme="http://zhouyanwei.cn/tags/rest%E5%8F%82%E6%95%B0/"/>
+    
+      <category term="扩展运算符" scheme="http://zhouyanwei.cn/tags/%E6%89%A9%E5%B1%95%E8%BF%90%E7%AE%97%E7%AC%A6/"/>
+    
+  </entry>
   
   <entry>
     <title>position:sticky</title>
@@ -493,32 +526,6 @@
       <category term="面向对象" scheme="http://zhouyanwei.cn/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
     
       <category term="OO" scheme="http://zhouyanwei.cn/tags/OO/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>codepen</title>
-    <link href="http://zhouyanwei.cn/2017/06/01/codepen/"/>
-    <id>http://zhouyanwei.cn/2017/06/01/codepen/</id>
-    <published>2017-05-31T16:00:00.000Z</published>
-    <updated>2018-07-03T06:55:57.159Z</updated>
-    
-    <content type="html"><![CDATA[<p>codepen, “代码笔”,前端开发很好用的一个网站，你可以把你的HTML、css、js代码放到上面看效果，也可以在上面直接写代码看结果。</p><p>现在的css3的一些特效，像旋转，移动什么的都需要进行兼容性处理，在这里就介绍一下codepen如何进行兼容性处理。</p><p>首先打开codepen网址，<a href="https://codepen.io/" target="_blank" rel="noopener">www.codepen.io</a>点击creat新建一个newpen<br><img src="/images/2017-06-01/newpen.png" alt=""><br>把css代码粘贴到css框里，然后<br><img src="/images/2017-06-01/pen1.png" alt=""><br><img src="/images/2017-06-01/pen2.png" alt=""><br><img src="/images/2017-06-01/pen3.png" alt=""><br><img src="/images/2017-06-01/pen4.png" alt=""><br>这样css代码框里的兼容就处理好了，就可以替换原来的代码了。</p><p>看一下兼容前后的效果！<br><img src="/images/2017-06-01/pen5.png" alt=""><br>看着很简单，但是一个页面有很多css动画，还有很多个页面，这个兼容就好用多了。</p><blockquote><p>codepen的实用之处。。。</p></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;codepen, “代码笔”,前端开发很好用的一个网站，你可以把你的HTML、css、js代码放到上面看效果，也可以在上面直接写代码看结果。&lt;/p&gt;
-&lt;p&gt;现在的css3的一些特效，像旋转，移动什么的都需要进行兼容性处理，在这里就介绍一下codepen如何进行兼容性处理。&lt;
-      
-    
-    </summary>
-    
-      <category term="CSS" scheme="http://zhouyanwei.cn/categories/CSS/"/>
-    
-    
-      <category term="codepen兼容" scheme="http://zhouyanwei.cn/tags/codepen%E5%85%BC%E5%AE%B9/"/>
     
   </entry>
   

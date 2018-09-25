@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://zhouyanwei.cn/"/>
-  <updated>2018-09-03T05:54:09.316Z</updated>
+  <updated>2018-09-25T08:27:16.432Z</updated>
   <id>http://zhouyanwei.cn/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>前端跨域方案</title>
+    <link href="http://zhouyanwei.cn/2018/09/25/proxy/"/>
+    <id>http://zhouyanwei.cn/2018/09/25/proxy/</id>
+    <published>2018-09-24T16:00:00.000Z</published>
+    <updated>2018-09-25T08:27:16.432Z</updated>
+    
+    <content type="html"><![CDATA[<p>做了一份关于跨域的ppt,主要讲解了，使用vue-cli、nginx、node.js进行跨域处理。欢迎下载观看。</p><p><a href="../../../../link/2018-09-25/proxy.pptx">PPT请点击这里下载</a></p><p>下面附上几张照片，node.js跨域源码在下面。</p><a id="more"></a><p><img src="/images/2018-09-25/proxy1.png" alt=""><br><img src="/images/2018-09-25/proxy2.png" alt=""><br><img src="/images/2018-09-25/proxy3.png" alt=""><br><img src="/images/2018-09-25/proxy4.png" alt=""></p><p>proxy.js</p><pre><code class="bash">var PORT = 3000;var http = require(<span class="string">'http'</span>);var url=require(<span class="string">'url'</span>);var fs=require(<span class="string">'fs'</span>);var mine=require(<span class="string">'./mime'</span>).types;var path=require(<span class="string">'path'</span>);var httpProxy = require(<span class="string">'http-proxy'</span>);var proxy = httpProxy.createProxyServer({    target: <span class="string">'http://192.168.2.18:8080/'</span>,   //接口地址    // 下面的设置用于https    // ssl: {    //     key: fs.readFileSync(<span class="string">'server_decrypt.key'</span>, <span class="string">'utf8'</span>),    //     cert: fs.readFileSync(<span class="string">'server.crt'</span>, <span class="string">'utf8'</span>)    // },    // secure: <span class="literal">false</span>});proxy.on(<span class="string">'error'</span>, <span class="keyword">function</span>(err, req, res){    res.writeHead(500, {        <span class="string">'content-type'</span>: <span class="string">'text/plain'</span>    });    console.log(err);    res.end(<span class="string">'Something went wrong. And we are reporting a custom error message.'</span>);});var server = http.createServer(<span class="keyword">function</span> (request, response) {    var pathname = url.parse(request.url).pathname;    //var realPath = path.join(<span class="string">"main-pages"</span>, pathname); // 指定根目录    var realPath = path.join(<span class="string">"./"</span>, pathname);    console.log(pathname);    console.log(realPath);    var ext = path.extname(realPath);    ext = ext ? ext.slice(1) : <span class="string">'unknown'</span>;    //判断如果是接口访问，则通过proxy转发    <span class="keyword">if</span>(pathname.indexOf(<span class="string">"meis"</span>) &gt; 0){        proxy.web(request, response);        <span class="built_in">return</span>;    }    fs.exists(realPath, <span class="keyword">function</span> (exists) {        <span class="keyword">if</span> (!exists) {            response.writeHead(404, {                <span class="string">'Content-Type'</span>: <span class="string">'text/plain'</span>            });            response.write(<span class="string">"This request URL "</span> + pathname + <span class="string">" was not found on this server."</span>);            response.end();        } <span class="keyword">else</span> {            fs.readFile(realPath, <span class="string">"binary"</span>, <span class="keyword">function</span> (err, file) {                <span class="keyword">if</span> (err) {                    response.writeHead(500, {                        <span class="string">'Content-Type'</span>: <span class="string">'text/plain'</span>                    });                    response.end(err);                } <span class="keyword">else</span> {                    var contentType = mine[ext] || <span class="string">"text/plain"</span>;                    response.writeHead(200, {                        <span class="string">'Content-Type'</span>: contentType                    });                    response.write(file, <span class="string">"binary"</span>);                    response.end();                }            });        }    });});server.listen(PORT);console.log(<span class="string">"Server runing at port: "</span> + PORT + <span class="string">"."</span>);</code></pre><p>mime.js</p><pre><code class="bash">exports.types = {    <span class="string">"css"</span>: <span class="string">"text/css"</span>,    <span class="string">"gif"</span>: <span class="string">"image/gif"</span>,    <span class="string">"html"</span>: <span class="string">"text/html"</span>,    <span class="string">"ico"</span>: <span class="string">"image/x-icon"</span>,    <span class="string">"jpeg"</span>: <span class="string">"image/jpeg"</span>,    <span class="string">"jpg"</span>: <span class="string">"image/jpeg"</span>,    <span class="string">"js"</span>: <span class="string">"text/javascript"</span>,    <span class="string">"json"</span>: <span class="string">"application/json"</span>,    <span class="string">"pdf"</span>: <span class="string">"application/pdf"</span>,    <span class="string">"png"</span>: <span class="string">"image/png"</span>,    <span class="string">"svg"</span>: <span class="string">"image/svg+xml"</span>,    <span class="string">"swf"</span>: <span class="string">"application/x-shockwave-flash"</span>,    <span class="string">"tiff"</span>: <span class="string">"image/tiff"</span>,    <span class="string">"txt"</span>: <span class="string">"text/plain"</span>,    <span class="string">"wav"</span>: <span class="string">"audio/x-wav"</span>,    <span class="string">"wma"</span>: <span class="string">"audio/x-ms-wma"</span>,    <span class="string">"wmv"</span>: <span class="string">"video/x-ms-wmv"</span>,    <span class="string">"xml"</span>: <span class="string">"text/xml"</span>,    <span class="string">"woff"</span>: <span class="string">"application/x-woff"</span>,    <span class="string">"woff2"</span>: <span class="string">"application/x-woff2"</span>,    <span class="string">"tff"</span>: <span class="string">"application/x-font-truetype"</span>,    <span class="string">"otf"</span>: <span class="string">"application/x-font-opentype"</span>,    <span class="string">"eot"</span>: <span class="string">"application/vnd.ms-fontobject"</span>};</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;做了一份关于跨域的ppt,主要讲解了，使用vue-cli、nginx、node.js进行跨域处理。欢迎下载观看。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;../../../../link/2018-09-25/proxy.pptx&quot;&gt;PPT请点击这里下载&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;下面附上几张照片，node.js跨域源码在下面。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="js" scheme="http://zhouyanwei.cn/categories/js/"/>
+    
+    
+      <category term="vue" scheme="http://zhouyanwei.cn/tags/vue/"/>
+    
+      <category term="node.js" scheme="http://zhouyanwei.cn/tags/node-js/"/>
+    
+      <category term="nginx" scheme="http://zhouyanwei.cn/tags/nginx/"/>
+    
+  </entry>
   
   <entry>
     <title>vue-cli3 + ElementUI</title>
@@ -502,31 +530,6 @@ console.log(distinct(a,b,c));//[1, 2, 3, 5, 8, 6, 7, 9]
     
     
       <category term="print" scheme="http://zhouyanwei.cn/tags/print/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>vertical-align</title>
-    <link href="http://zhouyanwei.cn/2017/06/12/vertical-align/"/>
-    <id>http://zhouyanwei.cn/2017/06/12/vertical-align/</id>
-    <published>2017-06-11T16:00:00.000Z</published>
-    <updated>2018-07-03T06:55:57.158Z</updated>
-    
-    <content type="html"><![CDATA[<p>在前端页面开发过程中，经常会碰到向nav导航的布局，一张图片加上字体说明（现在实现这种效果用iconfont也是很不错的），别的地方也有很多需要用到这种组合的形式，默认的样式是这样的。<br><img src="/images/2017-06-12/va1.png" alt=""><br>一般都是需要图片居中显示的，以前我的做法都是将图片进行浮动让后再调整图片位置，偶然间发现css有一个这一个属性vertical-align，感觉很实用，发现新大陆了。看一下w3school对他的解释。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">浏览器支持</span><br><span class="line">    所有浏览器都支持 vertical-align 属性。</span><br><span class="line">    注释：任何的版本的 Internet Explorer （包括 IE8）都不支持属性值 <span class="string">"inherit"</span>。</span><br><span class="line">定义和用法</span><br><span class="line">    vertical-align 属性设置元素的垂直对齐方式。</span><br><span class="line">说明</span><br><span class="line">    该属性定义行内元素的基线相对于该元素所在行的基线的垂直对齐。允许指定负长度值和百分比值。</span><br><span class="line">    这会使元素降低而不是升高。在表单元格中，这个属性会设置单元格框中的单元格内容的对齐方式。</span><br><span class="line">        默认值：        baseline</span><br><span class="line">        继承性：        no</span><br><span class="line">        版本：            CSS1</span><br><span class="line">        JavaScript 语法：object.style.verticalAlign=<span class="string">"bottom"</span></span><br><span class="line">可能的值</span><br><span class="line">    值            描述</span><br><span class="line">    baseline    默认。元素放置在父元素的基线上。</span><br><span class="line">    sub            垂直对齐文本的下标。</span><br><span class="line">    super        垂直对齐文本的上标</span><br><span class="line">    top            把元素的顶端与行中最高元素的顶端对齐</span><br><span class="line">    text-top    把元素的顶端与父元素字体的顶端对齐</span><br><span class="line">    middle        把此元素放置在父元素的中部。</span><br><span class="line">    bottom        把元素的顶端与行中最低的元素的顶端对齐。</span><br><span class="line">    text-bottom    把元素的底端与父元素字体的底端对齐。</span><br><span class="line">    length </span><br><span class="line">    %            使用 <span class="string">"line-height"</span> 属性的百分比值来排列此元素。允许使用负值。</span><br><span class="line">    inherit        规定应该从父元素继承 vertical-align 属性的值。</span><br></pre></td></tr></table></figure></p><p>给我刚才的例子添加上vertical-align:middle属性，看一下效果<br><img src="/images/2017-06-12/va2.png" alt=""><br>一下子就达到了我想要的效果，感觉很不错吧</p><p>其他的属性值也很好理解，多多记忆一下就好了。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;在前端页面开发过程中，经常会碰到向nav导航的布局，一张图片加上字体说明（现在实现这种效果用iconfont也是很不错的），别的地方也有很多需要用到这种组合的形式，默认的样式是这样的。&lt;br&gt;&lt;img src=&quot;/images/2017-06-12/va1.png&quot; alt
-      
-    
-    </summary>
-    
-      <category term="CSS" scheme="http://zhouyanwei.cn/categories/CSS/"/>
-    
-    
-      <category term="vertical-align" scheme="http://zhouyanwei.cn/tags/vertical-align/"/>
     
   </entry>
   

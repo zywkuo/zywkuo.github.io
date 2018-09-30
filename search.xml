@@ -16,7 +16,7 @@
   <entry>
     <title><![CDATA[vue-cli3 + ElementUI]]></title>
     <url>%2F2018%2F09%2F03%2Fvue-cli3%2F</url>
-    <content type="text"><![CDATA[使用vue-cli3脚手架搭配ElementUI做了一个简单的PC后台管理系统连接地址账号密码随便输，但不能为空。github源码在这里下载在下来后安装依赖，启动项目应该就可以看了。 我也在学习中，持续更新。。。。。。]]></content>
+    <content type="text"><![CDATA[使用vue-cli3脚手架搭配ElementUI做了一个简单的PC后台管理系统连接地址账号密码随便输,不写也行。github源码在这里下载在下来后安装依赖，启动项目应该就可以看了。 我也在学习中，持续更新。。。。。。]]></content>
       <categories>
         <category>VUE</category>
       </categories>

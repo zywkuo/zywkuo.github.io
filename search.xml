@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[flutter Android Studio配置错误]]></title>
+    <url>%2F2018%2F12%2F08%2Fflutter%2F</url>
+    <content type="text"><![CDATA[刚开始学些flutter，安装配置的时候遇到了点小问题，配置流程我就不发了，网上很多，我的学习地址是这个，可以参考。技术胖的这篇教程;我只要是记录我在使用Android Studio运行flutter的时候出现的问题。 出现问题如下图 我是没搞懂这是什么问题，然后就请教了一下我们公司做Android的大神，他来我这一看，就找到了问题。 看着两个图，文件配置的版本号为27，虚拟机的版本号为28 两个版本号没有对上，然后我把27改成28，在debug一下就跑起来了。 闻道有先后，术业有专攻。 还是要多多学习。]]></content>
+      <categories>
+        <category>flutter</category>
+      </categories>
+      <tags>
+        <tag>flutter</tag>
+        <tag>Android Studio</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[单图片上传]]></title>
     <url>%2F2018%2F11%2F28%2Fimgupload%2F</url>
     <content type="text"><![CDATA[业务需求，移动端app需要一个单图片上传的功能，并且只允许照相，不允许从本地选取，本来想使用webUploader来做，配置好了，发现一个问题只能上传一次，在次上传，缩略图不替换（也有可能这个插件我没配置使用好，此处不做过多纠结），然后就参考写了一个。 代码如下（需要依赖jq） html123&lt;div id="imgUpload"&gt; &lt;img src="upload.png" alt=""&gt;&lt;!--upload.png为初始显示背景图--&gt;&lt;/div&gt; css12345678#imgUpload &#123; width: 88px; height: 88px;&#125;#imgUpload img &#123; width: 100%; height: 100%;&#125; js12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364//图片上传function ImgUpload(id, options) &#123; this.me = $(id); this.callback = options.callback; this.init();&#125;ImgUpload.prototype = &#123; init: function () &#123; this.eventClickInit(); &#125;, eventClickInit:function () &#123; var self = this; this.me.unbind().click(function() &#123; self.createImageUploadDialog(); &#125;) &#125;, onChangeUploadFile: function() &#123; var fileInput = this.fileInput; var files = fileInput.files; if (files.length == 0) &#123; return false; &#125; var file = files[0]; if (file.type.indexOf('image') === -1) &#123; alert("您上传的不是图片！"); return false; &#125; var img = window.URL.createObjectURL(file); var filename = file.name; var filesize = Math.floor((file.size) / 1024); if (filesize &gt; 1024 * 20) &#123; alert("上传大小不能超过20M."); return false; &#125; this.me.find("img").attr("src", img); this.me.find("img").attr("title", filename); if (this.callback) &#123; this.callback(files); &#125; &#125;, createImageUploadDialog: function() &#123; var fileInput = this.fileInput; if (!fileInput) &#123; fileInput = document.createElement('input'); fileInput.type = 'file'; fileInput.name = 'ime-images'; fileInput.accept = 'image/*'; fileInput.capture = 'camera';//只允许照相 fileInput.multiple = false;//不允许多选 fileInput.onchange = this.onChangeUploadFile.bind(this); this.fileInput = fileInput; &#125; fileInput.click(); &#125;&#125;//调用方法var dragImgUpload = new ImgUpload("#imgUpload",&#123; callback:function (files) &#123; var imgFile = files[0]; console.log(imgFile); //do something 调取接口进行上传等操作。 &#125;&#125;); 具体效果点击这里;]]></content>

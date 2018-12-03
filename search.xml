@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title><![CDATA[flutter Android Studio配置错误]]></title>
-    <url>%2F2018%2F12%2F08%2Fflutter%2F</url>
+    <url>%2F2018%2F11%2F30%2Fflutter%2F</url>
     <content type="text"><![CDATA[刚开始学些flutter，安装配置的时候遇到了点小问题，配置流程我就不发了，网上很多，我的学习地址是这个，可以参考。技术胖的这篇教程;我只要是记录我在使用Android Studio运行flutter的时候出现的问题。 出现问题如下图 我是没搞懂这是什么问题，然后就请教了一下我们公司做Android的大神，他来我这一看，就找到了问题。 看着两个图，文件配置的版本号为27，虚拟机的版本号为28 两个版本号没有对上，然后我把27改成28，在debug一下就跑起来了。 闻道有先后，术业有专攻。 还是要多多学习。]]></content>
       <categories>
         <category>flutter</category>
@@ -324,9 +324,9 @@
   <entry>
     <title><![CDATA[js和jq获取当前位置]]></title>
     <url>%2F2017%2F05%2F24%2Fwidth%2Bheight%2F</url>
-    <content type="text"><![CDATA[在写javascript的时候，有的时候需要判断盒子的当前位置，或者鼠标位置，在这里我就总结一下这些判断方法，先来一张直观图。1234567891011121314151617181920212223javascript原生写法BODY对象宽度：document.body.clientWidthBODY对象高度：document.body.clientHeight可见区域宽度：document.documentElement.clientWidth可见区域高度：document.documentElement.clientHeight网页可见区域宽：document.body.offsetWidth (包括边线的宽)网页可见区域高：document.body.offsetHeight (包括边线的高)网页正文全文宽：document.body.scrollWidth网页正文全文高：document.body.scrollHeight网页被卷去的高：document.body.scrollTop网页被卷去的左：document.body.scrollLeft网页正文部分上：window.screenTop网页正文部分左：window.screenLeft屏幕分辨率的高：window.screen.height屏幕分辨率的宽：window.screen.width屏幕可用工作区高度：window.screen.availHeight屏幕可用工作区宽度：window.screen.availWidth获取元素的宽度：obj.clientWidth元素的高度：obj.clientHeight偏移坐标left：obj.offsetLeft偏移坐标top：obj.offsetTop元素的宽度：obj.offsetWidth元素的高度：obj.offsetHeight 1234567jquery写法偏移坐标left：$(selector).offset().left偏移坐标top：$(selector).offset().top宽度：$(w).height() //可试区域w=window、页面的文档w=documene、元素w=obj高度：$(h).width(); //可试区域h=window、页面的文档h=documene、元素h=obj滚动高度：$(document).scrollTop()滚动宽度：$(document).scrollTop() 123js原生+jquery写法偏移坐标left：$(selector)[0].offsetLeft偏移坐标top：$(selector)[0].offsetTop 持续更新。。。。。。]]></content>
+    <content type="text"><![CDATA[在写javascript的时候，有的时候需要判断盒子的当前位置，或者鼠标位置，在这里我就总结一下这些判断方法，先来一张直观图。1234567891011121314151617181920212223javascript原生写法BODY对象宽度：document.body.clientWidthBODY对象高度：document.body.clientHeight可见区域宽度：document.documentElement.clientWidth可见区域高度：document.documentElement.clientHeight网页可见区域宽：document.body.offsetWidth (包括边线的宽)网页可见区域高：document.body.offsetHeight (包括边线的高)网页正文全文宽：document.body.scrollWidth网页正文全文高：document.body.scrollHeight网页被卷去的高：document.body.scrollTop网页被卷去的左：document.body.scrollLeft网页正文部分上：window.screenTop网页正文部分左：window.screenLeft屏幕分辨率的高：window.screen.height屏幕分辨率的宽：window.screen.width屏幕可用工作区高度：window.screen.availHeight屏幕可用工作区宽度：window.screen.availWidth获取元素的宽度：obj.clientWidth元素的高度：obj.clientHeight偏移坐标left：obj.offsetLeft偏移坐标top：obj.offsetTop元素的宽度：obj.offsetWidth元素的高度：obj.offsetHeight 1234567jquery写法偏移坐标left：$(selector).offset().left偏移坐标top：$(selector).offset().top宽度：$(w).height() //可试区域w=window、页面的文档w=documene、元素w=obj高度：$(h).width(); //可试区域h=window、页面的文档h=documene、元素h=obj滚动高度：$(document).scrollTop()滚动宽度：$(document).scrollTop() 123js原生+jquery写法偏移坐标left：$(selector)[0].offsetLeft偏移坐标top：$(selector)[0].offsetTop 2018-12-03更新今天发现一个新的js方法，可以直接返回好多东西，来看一下。语法是Element.getBoundingClientRect();看一下取到的值返回值是一个 DOMRect 对象，我们想使用哪个值直接点上哪个就好了。比如1234const el =document.getElementById('police_deviation')const bound=el.getBoundingClientRect()bound.left //元素距离页面左侧值bound.right //元素距离页面右侧值 具体看下图详细的也可以看这里https://developer.mozilla.org/zh-CN/docs/Web/API/Element/getBoundingClientRect 在看一下兼容性good ！！！！！！可以直接拿来用了。 持续更新。。。。。。]]></content>
       <categories>
-        <category>JS</category>
+        <category>js</category>
       </categories>
       <tags>
         <tag>js和jq判断位置</tag>

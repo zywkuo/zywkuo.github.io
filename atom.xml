@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://zhouyanwei.cn/"/>
-  <updated>2018-11-30T02:02:14.921Z</updated>
+  <updated>2018-12-03T05:43:42.705Z</updated>
   <id>http://zhouyanwei.cn/</id>
   
   <author>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>flutter Android Studio配置错误</title>
-    <link href="http://zhouyanwei.cn/2018/12/08/flutter/"/>
-    <id>http://zhouyanwei.cn/2018/12/08/flutter/</id>
-    <published>2018-12-07T16:00:00.000Z</published>
-    <updated>2018-11-30T02:02:14.921Z</updated>
+    <link href="http://zhouyanwei.cn/2018/11/30/flutter/"/>
+    <id>http://zhouyanwei.cn/2018/11/30/flutter/</id>
+    <published>2018-11-29T16:00:00.000Z</published>
+    <updated>2018-12-03T05:43:42.705Z</updated>
     
     <content type="html"><![CDATA[<p>刚开始学些flutter，安装配置的时候遇到了点小问题，配置流程我就不发了，网上很多，我的学习地址是这个，可以参考。<a href="http://jspang.com/post/flutter1.html#toc-12d" target="_blank" rel="noopener">技术胖的这篇教程</a>;<br>我只要是记录我在使用Android Studio运行flutter的时候出现的问题。</p><a id="more"></a><p>出现问题如下图</p><p><img src="/images/2018-11-30/1.png" alt=""></p><p>我是没搞懂这是什么问题，然后就请教了一下我们公司做Android的大神，他来我这一看，就找到了问题。</p><p><img src="/images/2018-11-30/2.png" alt=""><br><img src="/images/2018-11-30/3.png" alt=""></p><p>看着两个图，文件配置的版本号为27，虚拟机的版本号为28 两个版本号没有对上，然后我把27改成28，在debug一下就跑起来了。</p><p>闻道有先后，术业有专攻。</p><p>还是要多多学习。</p>]]></content>
     

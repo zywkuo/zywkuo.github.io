@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://zhouyanwei.cn/"/>
-  <updated>2018-12-03T05:43:42.705Z</updated>
+  <updated>2018-12-03T06:52:34.900Z</updated>
   <id>http://zhouyanwei.cn/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>IntersectionObserver API</title>
+    <link href="http://zhouyanwei.cn/2018/12/03/IntersectionObserver/"/>
+    <id>http://zhouyanwei.cn/2018/12/03/IntersectionObserver/</id>
+    <published>2018-12-02T16:00:00.000Z</published>
+    <updated>2018-12-03T06:52:34.900Z</updated>
+    
+    <content type="html"><![CDATA[<p>原来判断一个元素是否在页面显示区域中，需要使用scroll事件进行监听判断，现在有了IntersectionObserver就方便了很多。</p><a id="more"></a><p>用法为</p><p>var io = new IntersectionObserver(callback, option);</p><p>IntersectionObserver是浏览器原生提供的构造函数，接受两个参数：callback是可见性变化时的回调函数，option是配置对象（该参数可选）。</p><p>// 开始观察</p><pre><code class="bash">io.observe(document.getElementById(<span class="string">'example'</span>));</code></pre><p>// 停止观察</p><pre><code class="bash">io.unobserve(element);</code></pre><p>// 关闭观察器</p><pre><code class="bash">io.disconnect();</code></pre><pre><code class="bash">var io = new IntersectionObserver(    entries =&gt; {        entries.forEach(i =&gt; {            console.log(<span class="string">'Time: '</span> + i.time);            console.log(<span class="string">'Target: '</span> + i.target);            console.log(<span class="string">'IntersectionRatio: '</span> + i.intersectionRatio);            console.log(<span class="string">'rootBounds: '</span> + i.rootBounds);            console.log(i.boundingClientRect);            console.log(i.intersectionRect);            console.log(<span class="string">'================'</span>);        });    },    {        /* Using default options. Details below */    });// Start observing an element// 多次调用io.observe(document.querySelector(<span class="string">'#a'</span>));io.observe(document.querySelector(<span class="string">'#b'</span>));</code></pre><p>返回的属性如下</p><pre><code class="bash">time：可见性发生变化的时间，是一个高精度时间戳，单位为毫秒target：被观察的目标元素，是一个 DOM 节点对象rootBounds：根元素的矩形区域的信息，getBoundingClientRect()方法的返回值，如果没有根元素（即直接相对于视口滚动），则返回nullboundingClientRect：目标元素的矩形区域的信息intersectionRect：目标元素与视口（或根元素）的交叉区域的信息intersectionRatio：目标元素的可见比例，即intersectionRect占boundingClientRect的比例，完全可见时为1，完全不可见时小于等于0</code></pre><p>这里面返回的值里面有位置信息，就可以搞事情了。</p><p>看一下兼容性</p><p><img src="/images/2018-12-03/1.png" alt=""></p><p>虽然兼容还不是很好，要是这个方法主流兼容了就很好了。以后一定是一个好方法。</p><p>想要学习更多的请借一步前往阮大大这里看</p><p><a href="http://www.ruanyifeng.com/blog/2016/11/intersectionobserver_api.html" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2016/11/intersectionobserver_api.html</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;原来判断一个元素是否在页面显示区域中，需要使用scroll事件进行监听判断，现在有了IntersectionObserver就方便了很多。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="js" scheme="http://zhouyanwei.cn/categories/js/"/>
+    
+    
+      <category term="IntersectionObserver" scheme="http://zhouyanwei.cn/tags/IntersectionObserver/"/>
+    
+  </entry>
   
   <entry>
     <title>flutter Android Studio配置错误</title>
@@ -421,7 +443,7 @@ console.log(distinct(a,b,c));//[1, 2, 3, 5, 8, 6, 7, 9]
     <link href="http://zhouyanwei.cn/2018/07/09/timer/"/>
     <id>http://zhouyanwei.cn/2018/07/09/timer/</id>
     <published>2018-07-08T16:00:00.000Z</published>
-    <updated>2018-07-09T01:50:44.152Z</updated>
+    <updated>2018-12-03T06:53:26.240Z</updated>
     
     <content type="html"><![CDATA[<h1 id="时间转时间戳"><a href="#时间转时间戳" class="headerlink" title="时间转时间戳"></a>时间转时间戳</h1><h2 id="1-Date-parse-new-Date-不推荐这种办法，毫秒级别的数值被转化为000"><a href="#1-Date-parse-new-Date-不推荐这种办法，毫秒级别的数值被转化为000" class="headerlink" title="1.Date.parse(new Date()) 不推荐这种办法，毫秒级别的数值被转化为000"></a>1.Date.parse(new Date()) 不推荐这种办法，毫秒级别的数值被转化为000</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var timestamp1 = Date.parse(new Date());</span><br><span class="line">console.log(timestamp1); //1531100204000</span><br></pre></td></tr></table></figure><h2 id="2-new-Date-valueOf-通过valueOf-函数返回指定对象的原始值获得准确的时间戳值"><a href="#2-new-Date-valueOf-通过valueOf-函数返回指定对象的原始值获得准确的时间戳值" class="headerlink" title="2.(new Date()).valueOf() 通过valueOf()函数返回指定对象的原始值获得准确的时间戳值"></a>2.(new Date()).valueOf() 通过valueOf()函数返回指定对象的原始值获得准确的时间戳值</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var timestamp2 = (new Date()).valueOf();</span><br><span class="line">console.log(timestamp2); //1531100216013</span><br></pre></td></tr></table></figure><h2 id="3-new-Date-getTime-通过原型方法直接获得当前时间的毫秒值，准确"><a href="#3-new-Date-getTime-通过原型方法直接获得当前时间的毫秒值，准确" class="headerlink" title="3.new Date().getTime() 通过原型方法直接获得当前时间的毫秒值，准确"></a>3.new Date().getTime() 通过原型方法直接获得当前时间的毫秒值，准确</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var timestamp3 = new Date().getTime();</span><br><span class="line">console.log(timestamp3); //1531100225639</span><br></pre></td></tr></table></figure><h2 id="4-Number-new-Date-将时间转化为一个number类型的数值，即时间戳"><a href="#4-Number-new-Date-将时间转化为一个number类型的数值，即时间戳" class="headerlink" title="4.Number(new Date()) 将时间转化为一个number类型的数值，即时间戳"></a>4.Number(new Date()) 将时间转化为一个number类型的数值，即时间戳</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var timetamp4 = Number(new Date());</span><br><span class="line">console.log(timetamp4); //1531100238110</span><br></pre></td></tr></table></figure><h2 id="5-Date-now-ES5给Date提供了一种获取时间戳的新特性"><a href="#5-Date-now-ES5给Date提供了一种获取时间戳的新特性" class="headerlink" title="5.Date.now() ES5给Date提供了一种获取时间戳的新特性"></a>5.Date.now() ES5给Date提供了一种获取时间戳的新特性</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var timetamp5 = Date.now();</span><br><span class="line">console.log(timetamp5); //1531100248079</span><br></pre></td></tr></table></figure><h1 id="获取当前时间"><a href="#获取当前时间" class="headerlink" title="获取当前时间"></a>获取当前时间</h1><p>一个获取当前时间的函数，比较不错，好用。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">Date.prototype.pattern=<span class="keyword">function</span>(fmt) &#123;</span><br><span class="line">    var o = &#123;</span><br><span class="line">        <span class="string">"M+"</span> : this.getMonth()+1, //月份</span><br><span class="line">        <span class="string">"d+"</span> : this.getDate(), //日</span><br><span class="line">        <span class="string">"h+"</span> : this.getHours()%12 == 0 ? 12 : this.getHours()%12, //小时</span><br><span class="line">        <span class="string">"H+"</span> : this.getHours(), //小时</span><br><span class="line">        <span class="string">"m+"</span> : this.getMinutes(), //分</span><br><span class="line">        <span class="string">"s+"</span> : this.getSeconds(), //秒</span><br><span class="line">        <span class="string">"q+"</span> : Math.floor((this.getMonth()+3)/3), //季度</span><br><span class="line">        <span class="string">"S"</span> : this.getMilliseconds() //毫秒，</span><br><span class="line">    &#125;;</span><br><span class="line">    var week = &#123;</span><br><span class="line">        <span class="string">"0"</span> : <span class="string">"星期日"</span>,</span><br><span class="line">        <span class="string">"1"</span> : <span class="string">"星期一"</span>,</span><br><span class="line">        <span class="string">"2"</span> : <span class="string">"星期二"</span>,</span><br><span class="line">        <span class="string">"3"</span> : <span class="string">"星期三"</span>,</span><br><span class="line">        <span class="string">"4"</span> : <span class="string">"星期四"</span>,</span><br><span class="line">        <span class="string">"5"</span> : <span class="string">"星期五"</span>,</span><br><span class="line">        <span class="string">"6"</span> : <span class="string">"星期六"</span></span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">if</span>(/(y+)/.<span class="built_in">test</span>(fmt))&#123;</span><br><span class="line">        fmt=fmt.replace(RegExp.<span class="variable">$1</span>, (this.getFullYear()+<span class="string">""</span>).substr(4 - RegExp.<span class="variable">$1</span>.length));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(/(E+)/.<span class="built_in">test</span>(fmt))&#123;</span><br><span class="line">        fmt=fmt.replace(RegExp.<span class="variable">$1</span>, ((RegExp.<span class="variable">$1</span>.length&gt;1) ? (RegExp.<span class="variable">$1</span>.length&gt;2 ? <span class="string">"/u661f/u671f"</span> : <span class="string">"/u5468"</span>) : <span class="string">""</span>)+week[this.getDay()+<span class="string">""</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(var k <span class="keyword">in</span> o)&#123;</span><br><span class="line">        <span class="keyword">if</span>(new RegExp(<span class="string">"("</span>+ k +<span class="string">")"</span>).<span class="built_in">test</span>(fmt))&#123;</span><br><span class="line">            fmt = fmt.replace(RegExp.<span class="variable">$1</span>, (RegExp.<span class="variable">$1</span>.length==1) ? (o[k]) : ((<span class="string">"00"</span>+ o[k]).substr((<span class="string">""</span>+ o[k]).length)));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">return</span> fmt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>使用方法如下 yyyy(年) MM(月) dd(日) HH(时) mm(分) ss(秒) 随意搭配可以调换顺序使用</p><pre><code class="bash">console.log(new Date().pattern(<span class="string">"HH:mm"</span>));//09:41console.log(new Date().pattern(<span class="string">"yyyy-MM-dd HH:mm"</span>));//2018-07-09 09:41console.log(new Date().pattern(<span class="string">"yyyy年MM月dd日 HH:mm"</span>));//2018年07月09日 09:41console.log(new Date().pattern(<span class="string">"yyyy年MM月dd日 HH:mm:ss"</span>));//2018年07月09日 09:41:55console.log(new Date().pattern(<span class="string">"HH:mm yyyy年MM月dd日 E"</span>));//09:41 2018年07月09日 星期一</code></pre><h1 id="移动端比较不错的时间插件-lCalendar-js"><a href="#移动端比较不错的时间插件-lCalendar-js" class="headerlink" title="移动端比较不错的时间插件 lCalendar.js"></a>移动端比较不错的时间插件 lCalendar.js</h1><p>详情可以点击此链接查看 <a href="http://www.jq22.com/jquery-info13497" target="_blank" rel="noopener">手机端日期插件lCalendar.js</a></p><p>多多记录，方便以后查看。</p>]]></content>
     
@@ -434,7 +456,7 @@ console.log(distinct(a,b,c));//[1, 2, 3, 5, 8, 6, 7, 9]
     
     </summary>
     
-      <category term="time" scheme="http://zhouyanwei.cn/categories/time/"/>
+      <category term="js" scheme="http://zhouyanwei.cn/categories/js/"/>
     
     
       <category term="时间戳" scheme="http://zhouyanwei.cn/tags/%E6%97%B6%E9%97%B4%E6%88%B3/"/>
@@ -492,29 +514,6 @@ console.log(distinct(a,b,c));//[1, 2, 3, 5, 8, 6, 7, 9]
     
     
       <category term="jq插入" scheme="http://zhouyanwei.cn/tags/jq%E6%8F%92%E5%85%A5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello Hexo</title>
-    <link href="http://zhouyanwei.cn/2018/06/28/hello-hexo/"/>
-    <id>http://zhouyanwei.cn/2018/06/28/hello-hexo/</id>
-    <published>2018-06-27T16:00:00.000Z</published>
-    <updated>2018-07-02T08:48:57.649Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Miss-Dad"><a href="#Miss-Dad" class="headerlink" title="Miss Dad"></a>Miss Dad</h1><p>感觉过了人生过了好久，哪怕在没有时间也要抽出时间陪陪家人，不要失去了才知道珍惜。好久没有写博客了，因为个人原因在加上换了电脑不想在用jekyll写了，觉得太麻烦，这几天工作不是很忙就像在把博客弄回来，选择了Hexo,还是比较方便的。</p><p>下面只记录一下常用的Hexo命令，方便以后回看。</p><h1 id="hexo-new"><a href="#hexo-new" class="headerlink" title="hexo new"></a>hexo new</h1><p>新建一篇标题为 My New Post 的文章，因为标题里有空格，所以加上了引号。文章标题可以在对应 md 文件里改，新建时标题可以写的简单些。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure></p><h1 id="hexo-server-hexo-s"><a href="#hexo-server-hexo-s" class="headerlink" title="hexo server/hexo s"></a>hexo server/hexo s</h1><p>启动本地服务器，用于预览主题。默认地址： <a href="http://localhost:4000/hexo" target="_blank" rel="noopener">http://localhost:4000/hexo</a> s 是 hexo server 的缩写，命令效果一致；预览的同时可以修改文章内容或主题代码，保存后刷新页面即可；对 Hexo 根目录 _config.yml 的修改，需要重启本地服务器后才能预览效果。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server/hexo s</span><br></pre></td></tr></table></figure></p><h1 id="hexo-generate-hexo-g"><a href="#hexo-generate-hexo-g" class="headerlink" title="hexo generate/hexo g"></a>hexo generate/hexo g</h1><p>生成网站静态文件到默认设置的 public 文件夹。便于查看网站生成的静态文件或者手动部署网站；如果使用自动部署，不需要先执行该命令；hexo g 是 hexo generate 的缩写，命令效果一致。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate/hexo g</span><br></pre></td></tr></table></figure></p><h1 id="hexo-deploy-hexo-d"><a href="#hexo-deploy-hexo-d" class="headerlink" title="hexo deploy/hexo d"></a>hexo deploy/hexo d</h1><p>自动生成网站静态文件，并部署到设定的仓库。hexo d 是 hexo deploy 的缩写，命令效果一致。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy/hexo d</span><br></pre></td></tr></table></figure></p><h1 id="hexo-clean"><a href="#hexo-clean" class="headerlink" title="hexo clean"></a>hexo clean</h1><p>清除缓存文件 db.json 和已生成的静态文件 public 。网站显示异常时可以执行这条命令试试。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br></pre></td></tr></table></figure></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;Miss-Dad&quot;&gt;&lt;a href=&quot;#Miss-Dad&quot; class=&quot;headerlink&quot; title=&quot;Miss Dad&quot;&gt;&lt;/a&gt;Miss Dad&lt;/h1&gt;&lt;p&gt;感觉过了人生过了好久，哪怕在没有时间也要抽出时间陪陪家人，不要失去了才知道珍惜。好久没有写博
-      
-    
-    </summary>
-    
-    
-      <category term="Hexo" scheme="http://zhouyanwei.cn/tags/Hexo/"/>
     
   </entry>
   

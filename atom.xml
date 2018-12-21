@@ -387,9 +387,9 @@ console.log(distinct(a,b,c));//[1, 2, 3, 5, 8, 6, 7, 9]
     <link href="http://zhouyanwei.cn/2018/07/26/vivo-error/"/>
     <id>http://zhouyanwei.cn/2018/07/26/vivo-error/</id>
     <published>2018-07-25T16:00:00.000Z</published>
-    <updated>2018-08-02T02:28:11.121Z</updated>
+    <updated>2018-12-21T08:54:25.505Z</updated>
     
-    <content type="html"><![CDATA[<p>今天收到用户反馈，vivo手机我们的app H5页面怎么显示的不对啊，让后我们就测试了好几个机型，华为、小米、oppo、酷派，都没有问题啊，安卓小哥虚拟机都用上了。<br><a id="more"></a></p><p>后来安卓小哥用vivo手机测试在log处发现了报错，让后打开js一看有这个 ` 符号，还有这个Array.from()，${ele}等。</p><p>这都是ES6语法啊，原来vivo手机居然不支持ES6</p><p>都这么久了vivo还不支持ES6！！！！！！</p>]]></content>
+    <content type="html"><![CDATA[<p>今天收到用户反馈，vivo手机我们的app H5页面怎么显示的不对啊，让后我们就测试了好几个机型，华为、小米、oppo、酷派，都没有问题啊，安卓小哥虚拟机都用上了。<br><a id="more"></a></p><p>后来安卓小哥用vivo手机测试在log处发现了报错，让后打开js一看有这个 ` 符号，还有这个Array.from()，${ele}等。</p><p>这都是ES6语法啊，原来vivo手机居然不支持ES6</p><p>都这么久了vivo还不支持ES6！！！！！！</p><p>错误纠正。</p><p>后来我们专门进行了测试，发现只有<code></code>，ES6新增的模板字符串有问题，我们的app在vivo收手机上不起作用。别的语法都没有问题。<br>在vivo手机自带的浏览器进行测试也是没有问题的。原谅我还黑了vivo一波。最后是我们app的内核有问题。。。。。。</p>]]></content>
     
     <summary type="html">
     

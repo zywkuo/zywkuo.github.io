@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://zhouyanwei.cn/"/>
-  <updated>2018-12-11T07:47:24.478Z</updated>
+  <updated>2018-12-26T08:48:42.392Z</updated>
   <id>http://zhouyanwei.cn/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>blob兼容性问题</title>
+    <link href="http://zhouyanwei.cn/2018/12/26/toBlob/"/>
+    <id>http://zhouyanwei.cn/2018/12/26/toBlob/</id>
+    <published>2018-12-25T16:00:00.000Z</published>
+    <updated>2018-12-26T08:48:42.392Z</updated>
+    
+    <content type="html"><![CDATA[<p>接上一篇文章，图片在谷歌浏览器上使用的时候没有问题，但是在手机上测试的时候就卡在那不动了，然后我测试了安卓我们的app和手机自带浏览器都不行，又测试了苹果我们的app不行，微信和safari是可以的。</p><p>然后我就和我们的安卓小哥说让他帮我看看log,结果发现canvas.toBlob is undefined。</p><a id="more"></a><p>原因：<br>blog方法兼容性不是很好，所以需要兼容一下<br>解决办法：<br>发现了这个网址解决了问题<br><a href="https://github.com/blueimp/JavaScript-Canvas-to-Blob" target="_blank" rel="noopener">https://github.com/blueimp/JavaScript-Canvas-to-Blob</a>;<br>使用方法很简单，只需要把canvas-to-blob.js或者canvas-to-blob.min.js在之前引入就好了。然后下面原来的方法该怎么用就怎么用，就没有问题了。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var canvas = document.createElement(<span class="string">'canvas'</span>);</span><br><span class="line"><span class="keyword">if</span> (canvas.toBlob) &#123;</span><br><span class="line">    canvas.toBlob(<span class="keyword">function</span> (blob) &#123;</span><br><span class="line">             //<span class="keyword">do</span> something</span><br><span class="line">         &#125;,</span><br><span class="line">         <span class="string">'image/jpeg'</span></span><br><span class="line">     );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;接上一篇文章，图片在谷歌浏览器上使用的时候没有问题，但是在手机上测试的时候就卡在那不动了，然后我测试了安卓我们的app和手机自带浏览器都不行，又测试了苹果我们的app不行，微信和safari是可以的。&lt;/p&gt;
+&lt;p&gt;然后我就和我们的安卓小哥说让他帮我看看log,结果发现canvas.toBlob is undefined。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="js" scheme="http://zhouyanwei.cn/categories/js/"/>
+    
+    
+      <category term="blob" scheme="http://zhouyanwei.cn/tags/blob/"/>
+    
+  </entry>
   
   <entry>
     <title>单图片上传pro(带压缩版)</title>
@@ -484,32 +507,6 @@ console.log(distinct(a,b,c));//[1, 2, 3, 5, 8, 6, 7, 9]
       <category term="时间戳" scheme="http://zhouyanwei.cn/tags/%E6%97%B6%E9%97%B4%E6%88%B3/"/>
     
       <category term="当前时间" scheme="http://zhouyanwei.cn/tags/%E5%BD%93%E5%89%8D%E6%97%B6%E9%97%B4/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>slice、splice、split、join、substring、substr</title>
-    <link href="http://zhouyanwei.cn/2018/07/08/slice/"/>
-    <id>http://zhouyanwei.cn/2018/07/08/slice/</id>
-    <published>2018-07-07T16:00:00.000Z</published>
-    <updated>2018-07-09T06:01:42.041Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="slice"><a href="#slice" class="headerlink" title="slice()"></a>slice()</h1><pre><code class="bash">Array和String对象都有在Array中  slice(i,[j])i为开始截取的索引值,负数代表从末尾算起的索引值，-1为倒数第一个元素 j为结束的索引值，缺省时则获取从i到末尾的所有元素参数返回： 返回索引值从i到j的数组，原数组不改变在String中 slice(i,[j])参数说明： i为开始截取的索引值，负数代表从末尾算起的索引值，-1为倒数第一个字符 j为结束的索引值，缺省时则获取从i到末尾的所有字符</code></pre><h1 id="splice"><a href="#splice" class="headerlink" title="splice()"></a>splice()</h1><pre><code class="bash">存在Array中     方法向/从数组中添加/删除项目，然后返回被删除的项目。 该方法会改变原始数组splice(index,howmany,item1,itemx )index : 必需。整数，规定添加/删除项目的位置，使用负数可从数组结尾处规定位置。howmany: 必需。要删除的项目数量。如果设置为 0，则不会删除项目。item1...itemX : 可选。向数组添加的新项目。返回值  Array  包含被删除项目的新数组，如果有的话。</code></pre><h1 id="substring"><a href="#substring" class="headerlink" title="substring()"></a>substring()</h1><pre><code class="bash">在String中  substring(start,stop)start：表示子字符串的开始位置，stop：表示结束结果。注意：第二个参数应该大于第一个参数。如果出现第一个参数大于第二个参数的情况，substring方法会自动更换两个参数的位置。 </code></pre><h1 id="substr"><a href="#substr" class="headerlink" title="substr()"></a>substr()</h1><pre><code class="bash">在String中，substr（start，length）；start：子字符串的开始位置，length：子字符串的长度。</code></pre><h1 id="split-字符串转数组"><a href="#split-字符串转数组" class="headerlink" title="split() 字符串转数组"></a>split() 字符串转数组</h1><pre><code class="bash">在String中 split（separator，howmany）separator：必需。字符串或正则表达式，从该参数指定的地方分割 stringObject。howmany： 可选。该参数可指定返回的数组的最大长度。如果设置了该参数，返回的子串不会多于这个参数指定的数组。如果没有设置该参数，整个字符串都会被分割，不考虑它的长度。返回值一个字符串数组。该数组是通过在separator指定的边界处将字符串StringObject分割成子串创建的。返回的数组的字符串不包含separator自身但是，如果 separator 是包含子表达式的正则表达式，那么返回的数组中包括与这些子表达式匹配的字串（但不包括与整个正则表达式匹配的文本）与jion（）函数相反效果var str = <span class="string">'ab+c+de'</span>;var a = str.split(<span class="string">'+'</span>); // [ab, c, de]var b = str.split(<span class="string">''</span>); //[a, b, +, c, +, d, e]</code></pre><h1 id="join-字符串转数组"><a href="#join-字符串转数组" class="headerlink" title="join() 字符串转数组"></a>join() 字符串转数组</h1><pre><code class="bash">var a, b,c; a = new Array(a,b,c,d,e); b = a.join(<span class="string">'-'</span>); //a-b-c<span class="_">-d</span><span class="_">-e</span>  使用-拼接数组元素c = a.join(<span class="string">''</span>); //abcde</code></pre><p>多多记录，方便以后查看。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;slice&quot;&gt;&lt;a href=&quot;#slice&quot; class=&quot;headerlink&quot; title=&quot;slice()&quot;&gt;&lt;/a&gt;slice()&lt;/h1&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;Array和String对象都有
-在Array中  slice(i
-      
-    
-    </summary>
-    
-      <category term="js" scheme="http://zhouyanwei.cn/categories/js/"/>
-    
-    
-      <category term="js截取" scheme="http://zhouyanwei.cn/tags/js%E6%88%AA%E5%8F%96/"/>
     
   </entry>
   

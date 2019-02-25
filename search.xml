@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[typeof和instanceof和hasOwnProperty]]></title>
+    <url>%2F2019%2F02%2F25%2F2019-2-25-typeof%2F</url>
+    <content type="text"><![CDATA[判断类型、构造函数、对象属性等，记录到一起，方便记忆学习。 typeof操作符返回一个字符串，表示未经计算的操作数的类型，其实就是判断参数是什么类型的实例。 一般返回以下几种结果：”number”、”string”、”boolean”、”object”、”function” 和 “undefined”。 123456789101112131415161718192021console.log(typeof 123) //numberconsole.log(typeof (1+2)) //numberconsole.log(typeof NaN) //numberconsole.log(typeof Number(6)) //numberconsole.log(typeof Infinity) //numberconsole.log(typeof "") //stringconsole.log(typeof "zyw") //stringconsole.log(typeof (typeof "zyw")) //stringconsole.log(typeof true) //booleanconsole.log(typeof false) //boolean console.log(typeof &#123;name:'zyw'&#125;) //objectconsole.log(typeof ['z', 'y', 'w']) //objectconsole.log(typeof new Date()) //objectconsole.log(typeof function()&#123;&#125;) //functionconsole.log(typeof undefined) //undefinedconsole.log(typeof zyw) //undefined zyw未定义 instanceof用于测试构造函数的prototype属性是否出现在对象的原型链中的任何位置 注意上面数组和对象返回的都是object，这时就需要使用instanceof来判断了。123456789101112131415161718192021222324console.log(['z', 'y', 'w'] instanceof Array) //true// 定义构造函数function C()&#123;&#125; function D()&#123;&#125; var o = new C();o instanceof C; // true，因为 Object.getPrototypeOf(o) === C.prototypeo instanceof D; // false，因为 D.prototype不在o的原型链上o instanceof Object; // true,因为Object.prototype.isPrototypeOf(o)返回trueC.prototype instanceof Object // true,同上console.log("zyw" instanceof String) //falseconsole.log(new String() instanceof String) //trueconsole.log(new String("zyw") instanceof String) //trueconsole.log(new Date() instanceof String) //falseconsole.log(new String("zyw") instanceof Object) //trueconsole.log(&#123;&#125; instanceof Object) //trueconsole.log(Object.create(null) instanceof Object) //falseconsole.log(new Date() instanceof Date) //trueconsole.log(new String() instanceof Date) //falseconsole.log(new Date() instanceof Object) //true hasOwnProperty返回一个布尔值，指示对象自身属性中是否具有指定的属性 123456789o = new Object();o.prop = 'exists';function changeO() &#123; o.newprop = o.prop; delete o.prop;&#125;o.hasOwnProperty('prop'); // 返回 truechangeO();o.hasOwnProperty('prop'); // 返回 false 参考网址：MDN]]></content>
+      <categories>
+        <category>js</category>
+      </categories>
+      <tags>
+        <tag>typeof</tag>
+        <tag>instanceof</tag>
+        <tag>hasOwnProperty</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[blob兼容性问题]]></title>
     <url>%2F2018%2F12%2F26%2FtoBlob%2F</url>
     <content type="text"><![CDATA[接上一篇文章，图片在谷歌浏览器上使用的时候没有问题，但是在手机上测试的时候就卡在那不动了，然后我测试了安卓我们的app和手机自带浏览器都不行，又测试了苹果我们的app不行，微信和safari是可以的。 然后我就和我们的安卓小哥说让他帮我看看log,结果发现canvas.toBlob is undefined。 原因：blog方法兼容性不是很好，所以需要兼容一下解决办法：发现了这个网址解决了问题https://github.com/blueimp/JavaScript-Canvas-to-Blob;使用方法很简单，只需要把canvas-to-blob.js或者canvas-to-blob.min.js在之前引入就好了。然后下面原来的方法该怎么用就怎么用，就没有问题了。 12345678var canvas = document.createElement('canvas');if (canvas.toBlob) &#123; canvas.toBlob(function (blob) &#123; //do something &#125;, 'image/jpeg' );&#125;]]></content>

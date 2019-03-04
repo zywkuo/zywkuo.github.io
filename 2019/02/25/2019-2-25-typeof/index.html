@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="typeof,instanceof,hasOwnProperty," />
+  <meta name="keywords" content="typeof,instanceof,hasOwnProperty,Object.prototype.toString.call(),isArray," />
 
 
 
@@ -98,16 +98,16 @@
 
 
 <meta name="description" content="判断类型、构造函数、对象属性等，记录到一起，方便记忆学习。">
-<meta name="keywords" content="typeof,instanceof,hasOwnProperty">
+<meta name="keywords" content="typeof,instanceof,hasOwnProperty,Object.prototype.toString.call(),isArray">
 <meta property="og:type" content="article">
-<meta property="og:title" content="typeof和instanceof和hasOwnProperty">
+<meta property="og:title" content="判断数据类型">
 <meta property="og:url" content="http://zhouyanwei.cn/2019/02/25/2019-2-25-typeof/index.html">
 <meta property="og:site_name" content="周艳伟">
 <meta property="og:description" content="判断类型、构造函数、对象属性等，记录到一起，方便记忆学习。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-02-25T08:11:19.730Z">
+<meta property="og:updated_time" content="2019-03-04T08:10:28.696Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="typeof和instanceof和hasOwnProperty">
+<meta name="twitter:title" content="判断数据类型">
 <meta name="twitter:description" content="判断类型、构造函数、对象属性等，记录到一起，方便记忆学习。">
 
 
@@ -144,7 +144,7 @@
 
 
 
-  <title>typeof和instanceof和hasOwnProperty | 周艳伟</title>
+  <title>判断数据类型 | 周艳伟</title>
   
 
 
@@ -334,7 +334,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">typeof和instanceof和hasOwnProperty</h1>
+          <h1 class="post-title" itemprop="name headline">判断数据类型</h1>
         
 
         <div class="post-meta">
@@ -386,7 +386,7 @@
 
           
           
-             <span id="/2019/02/25/2019-2-25-typeof/" class="leancloud_visitors" data-flag-title="typeof和instanceof和hasOwnProperty">
+             <span id="/2019/02/25/2019-2-25-typeof/" class="leancloud_visitors" data-flag-title="判断数据类型">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -411,7 +411,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  479
+                  605
                 </span>
               
 
@@ -427,7 +427,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  3
                 </span>
               
             </div>
@@ -457,6 +457,10 @@
 <p>注意上面数组和对象返回的都是object，这时就需要使用instanceof来判断了。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">console.log([<span class="string">'z'</span>, <span class="string">'y'</span>, <span class="string">'w'</span>] instanceof Array) //<span class="literal">true</span></span><br><span class="line"></span><br><span class="line">// 定义构造函数</span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">C</span></span>()&#123;&#125; </span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">D</span></span>()&#123;&#125; </span><br><span class="line">var o = new C();</span><br><span class="line">o instanceof C; // <span class="literal">true</span>，因为 Object.getPrototypeOf(o) === C.prototype</span><br><span class="line">o instanceof D; // <span class="literal">false</span>，因为 D.prototype不在o的原型链上</span><br><span class="line">o instanceof Object; // <span class="literal">true</span>,因为Object.prototype.isPrototypeOf(o)返回<span class="literal">true</span></span><br><span class="line">C.prototype instanceof Object // <span class="literal">true</span>,同上</span><br><span class="line"></span><br><span class="line">console.log(<span class="string">"zyw"</span> instanceof String) //<span class="literal">false</span></span><br><span class="line">console.log(new String() instanceof String) //<span class="literal">true</span></span><br><span class="line">console.log(new String(<span class="string">"zyw"</span>) instanceof String) //<span class="literal">true</span></span><br><span class="line">console.log(new Date() instanceof String) //<span class="literal">false</span></span><br><span class="line"></span><br><span class="line">console.log(new String(<span class="string">"zyw"</span>) instanceof Object) //<span class="literal">true</span></span><br><span class="line">console.log(&#123;&#125; instanceof Object) //<span class="literal">true</span></span><br><span class="line">console.log(Object.create(null) instanceof Object) //<span class="literal">false</span></span><br><span class="line"></span><br><span class="line">console.log(new Date() instanceof Date) //<span class="literal">true</span></span><br><span class="line">console.log(new String() instanceof Date) //<span class="literal">false</span></span><br><span class="line"></span><br><span class="line">console.log(new Date() instanceof Object) //<span class="literal">true</span></span><br></pre></td></tr></table></figure></p>
 <h1 id="hasOwnProperty-NaN"><a href="#hasOwnProperty-NaN" class="headerlink" title="hasOwnProperty"></a>hasOwnProperty</h1><p>返回一个布尔值，指示对象自身属性中是否具有指定的属性</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">o = new Object();</span><br><span class="line">o.prop = <span class="string">'exists'</span>;</span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">changeO</span></span>() &#123;</span><br><span class="line">  o.newprop = o.prop;</span><br><span class="line">  delete o.prop;</span><br><span class="line">&#125;</span><br><span class="line">o.hasOwnProperty(<span class="string">'prop'</span>);   // 返回 <span class="literal">true</span></span><br><span class="line">changeO();</span><br><span class="line">o.hasOwnProperty(<span class="string">'prop'</span>);   // 返回 <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<h1 id="Object-prototype-toString-call"><a href="#Object-prototype-toString-call" class="headerlink" title="Object.prototype.toString.call()"></a>Object.prototype.toString.call()</h1><p>常用于判断浏览器内置对象。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">console.log( Object.prototype.toString.call(<span class="string">'zyw'</span>)) //[object String]</span><br><span class="line">console.log( Object.prototype.toString.call(123)) //[object Number]</span><br><span class="line">console.log( Object.prototype.toString.call(Symbol(123))) //[object Symbol]</span><br><span class="line">console.log( Object.prototype.toString.call(null)) //[object Null]</span><br><span class="line">console.log( Object.prototype.toString.call(undefined)) //[object Undefined]</span><br><span class="line">console.log( Object.prototype.toString.call(<span class="function"><span class="title">function</span></span> () &#123;&#125;)) //[object Function]</span><br><span class="line">console.log( Object.prototype.toString.call(&#123;name: <span class="string">'zyw'</span>&#125;)) //[object Object]</span><br></pre></td></tr></table></figure>
+<h1 id="Array-isArray"><a href="#Array-isArray" class="headerlink" title="Array.isArray()"></a>Array.isArray()</h1><p>用来判断对象是否为数组</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var arr = [<span class="string">'z'</span>, <span class="string">'y'</span>, <span class="string">'w'</span>]</span><br><span class="line">console.log(Array.isArray(arr))//<span class="literal">true</span></span><br><span class="line">var obj = &#123;name: <span class="string">'zyw'</span>&#125;</span><br><span class="line">console.log(Array.isArray(obj))//<span class="literal">false</span></span><br></pre></td></tr></table></figure>
 <p>参考网址：MDN</p>
 
       
@@ -481,6 +485,10 @@
           
             <a href="/tags/hasOwnProperty/" rel="tag"># hasOwnProperty</a>
           
+            <a href="/tags/Object-prototype-toString-call/" rel="tag"># Object.prototype.toString.call()</a>
+          
+            <a href="/tags/isArray/" rel="tag"># isArray</a>
+          
         </div>
       
 
@@ -501,6 +509,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/03/04/2019-3-4-inherit/" rel="prev" title="闭包与继承">
+                闭包与继承 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -582,7 +594,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-count">36</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -604,7 +616,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">52</span>
+                  <span class="site-state-item-count">56</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -698,7 +710,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#typeof"><span class="nav-number">1.</span> <span class="nav-text">typeof</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#instanceof"><span class="nav-number">2.</span> <span class="nav-text">instanceof</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#hasOwnProperty-NaN"><span class="nav-number">3.</span> <span class="nav-text">hasOwnProperty</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#typeof"><span class="nav-number">1.</span> <span class="nav-text">typeof</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#instanceof"><span class="nav-number">2.</span> <span class="nav-text">instanceof</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#hasOwnProperty-NaN"><span class="nav-number">3.</span> <span class="nav-text">hasOwnProperty</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Object-prototype-toString-call"><span class="nav-number">4.</span> <span class="nav-text">Object.prototype.toString.call()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Array-isArray"><span class="nav-number">5.</span> <span class="nav-text">Array.isArray()</span></a></li></ol></div>
             
 
           </div>
@@ -741,7 +753,7 @@
   <div class="theme-info">
     <div class="powered-by"></div>
     <i class="fa fa-pencil"></i>
-    <span class="post-count">博客全站共33.4k字</span>
+    <span class="post-count">博客全站共34.5k字</span>
   </div>
 
 

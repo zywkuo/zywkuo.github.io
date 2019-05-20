@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://zhouyanwei.cn/"/>
-  <updated>2019-03-12T06:11:50.082Z</updated>
+  <updated>2019-05-20T11:03:57.740Z</updated>
   <id>http://zhouyanwei.cn/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Jenkins + publish over ssh 插件进行web前端自动化打包和部署</title>
+    <link href="http://zhouyanwei.cn/2019/05/20/2019-5-20-Jenkins/"/>
+    <id>http://zhouyanwei.cn/2019/05/20/2019-5-20-Jenkins/</id>
+    <published>2019-05-19T16:00:00.000Z</published>
+    <updated>2019-05-20T11:03:57.740Z</updated>
+    
+    <content type="html"><![CDATA[<p>好久没有有更新了，换个工作一直忙，今天研究了一下前端测试环境自动化部署，再次记录，方便以后查阅。</p><a id="more"></a><h2 id="安装-Jenkins"><a href="#安装-Jenkins" class="headerlink" title="安装 Jenkins"></a>安装 Jenkins</h2><p>第一步就是先安装Jenkins，这里以mac系统为例，实际都是大同小异的。</p><p>通过 homebrew 安装 Jenkins, 建议通过命令安装，如果使用安装包安装，会涉及到权限问题服务启动不了。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install jenkins</span><br></pre></td></tr></table></figure><p>如果没有安装homebrew，请参考这里<a href="https://brew.sh/index_zh-cn" target="_blank" rel="noopener">https://brew.sh/index_zh-cn</a></p><p>安装好了之后执行命令</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jenkins</span><br></pre></td></tr></table></figure><p>浏览器访问,进入页面稍等一会。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[http://localhost:8080](http://localhost:8080)</span><br></pre></td></tr></table></figure><p>因为我在安装的时候忘记截图了，所以就盗用了别人的图。</p><p>首先按照他的路径找到密码粘贴进去。</p><p><img src="/images/2019-05-20/1.png" alt="1"></p><p>然后创建一个用户，方便以后好登陆。</p><p><img src="/images/2019-05-20/2.png" alt="2"></p><p>在配置最后一个页面就可以了。</p><p><img src="/images/2019-05-20/3.png" alt="3"></p><p>记得还有一个选择插件的页面，用默认的就好了。</p><h2 id="建一个item进行自动化打包"><a href="#建一个item进行自动化打包" class="headerlink" title="建一个item进行自动化打包"></a>建一个item进行自动化打包</h2><p>进入jenkins主页面是这样的。</p><p><img src="/images/2019-05-20/4.jpg" alt="4"></p><p>点击新建item</p><p><img src="/images/2019-05-20/5.png" alt="5"></p><p>确定后进入配置页面</p><p>General配置</p><p><img src="/images/2019-05-20/6.png" alt="6"></p><p>源码管理配置</p><p>因为我们目前还在使用svn，所以选择SVN，马上要开新项目，要使git了，配置应该不会又太大变化。</p><p><img src="/images/2019-05-20/7.png" alt="7"></p><p>构建触发器配置</p><p>这个就看自己的需要了。</p><p><img src="/images/2019-05-20/8.png" alt="8"></p><p>构建环境配置</p><p><img src="/images/2019-05-20/9.png" alt="9"></p><p>构建配置</p><p><img src="/images/2019-05-20/10.png" alt="10"><br><img src="/images/2019-05-20/11.png" alt="11"></p><p>注意一下红色提示</p><p>此处配置完成后就可以进行build打包了。</p><p><img src="/images/2019-05-20/12.png" alt="12"></p><p>然后我们进入jenkins目录文件，就可以看见项目和打包好的dist文件夹了。我的目录是</p><pre><code class="bash">/Users/zhouyanwei/.jenkins/workspace/<span class="built_in">test</span></code></pre><p>到此已经实现了自动化打包，接下来就是配置如何实现自动化上传到测试服务器上。</p><h2 id="publish-over-ssh-插件进行自动化部署"><a href="#publish-over-ssh-插件进行自动化部署" class="headerlink" title="publish over ssh 插件进行自动化部署"></a>publish over ssh 插件进行自动化部署</h2><p>首先我们先安装插件，因为我已经安装了。</p><p><img src="/images/2019-05-20/13.png" alt="13"><br><img src="/images/2019-05-20/14.png" alt="14"></p><p>安装好了之后进行Publish over SSH配置</p><p><img src="/images/2019-05-20/15.png" alt="15"></p><p>进入后找到 Publish over SSH 项</p><p>在进行SSH配置的时候，我了解到有两种方法，第一种是使用秘钥进行进行传输，还有一种就是我使用的账号密码进行传输。</p><p><img src="/images/2019-05-20/16.png" alt="16"></p><p>别忘记保存，应用。</p><p>然后我们回到我们的项目配置，进行构建后操作配置</p><p>构建后操作配置</p><p><img src="/images/2019-05-20/17.png" alt="17"><br><img src="/images/2019-05-20/18.png" alt="18"></p><p>别忘记保存，应用。</p><p>然后我们回到项目首页 Build Now 就可以了，完成后就会自动打包进行服务器更新了。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;好久没有有更新了，换个工作一直忙，今天研究了一下前端测试环境自动化部署，再次记录，方便以后查阅。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Jenkins" scheme="http://zhouyanwei.cn/categories/Jenkins/"/>
+    
+    
+      <category term="Jenkins" scheme="http://zhouyanwei.cn/tags/Jenkins/"/>
+    
+  </entry>
   
   <entry>
     <title>双向绑定</title>
@@ -480,28 +502,6 @@ console.log(distinct(a,b,c));//[1, 2, 3, 5, 8, 6, 7, 9]
     
     
       <category term="模糊查询" scheme="http://zhouyanwei.cn/tags/%E6%A8%A1%E7%B3%8A%E6%9F%A5%E8%AF%A2/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>vivo手机H5页面ERROR</title>
-    <link href="http://zhouyanwei.cn/2018/07/26/vivo-error/"/>
-    <id>http://zhouyanwei.cn/2018/07/26/vivo-error/</id>
-    <published>2018-07-25T16:00:00.000Z</published>
-    <updated>2018-12-21T08:54:25.505Z</updated>
-    
-    <content type="html"><![CDATA[<p>今天收到用户反馈，vivo手机我们的app H5页面怎么显示的不对啊，让后我们就测试了好几个机型，华为、小米、oppo、酷派，都没有问题啊，安卓小哥虚拟机都用上了。<br><a id="more"></a></p><p>后来安卓小哥用vivo手机测试在log处发现了报错，让后打开js一看有这个 ` 符号，还有这个Array.from()，${ele}等。</p><p>这都是ES6语法啊，原来vivo手机居然不支持ES6</p><p>都这么久了vivo还不支持ES6！！！！！！</p><p>错误纠正。</p><p>后来我们专门进行了测试，发现只有<code></code>，ES6新增的模板字符串有问题，我们的app在vivo收手机上不起作用。别的语法都没有问题。<br>在vivo手机自带的浏览器进行测试也是没有问题的。原谅我还黑了vivo一波。最后是我们app的内核有问题。。。。。。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;今天收到用户反馈，vivo手机我们的app H5页面怎么显示的不对啊，让后我们就测试了好几个机型，华为、小米、oppo、酷派，都没有问题啊，安卓小哥虚拟机都用上了。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="js" scheme="http://zhouyanwei.cn/categories/js/"/>
-    
-    
-      <category term="vivo error" scheme="http://zhouyanwei.cn/tags/vivo-error/"/>
     
   </entry>
   

@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Linux离线安装docker]]></title>
+    <url>%2F2019%2F08%2F12%2F2020-8-12-LinuxDocker%2F</url>
+    <content type="text"><![CDATA[如何在Linux离线下进行Docker安装。 本地环境 Linux版本：CentOS 7.6 Docker版本：docker-19.03.1 官方下载地址 安装步骤首先把下载好的Docker压缩包放到Linux根目录中执行解压命令将压缩包进行解压到指定目录12tar zxvf docker-19.03.1.tarsudo cp docker/* /usr/bin/ 小提示 安装好后不要忘记把根目录的压缩包删除，回到根目录执行命令 rm -f docker-19.03.1.tar要是可以直接ssh的，可以直接在本地把压缩包解压，然后把docker目录直接拽过去就好。 执行启动命令1sudo dockerd 然后查看一下docker版本号是否有了。docker -v 将docker注册为service 新建docker.service问价 1vim /etc/systemd/system/docker.service 把下下面的内容复制进去 123456789101112131415161718192021222324252627282930313233[Unit]Description=Docker Application Container EngineDocumentation=https://docs.docker.comAfter=network-online.target firewalld.serviceWants=network-online.target[Service]Type=notify# the default is not to use systemd for cgroups because the delegate issues still# exists and systemd currently does not support the cgroup feature set required# for containers run by dockerExecStart=/usr/bin/dockerdExecReload=/bin/kill -s HUP $MAINPID# Having non-zero Limit*s causes performance problems due to accounting overhead# in the kernel. We recommend using cgroups to do container-local accounting.LimitNOFILE=infinityLimitNPROC=infinityLimitCORE=infinity# Uncomment TasksMax if your systemd version supports it.# Only systemd 226 and above support this version.#TasksMax=infinityTimeoutStartSec=0# set delegate yes so that systemd does not reset the cgroups of docker containersDelegate=yes# kill only the docker process, not all processes in the cgroupKillMode=process# restart the docker process if it exits prematurelyRestart=on-failureStartLimitBurst=3StartLimitInterval=60s[Install]WantedBy=multi-user.target 执行命令 添加文件权限并启动docker 1chmod +x /etc/systemd/system/docker.service 重载unit配置文件 1systemctl daemon-reload 启动Docker 1systemctl start docker 设置开机自启 1systemctl enable docker.service 常用命令 重启docker 1systemctl restart docker 关闭docker 1systemctl stop docker]]></content>
+      <categories>
+        <category>Docker</category>
+      </categories>
+      <tags>
+        <tag>Docker</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Jenkins + publish over ssh 插件进行web前端自动化打包和部署]]></title>
     <url>%2F2019%2F05%2F20%2F2019-5-20-Jenkins%2F</url>
     <content type="text"><![CDATA[好久没有有更新了，换个工作一直忙，今天研究了一下前端测试环境自动化部署，再次记录，方便以后查阅。 安装 Jenkins第一步就是先安装Jenkins，这里以mac系统为例，实际都是大同小异的。 通过 homebrew 安装 Jenkins, 建议通过命令安装，如果使用安装包安装，会涉及到权限问题服务启动不了。 1brew install jenkins 如果没有安装homebrew，请参考这里https://brew.sh/index_zh-cn 安装好了之后执行命令 1jenkins 浏览器访问,进入页面稍等一会。 1[http://localhost:8080](http://localhost:8080) 因为我在安装的时候忘记截图了，所以就盗用了别人的图。 首先按照他的路径找到密码粘贴进去。 然后创建一个用户，方便以后好登陆。 在配置最后一个页面就可以了。 记得还有一个选择插件的页面，用默认的就好了。 建一个item进行自动化打包进入jenkins主页面是这样的。 点击新建item 确定后进入配置页面 General配置 源码管理配置 因为我们目前还在使用svn，所以选择SVN，马上要开新项目，要使git了，配置应该不会有太大变化。 构建触发器配置 这个就看自己的需要了。 构建环境配置 构建配置 注意一下红色提示 此处配置完成后就可以进行build打包了。 然后我们进入jenkins目录文件，就可以看见项目和打包好的dist文件夹了。我的目录是 /Users/zhouyanwei/.jenkins/workspace/test 到此已经实现了自动化打包，接下来就是配置如何实现自动化上传到测试服务器上。 publish over ssh 插件进行自动化部署首先我们先安装插件，因为我已经安装了。 安装好了之后进行Publish over SSH配置 找到 Publish over SSH 项 在进行SSH配置的时候，我了解到有两种方法，第一种是使用秘钥进行进行传输，还有一种就是我使用的账号密码进行传输。 别忘记保存，应用。 然后我们回到我们的项目配置，进行构建后操作配置 构建后操作配置 5月30日补充：最后一步替换后执行操作，使用.代替是不对的，不执行可以不写。 别忘记保存，应用。 然后我们回到项目首页 Build Now 就可以了，完成后就会自动打包进行服务器更新了。]]></content>

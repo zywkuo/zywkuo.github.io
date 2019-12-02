@@ -110,7 +110,9 @@
 <meta property="og:image" content="http://zhouyanwei.cn/images/2019-08-13/3.png">
 <meta property="og:image" content="http://zhouyanwei.cn/images/2019-08-13/4.png">
 <meta property="og:image" content="http://zhouyanwei.cn/images/2019-08-13/5.png">
-<meta property="og:updated_time" content="2019-08-13T06:54:37.983Z">
+<meta property="og:image" content="http://zhouyanwei.cn/images/2019-08-13/6.png">
+<meta property="og:image" content="http://zhouyanwei.cn/images/2019-08-13/7.png">
+<meta property="og:updated_time" content="2019-12-02T07:14:23.004Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Docker离线安装Nginx镜像">
 <meta name="twitter:description" content="离线安装还Docker后，在离线安装一个Nginx镜像，实现的方法，首先要在有网的地方将nginx镜像导出，然后在复制到内网环境中安装。">
@@ -417,7 +419,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  761
+                  895
                 </span>
               
 
@@ -433,7 +435,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3
+                  4
                 </span>
               
             </div>
@@ -534,6 +536,17 @@
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim ~/nginx/www/index.html</span><br></pre></td></tr></table></figure>
 <p><img src="/images/2019-08-13/5.png" alt="5"></p>
+<blockquote>
+<p>12 月 2 日更新。<br>遇到的问题 如何添加代理。</p>
+</blockquote>
+<p>docker中的nginx配置文件不单只是一个nginx.conf</p>
+<p>先执行命令进nginx交互模式里看一下nginx的结构</p>
+<p><img src="/images/2019-08-13/6.png" alt="6"></p>
+<p>要把自己创建的目录和容器对应上才可以。</p>
+<p><img src="/images/2019-08-13/7.png" alt="6"></p>
+<p>所以还需要重新部署ngixn</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">docker run -d -p 80:80 --name nginx \</span><br><span class="line">    -v ~/nginx/www:/usr/share/nginx/html \</span><br><span class="line">    -v ~/nginx/nginx.conf:/etc/nginx/nginx.conf \</span><br><span class="line">    -v ~/nginx/conf.d:/etc/nginx/conf.d \</span><br><span class="line">    -v ~/nginx/logs:/var/<span class="built_in">log</span>/nginx nginx</span><br></pre></td></tr></table></figure>
+<p>在default.conf重设置代理就可以生效了。</p>
 
       
     </div>
@@ -813,7 +826,7 @@
   <div class="theme-info">
     <div class="powered-by"></div>
     <i class="fa fa-pencil"></i>
-    <span class="post-count">博客全站共36.8k字</span>
+    <span class="post-count">博客全站共36.9k字</span>
   </div>
 
 

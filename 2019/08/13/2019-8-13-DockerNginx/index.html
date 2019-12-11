@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="Nginx镜像," />
+  <meta name="keywords" content="Docker,Nginx," />
 
 
 
@@ -98,7 +98,7 @@
 
 
 <meta name="description" content="离线安装还Docker后，在离线安装一个Nginx镜像，实现的方法，首先要在有网的地方将nginx镜像导出，然后在复制到内网环境中安装。">
-<meta name="keywords" content="Nginx镜像">
+<meta name="keywords" content="Docker,Nginx">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Docker离线安装Nginx镜像">
 <meta property="og:url" content="http://zhouyanwei.cn/2019/08/13/2019-8-13-DockerNginx/index.html">
@@ -112,7 +112,7 @@
 <meta property="og:image" content="http://zhouyanwei.cn/images/2019-08-13/5.png">
 <meta property="og:image" content="http://zhouyanwei.cn/images/2019-08-13/6.png">
 <meta property="og:image" content="http://zhouyanwei.cn/images/2019-08-13/7.png">
-<meta property="og:updated_time" content="2019-12-02T07:14:23.004Z">
+<meta property="og:updated_time" content="2019-12-11T07:43:02.650Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Docker离线安装Nginx镜像">
 <meta name="twitter:description" content="离线安装还Docker后，在离线安装一个Nginx镜像，实现的方法，首先要在有网的地方将nginx镜像导出，然后在复制到内网环境中安装。">
@@ -377,8 +377,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Nginx镜像/" itemprop="url" rel="index">
-                    <span itemprop="name">Nginx镜像</span>
+                  <a href="/categories/Docker/" itemprop="url" rel="index">
+                    <span itemprop="name">Docker</span>
                   </a>
                 </span>
 
@@ -419,7 +419,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  895
+                  897
                 </span>
               
 
@@ -492,9 +492,9 @@
 <blockquote>
 <p>第一个 nginx 容器名称。<br>-d设置容器在在后台一直运行。<br>-p 端口进行映射，将本地 8090 端口映射到容器内部的 80 端口。</p>
 </blockquote>
-<p>然后。。。。。。啊哦</p>
+<p>可能会遇见的错误</p>
 <p><img src="/images/2019-08-13/3.png" alt="3"></p>
-<p>google了一下原因，是因为selinux开启导致docker run失败。</p>
+<p>解决办法，是因为selinux开启导致docker run失败。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/selinux/config</span><br></pre></td></tr></table></figure>
 <ul>
 <li><p>把 SELINUX项修改为disabled，然后重启CentOS系统。</p>
@@ -537,7 +537,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim ~/nginx/www/index.html</span><br></pre></td></tr></table></figure>
 <p><img src="/images/2019-08-13/5.png" alt="5"></p>
 <blockquote>
-<p>12 月 2 日更新。<br>遇到的问题 如何添加代理。</p>
+<p>12 月 2 日更新。<br>遇到的问题 如何添加代理</p>
 </blockquote>
 <p>docker中的nginx配置文件不单只是一个nginx.conf</p>
 <p>先执行命令进nginx交互模式里看一下nginx的结构</p>
@@ -564,7 +564,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Nginx镜像/" rel="tag"># Nginx镜像</a>
+            <a href="/tags/Docker/" rel="tag"># Docker</a>
+          
+            <a href="/tags/Nginx/" rel="tag"># Nginx</a>
           
         </div>
       
@@ -586,6 +588,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/12/11/qs/" rel="prev" title="qs 序列化数据使用">
+                qs 序列化数据使用 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -667,7 +673,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">40</span>
+                  <span class="site-state-item-count">41</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -689,7 +695,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">61</span>
+                  <span class="site-state-item-count">62</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -826,7 +832,7 @@
   <div class="theme-info">
     <div class="powered-by"></div>
     <i class="fa fa-pencil"></i>
-    <span class="post-count">博客全站共36.9k字</span>
+    <span class="post-count">博客全站共37.0k字</span>
   </div>
 
 

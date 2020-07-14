@@ -112,7 +112,7 @@
 <meta property="og:image" content="http://zhouyanwei.cn/images/2020-07-14/5.png">
 <meta property="og:image" content="http://zhouyanwei.cn/images/2020-07-14/6.png">
 <meta property="og:image" content="http://zhouyanwei.cn/images/2020-07-14/7.png">
-<meta property="og:updated_time" content="2020-07-14T05:52:36.202Z">
+<meta property="og:updated_time" content="2020-07-14T09:31:35.244Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="koa+mysql">
 <meta name="twitter:description" content="好久不见，好忙，前段时间搭了一套electron-vue客户端，就想着用node把后台也一起搞搞，koa+mysql。">
@@ -419,7 +419,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  634
+                  766
                 </span>
               
 
@@ -435,7 +435,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3
+                  4
                 </span>
               
             </div>
@@ -484,7 +484,16 @@
 <p>在重新启动，会发现数据库中新建了一张名为<code>user</code>的表。</p>
 <p><img src="/images/2020-07-14/7.png" alt="run"></p>
 <p>至此，基本的koa连接使用mysql就完成了。</p>
-<p><a href="https://www.jianshu.com/p/98801a280b25" target="_blank" rel="noopener">参考地址 https://www.jianshu.com/p/98801a280b25</a></p>
+<p>ps:</p>
+<p>升级了mysql到8之后，发现，koa mysql模块连接不上mysql</p>
+<p>具体报错如下(忘记截图了。。。)：</p>
+<blockquote>
+<p>UnhandledPromiseRejectionWarning: Error: ER_NOT_SUPPORTED_AUTH_MODE: Client</p>
+</blockquote>
+<p>原因是最新的mysql模块并未完全支持MySQL 8的“caching_sha2_password”加密方式，而“caching_sha2_password”在MySQL 8中是默认的加密方式。因此，下面的方式命令是默认已经使用了“caching_sha2_password”加密方式，该账号、密码无法在mysql模块中使用。</p>
+<p>需要重新修改mysql root的密码。</p>
+<p><code>mysql&gt; ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED WITH mysql_native_password BY &#39;123456&#39;;</code></p>
+<p><a href="https://www.jianshu.com/p/98801a280b25" target="_blank" rel="noopener">参考地址 koa+mysql</a><br><a href="https://waylau.com/node.js-mysql-client-does-not-support-authentication-protocol/" target="_blank" rel="noopener">参考地址 mysql8修改加方式</a></p>
 
       
     </div>
@@ -766,7 +775,7 @@
   <div class="theme-info">
     <div class="powered-by"></div>
     <i class="fa fa-pencil"></i>
-    <span class="post-count">博客全站共37.6k字</span>
+    <span class="post-count">博客全站共37.8k字</span>
   </div>
 
 

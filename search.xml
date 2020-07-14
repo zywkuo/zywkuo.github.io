@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[koa+mysql]]></title>
+    <url>%2F2020%2F07%2F14%2Fkoa%2Bmysql%2F</url>
+    <content type="text"><![CDATA[好久不见，好忙，前段时间搭了一套electron-vue客户端，就想着用node把后台也一起搞搞，koa+mysql。 mysql 安装本地开发环境为mac，mysql下载地址，下载安装就可以了。 通过Navicat连接查看，新建了一个名为electron_vue的数据库。 koa 安装可以通过koa-generator脚手架直接安装使用-&gt;传送门 脚手架下载后npm install安转依赖模块，安装后目录展示。 npm start启动后，浏览器访问http://localhost:3000/是这个样子的。 koa 连接 mysql首先执行npm install mysql -S，引入mysql依赖。 根目录下新建config文件夹，文件夹下新建mysql_config.js文件，添加相关配置。 123456789const mysqlConfig = &#123; host: "localhost", port: 3306, user: "root", // mysql用户名 password: "4231", // 自己设置的mysql密码 database: "electron_vue", // mysql数据库名称&#125;;module.exports = mysqlConfig; 根目录下新建utils文件夹，新建query.js及sql.js，分别加入如下代码。 123456789101112131415161718192021222324252627// query.jsconst mysql = require("mysql");const MYSQL_CONFIG = require("../config/mysql_config"); // 数据库配置// mysqlconst pool = mysql.createPool(MYSQL_CONFIG);// query sql语句入口const query = (sql, val) =&gt; &#123; return new Promise((resolve, reject) =&gt; &#123; pool.getConnection(function (err, connection) &#123; if (err) &#123; reject(err); &#125; else &#123; connection.query(sql, val, (err, fields) =&gt; &#123; if (err) reject(err); else resolve(fields); connection.release(); &#125;); &#125; &#125;); &#125;);&#125;;module.exports = &#123; query,&#125;; 123456789101112131415161718192021222324252627282930// sql.js// 创建数据库const CREATE_TABLE = `CREATE TABLE IF NOT EXISTS user( user_id INT(5) NOT NULL AUTO_INCREMENT, user_name VARCHAR(255) NOT NULL, user_phone VARCHAR(255) NOT NULL, PRIMARY KEY (user_id));`.replace(/[\r\n]/g, "");// 查询数据表const QUERY_TABLE = (tableName) =&gt; `SELECT * FROM $&#123;tableName&#125;`;// 插入数据const INSERT_TABLE = (tableName, &#123; key, val &#125;) =&gt; `INSERT INTO $&#123;tableName&#125;($&#123;key&#125;) VALUES ($&#123;val&#125;)`;// 更新数据const UPDATE_TABLE = (tableName, &#123; primaryKey, primaryVal &#125;, &#123; key, value &#125;) =&gt; `UPDATE $&#123;tableName&#125; SET $&#123;key&#125;=$&#123;val&#125; WHERE($&#123;primaryKey&#125;=$&#123;primaryVal&#125;);`;// 删除数据const DELETE_TABLE = (tableName, &#123; primaryKey, primaryVal &#125;) =&gt; `DELETE FROM user WHERE($&#123;primaryKey&#125;=$&#123;primaryVal&#125;);`;module.exports = &#123; CREATE_TABLE, INSERT_TABLE, UPDATE_TABLE, DELETE_TABLE,&#125;; 在routers/index.js中引入，先创建一张表试一下。 123456789101112131415const router = require("koa-router")();const &#123; query &#125; = require("../utils/query");const &#123; CREATE_TABLE, INSERT_TABLE, UPDATE_TABLE, DELETE_TABLE,&#125; = require("../utils/sql");query(CREATE_TABLE);// ....省略了module.exports = router; 启动后台发现报错如下（据说是mysql8客户端错误） 需要在mysql中执行此命令： 12ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '此处填写数据库密码！';FLUSH PRIVILEGES; 我是在Navicat中执行的。 在重新启动，会发现数据库中新建了一张名为user的表。 至此，基本的koa连接使用mysql就完成了。 参考地址 https://www.jianshu.com/p/98801a280b25]]></content>
+      <categories>
+        <category>js</category>
+      </categories>
+      <tags>
+        <tag>koa</tag>
+        <tag>mysql</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[qs 序列化数据使用]]></title>
     <url>%2F2019%2F12%2F11%2Fqs%2F</url>
     <content type="text"><![CDATA[React、Vue在接口获取传输数据使用qs进行数据序列化遇到问题，后台查询列表需要拼接带’.‘的参数。 如果参数中存在’.‘需要添加allowDots属性,允许 dots： 1qs.stringify(params, &#123;allowDots: true&#125;) qs参考地址 https://github.com/ljharb/qs]]></content>

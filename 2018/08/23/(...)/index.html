@@ -97,25 +97,26 @@
   </script>
 
 
-<meta name="description" content="之前写的一篇数组去重的方法，这样写的。 const array = [1,1,2,3,4,5,5,6,6,7,8,8]; function distinct(){     let arr = [].concat.apply([], arguments);     console.log(arr);     return Array.from(new Set(arr)); } const a = [">
-<meta name="keywords" content="rest参数,扩展运算符">
+<meta name="description" content="之前写的一篇数组去重的方法，这样写的。 12345678const array &#x3D; [1,1,2,3,4,5,5,6,6,7,8,8];function distinct()&amp;#123;    let arr &#x3D; [].concat.apply([], arguments);    console.log(arr);    return Array.from(new Set(arr));&amp;#125">
 <meta property="og:type" content="article">
 <meta property="og:title" content="rest参数(...变量名)和扩展运算符(...)">
 <meta property="og:url" content="http://zhouyanwei.cn/2018/08/23/(...)/index.html">
 <meta property="og:site_name" content="zywkuo">
-<meta property="og:description" content="之前写的一篇数组去重的方法，这样写的。 const array = [1,1,2,3,4,5,5,6,6,7,8,8]; function distinct(){     let arr = [].concat.apply([], arguments);     console.log(arr);     return Array.from(new Set(arr)); } const a = [">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-23T02:57:47.509Z">
+<meta property="og:description" content="之前写的一篇数组去重的方法，这样写的。 12345678const array &#x3D; [1,1,2,3,4,5,5,6,6,7,8,8];function distinct()&amp;#123;    let arr &#x3D; [].concat.apply([], arguments);    console.log(arr);    return Array.from(new Set(arr));&amp;#125">
+<meta property="og:locale">
+<meta property="article:published_time" content="2018-08-22T16:00:00.000Z">
+<meta property="article:modified_time" content="2018-08-23T02:57:47.509Z">
+<meta property="article:author" content="Zyw">
+<meta property="article:tag" content="rest参数">
+<meta property="article:tag" content="扩展运算符">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="rest参数(...变量名)和扩展运算符(...)">
-<meta name="twitter:description" content="之前写的一篇数组去重的方法，这样写的。 const array = [1,1,2,3,4,5,5,6,6,7,8,8]; function distinct(){     let arr = [].concat.apply([], arguments);     console.log(arr);     return Array.from(new Set(arr)); } const a = [">
 
 
 
 <script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: '/',
+    root: '',
     scheme: 'Gemini',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
@@ -154,7 +155,7 @@
 
 
 
-</head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -202,7 +203,7 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
+          <a href="/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
@@ -212,7 +213,7 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
+          <a href="/about/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
@@ -222,7 +223,7 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
+          <a href="/tags/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
@@ -232,7 +233,7 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
+          <a href="/categories/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
@@ -242,7 +243,7 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
+          <a href="/archives/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
@@ -320,7 +321,7 @@
     <link itemprop="mainEntityOfPage" href="http://zhouyanwei.cn/2018/08/23/(...)/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zyw">
+      <meta itemprop="name" content="">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
@@ -411,7 +412,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  619
+                  676
                 </span>
               
 
@@ -449,86 +450,21 @@
 
       
         <p>之前写的一篇数组去重的方法，这样写的。</p>
-<pre><code class="bash">const array = [1,1,2,3,4,5,5,6,6,7,8,8];
-<span class="keyword">function</span> <span class="function"><span class="title">distinct</span></span>(){
-    <span class="built_in">let</span> arr = [].concat.apply([], arguments);
-    console.log(arr);
-    <span class="built_in">return</span> Array.from(new Set(arr));
-}
-const a = [1,2,3,5],b = [2,5,8,6],c = [7,8,9];
-console.log(distinct(a,b,c));//[1, 2, 3, 5, 8, 6, 7, 9]
-</code></pre>
-<a id="more"></a>
-<p>后来我一想，既然都用ES6了，不如都用ES6语法吧。然后我就把代码改成这样了。</p>
-<pre><code class="bash">distinct = () =&gt; {
-    <span class="built_in">let</span> arr = [].concat.apply([], arguments);
-    <span class="built_in">return</span> Array.from(new Set(arr));
-}
-console.log(distinct(array));//Uncaught ReferenceError: arguments is not defined
-</code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">const array = [1,1,2,3,4,5,5,6,6,7,8,8];</span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">distinct</span></span>()&#123;</span><br><span class="line">    <span class="built_in">let</span> arr = [].concat.apply([], arguments);</span><br><span class="line">    console.log(arr);</span><br><span class="line">    <span class="built_in">return</span> Array.from(new Set(arr));</span><br><span class="line">&#125;</span><br><span class="line">const a = [1,2,3,5],b = [2,5,8,6],c = [7,8,9];</span><br><span class="line">console.log(distinct(a,b,c));//[1, 2, 3, 5, 8, 6, 7, 9]</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+<p>后来我一想，既然都用ES6了，不如都用ES6语法吧。然后我就把代码改成这样了。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">distinct = () =&gt; &#123;</span><br><span class="line">    <span class="built_in">let</span> arr = [].concat.apply([], arguments);</span><br><span class="line">    <span class="built_in">return</span> Array.from(new Set(arr));</span><br><span class="line">&#125;</span><br><span class="line">console.log(distinct(array));//Uncaught ReferenceError: arguments is not defined</span><br></pre></td></tr></table></figure></p>
 <p>报错了，让后查找了一下原因，使用为箭头函数没有arguments，怎么办，这就需要用rest参数了。</p>
-<pre><code class="bash">const a = [1,2,3,5],b = [2,5,8,6],c = [7,8,9];
-distinct = (...theArgs) =&gt; {
-    <span class="built_in">let</span> arr = [].concat.apply([], theArgs);
-    <span class="built_in">return</span> Array.from(new Set(arr));
-}
-console.log(distinct(a,b,c));//[1, 2, 3, 5, 8, 6, 7, 9]
-</code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const a = [1,2,3,5],b = [2,5,8,6],c = [7,8,9];</span><br><span class="line">distinct = (...theArgs) =&gt; &#123;</span><br><span class="line">    <span class="built_in">let</span> arr = [].concat.apply([], theArgs);</span><br><span class="line">    <span class="built_in">return</span> Array.from(new Set(arr));</span><br><span class="line">&#125;</span><br><span class="line">console.log(distinct(a,b,c));//[1, 2, 3, 5, 8, 6, 7, 9]</span><br></pre></td></tr></table></figure>
 <p>这个<code>...theArgs</code>就是rest参数了，theArgs是自定义的命名，可以随便起名字。</p>
 <h1 id="rest参数-…变量名"><a href="#rest参数-…变量名" class="headerlink" title="rest参数(…变量名)"></a>rest参数(…变量名)</h1><p>最主要用于不定参数，用于获取函数多余的参数，将多余的逗号分隔的参数序列转换为数组参数</p>
-<p>rest参数的语法</p>
-<pre><code class="bash"><span class="keyword">function</span> f(a, b, ...theArgs) {
-  // ...
-}
-</code></pre>
-<p>看一个小例子</p>
-<pre><code class="bash">fun1 = (...theArgs) =&gt; {
-    console.log(theArgs);
-}
-fun1(1, 2, 3, 4, 5, 6);//[1, 2, 3, 4, 5, 6]
-
-fun2 = (a, b, ...theArgs) =&gt; {
-    console.log(theArgs);//[3, 4, 5, 6]
-}
-fun2(1, 2, 3, 4, 5, 6);
-</code></pre>
-<p>注意：rest参数只能是最后一个参数，他代表除a,b以外的所有参数，如果后面在添加别参数，例如</p>
-<pre><code class="bash">fun2 = (a, b, ...theArgs, c) =&gt; {
-    console.log(theArgs);
-}
-fun2(1, 2, 3, 4, 5, 6);Uncaught SyntaxError: Rest parameter must be last formal parameter
-</code></pre>
-<p>这样是会报错的。</p>
+<p>rest参数的语法<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> f(a, b, ...theArgs) &#123;</span><br><span class="line">  // ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>看一个小例子<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">fun1 = (...theArgs) =&gt; &#123;</span><br><span class="line">    console.log(theArgs);</span><br><span class="line">&#125;</span><br><span class="line">fun1(1, 2, 3, 4, 5, 6);//[1, 2, 3, 4, 5, 6]</span><br><span class="line"></span><br><span class="line">fun2 = (a, b, ...theArgs) =&gt; &#123;</span><br><span class="line">    console.log(theArgs);//[3, 4, 5, 6]</span><br><span class="line">&#125;</span><br><span class="line">fun2(1, 2, 3, 4, 5, 6);</span><br></pre></td></tr></table></figure><br>注意：rest参数只能是最后一个参数，他代表除a,b以外的所有参数，如果后面在添加别参数，例如<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">fun2 = (a, b, ...theArgs, c) =&gt; &#123;</span><br><span class="line">    console.log(theArgs);</span><br><span class="line">&#125;</span><br><span class="line">fun2(1, 2, 3, 4, 5, 6);Uncaught SyntaxError: Rest parameter must be last formal parameter</span><br></pre></td></tr></table></figure><br>这样是会报错的。</p>
 <p>说到这里这个<code>...</code>还有一个作用就是作为扩展运算符</p>
 <h1 id="扩展运算符-…"><a href="#扩展运算符-…" class="headerlink" title="扩展运算符(…)"></a>扩展运算符(…)</h1><p>扩展运算符可以理解为rest参数的逆运算，将数组转换为逗号分隔的参数序列</p>
-<pre><code class="bash">const nums = [1, 2, 3];
-fun = (a, b, c) =&gt; {
-    console.log(`<span class="variable">${a}</span> <span class="variable">${b}</span> <span class="variable">${c}</span>`)
-}
-fun(...nums);//1 2 3
-</code></pre>
-<p>ES5的话我们还需要这样调用</p>
-<pre><code class="bash">fun.apply(null,nums);
-</code></pre>
-<h1 id="扩展运算符应用"><a href="#扩展运算符应用" class="headerlink" title="扩展运算符应用"></a>扩展运算符应用</h1><h2 id="合并数组"><a href="#合并数组" class="headerlink" title="合并数组"></a>合并数组</h2><pre><code class="bash">const arr1 = [1, 2, 3]
-const arr2 = [5, 6]
-ES5
-console.log(arr1.concat(arr2));//[1, 2, 3, 5, 6]
-ES6
-console.log([...arr1, ...arr2]);//[1, 2, 3, 5, 6]
-</code></pre>
-<h2 id="判断最大值最小值"><a href="#判断最大值最小值" class="headerlink" title="判断最大值最小值"></a>判断最大值最小值</h2><pre><code class="bash">const array = [1,1,2,3,4,5,5,6,6,7,8,8];
-ES5
-console.log( Math.max.apply(null, array));//8
-console.log( Math.min.apply(null, array));//1
-ES6
-console.log( Math.max(...array));//8
-console.log( Math.min(...array));//1
-</code></pre>
-<h2 id="数组去重"><a href="#数组去重" class="headerlink" title="数组去重"></a>数组去重</h2><pre><code class="bash">const array = [1,1,2,3,4,5,5,6,6,7,8,8];
-const distinct = arr =&gt; [...new Set(arr)];
-console.log(distinct(array));//[1, 2, 3, 4, 5, 6, 7, 8]
-</code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const nums = [1, 2, 3];</span><br><span class="line">fun = (a, b, c) =&gt; &#123;</span><br><span class="line">    console.log(`<span class="variable">$&#123;a&#125;</span> <span class="variable">$&#123;b&#125;</span> <span class="variable">$&#123;c&#125;</span>`)</span><br><span class="line">&#125;</span><br><span class="line">fun(...nums);//1 2 3</span><br></pre></td></tr></table></figure>
+<p>ES5的话我们还需要这样调用<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fun.apply(null,nums);</span><br></pre></td></tr></table></figure></p>
+<h1 id="扩展运算符应用"><a href="#扩展运算符应用" class="headerlink" title="扩展运算符应用"></a>扩展运算符应用</h1><h2 id="合并数组"><a href="#合并数组" class="headerlink" title="合并数组"></a>合并数组</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const arr1 = [1, 2, 3]</span><br><span class="line">const arr2 = [5, 6]</span><br><span class="line">ES5</span><br><span class="line">console.log(arr1.concat(arr2));//[1, 2, 3, 5, 6]</span><br><span class="line">ES6</span><br><span class="line">console.log([...arr1, ...arr2]);//[1, 2, 3, 5, 6]</span><br></pre></td></tr></table></figure>
+<h2 id="判断最大值最小值"><a href="#判断最大值最小值" class="headerlink" title="判断最大值最小值"></a>判断最大值最小值</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const array = [1,1,2,3,4,5,5,6,6,7,8,8];</span><br><span class="line">ES5</span><br><span class="line">console.log( Math.max.apply(null, array));//8</span><br><span class="line">console.log( Math.min.apply(null, array));//1</span><br><span class="line">ES6</span><br><span class="line">console.log( Math.max(...array));//8</span><br><span class="line">console.log( Math.min(...array));//1</span><br></pre></td></tr></table></figure>
+<h2 id="数组去重"><a href="#数组去重" class="headerlink" title="数组去重"></a>数组去重</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const array = [1,1,2,3,4,5,5,6,6,7,8,8];</span><br><span class="line">const distinct = arr =&gt; [...new Set(arr)];</span><br><span class="line">console.log(distinct(array));//[1, 2, 3, 4, 5, 6, 7, 8]</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -546,9 +482,9 @@ console.log(distinct(array));//[1, 2, 3, 4, 5, 6, 7, 8]
       
         <div class="post-tags">
           
-            <a href="/tags/rest参数/" rel="tag"># rest参数</a>
+            <a href="/tags/rest%E5%8F%82%E6%95%B0/" rel="tag"># rest参数</a>
           
-            <a href="/tags/扩展运算符/" rel="tag"># 扩展运算符</a>
+            <a href="/tags/%E6%89%A9%E5%B1%95%E8%BF%90%E7%AE%97%E7%AC%A6/" rel="tag"># 扩展运算符</a>
           
         </div>
       
@@ -644,8 +580,8 @@ console.log(distinct(array));//[1, 2, 3, 4, 5, 6, 7, 8]
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <p class="site-author-name" itemprop="name">Zyw</p>
-              <p class="site-description motion-element" itemprop="description">周艳伟的个人博客</p>
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
           <nav class="site-state motion-element">
@@ -653,7 +589,7 @@ console.log(distinct(array));//[1, 2, 3, 4, 5, 6, 7, 8]
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives/">
+                <a href="/archives/%20%7C%7C%20archive">
               
                   <span class="site-state-item-count">42</span>
                   <span class="site-state-item-name">日志</span>
@@ -737,7 +673,7 @@ console.log(distinct(array));//[1, 2, 3, 4, 5, 6, 7, 8]
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#rest参数-…变量名"><span class="nav-number">1.</span> <span class="nav-text">rest参数(…变量名)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#扩展运算符-…"><span class="nav-number">2.</span> <span class="nav-text">扩展运算符(…)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#扩展运算符应用"><span class="nav-number">3.</span> <span class="nav-text">扩展运算符应用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#合并数组"><span class="nav-number">3.1.</span> <span class="nav-text">合并数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#判断最大值最小值"><span class="nav-number">3.2.</span> <span class="nav-text">判断最大值最小值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组去重"><span class="nav-number">3.3.</span> <span class="nav-text">数组去重</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#rest%E5%8F%82%E6%95%B0-%E2%80%A6%E5%8F%98%E9%87%8F%E5%90%8D"><span class="nav-number">1.</span> <span class="nav-text">rest参数(…变量名)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%89%A9%E5%B1%95%E8%BF%90%E7%AE%97%E7%AC%A6-%E2%80%A6"><span class="nav-number">2.</span> <span class="nav-text">扩展运算符(…)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%89%A9%E5%B1%95%E8%BF%90%E7%AE%97%E7%AC%A6%E5%BA%94%E7%94%A8"><span class="nav-number">3.</span> <span class="nav-text">扩展运算符应用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%88%E5%B9%B6%E6%95%B0%E7%BB%84"><span class="nav-number">3.1.</span> <span class="nav-text">合并数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%A4%E6%96%AD%E6%9C%80%E5%A4%A7%E5%80%BC%E6%9C%80%E5%B0%8F%E5%80%BC"><span class="nav-number">3.2.</span> <span class="nav-text">判断最大值最小值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D"><span class="nav-number">3.3.</span> <span class="nav-text">数组去重</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -757,7 +693,8 @@ console.log(distinct(array));//[1, 2, 3, 4, 5, 6, 7, 8]
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+        <div class="copyright"><a href="https://beian.miit.gov.cn" target="_blank">京ICP备17006226号-2</a> &copy;
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -780,7 +717,7 @@ console.log(distinct(array));//[1, 2, 3, 4, 5, 6, 7, 8]
   <div class="theme-info">
     <div class="powered-by"></div>
     <i class="fa fa-pencil"></i>
-    <span class="post-count">博客全站共37.8k字</span>
+    <span class="post-count">博客全站共38.8k字</span>
   </div>
 
 

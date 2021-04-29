@@ -98,21 +98,23 @@
 
 
 <meta name="description" content="做了一份关于跨域的ppt,主要讲解了，使用vue-cli、nginx、node.js进行跨域处理。欢迎下载观看。 PPT请点击这里下载 下面附上几张照片，node.js跨域源码在下面。">
-<meta name="keywords" content="vue,node.js,nginx">
 <meta property="og:type" content="article">
 <meta property="og:title" content="前端跨域方案">
 <meta property="og:url" content="http://zhouyanwei.cn/2018/09/25/proxy/index.html">
 <meta property="og:site_name" content="zywkuo">
 <meta property="og:description" content="做了一份关于跨域的ppt,主要讲解了，使用vue-cli、nginx、node.js进行跨域处理。欢迎下载观看。 PPT请点击这里下载 下面附上几张照片，node.js跨域源码在下面。">
-<meta property="og:locale" content="zh-Hans">
+<meta property="og:locale">
 <meta property="og:image" content="http://zhouyanwei.cn/images/2018-09-25/proxy1.png">
 <meta property="og:image" content="http://zhouyanwei.cn/images/2018-09-25/proxy2.png">
 <meta property="og:image" content="http://zhouyanwei.cn/images/2018-09-25/proxy3.png">
 <meta property="og:image" content="http://zhouyanwei.cn/images/2018-09-25/proxy4.png">
-<meta property="og:updated_time" content="2018-09-25T08:27:16.432Z">
+<meta property="article:published_time" content="2018-09-24T16:00:00.000Z">
+<meta property="article:modified_time" content="2018-09-25T08:27:16.432Z">
+<meta property="article:author" content="Zyw">
+<meta property="article:tag" content="vue">
+<meta property="article:tag" content="node.js">
+<meta property="article:tag" content="nginx">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="前端跨域方案">
-<meta name="twitter:description" content="做了一份关于跨域的ppt,主要讲解了，使用vue-cli、nginx、node.js进行跨域处理。欢迎下载观看。 PPT请点击这里下载 下面附上几张照片，node.js跨域源码在下面。">
 <meta name="twitter:image" content="http://zhouyanwei.cn/images/2018-09-25/proxy1.png">
 
 
@@ -120,7 +122,7 @@
 <script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: '/',
+    root: '',
     scheme: 'Gemini',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
@@ -159,7 +161,7 @@
 
 
 
-</head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -207,7 +209,7 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
+          <a href="/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
@@ -217,7 +219,7 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
+          <a href="/about/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
@@ -227,7 +229,7 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
+          <a href="/tags/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
@@ -237,7 +239,7 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
+          <a href="/categories/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
@@ -247,7 +249,7 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
+          <a href="/archives/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
@@ -325,7 +327,7 @@
     <link itemprop="mainEntityOfPage" href="http://zhouyanwei.cn/2018/09/25/proxy/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zyw">
+      <meta itemprop="name" content="">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
@@ -416,7 +418,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  398
+                  488
                 </span>
               
 
@@ -432,7 +434,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  3
                 </span>
               
             </div>
@@ -456,102 +458,9 @@
         <p>做了一份关于跨域的ppt,主要讲解了，使用vue-cli、nginx、node.js进行跨域处理。欢迎下载观看。</p>
 <p><a href="../../../../link/2018-09-25/proxy.pptx">PPT请点击这里下载</a></p>
 <p>下面附上几张照片，node.js跨域源码在下面。</p>
-<a id="more"></a>
+<span id="more"></span>
 <p><img src="/images/2018-09-25/proxy1.png" alt=""><br><img src="/images/2018-09-25/proxy2.png" alt=""><br><img src="/images/2018-09-25/proxy3.png" alt=""><br><img src="/images/2018-09-25/proxy4.png" alt=""></p>
-<p>proxy.js</p>
-<pre><code class="bash">var PORT = 3000;
-var http = require(<span class="string">'http'</span>);
-var url=require(<span class="string">'url'</span>);
-var fs=require(<span class="string">'fs'</span>);
-var mine=require(<span class="string">'./mime'</span>).types;
-var path=require(<span class="string">'path'</span>);
-var httpProxy = require(<span class="string">'http-proxy'</span>);
-var proxy = httpProxy.createProxyServer({
-    target: <span class="string">'http://192.168.2.18:8080/'</span>,   //接口地址
-    // 下面的设置用于https
-    // ssl: {
-    //     key: fs.readFileSync(<span class="string">'server_decrypt.key'</span>, <span class="string">'utf8'</span>),
-    //     cert: fs.readFileSync(<span class="string">'server.crt'</span>, <span class="string">'utf8'</span>)
-    // },
-    // secure: <span class="literal">false</span>
-});
-proxy.on(<span class="string">'error'</span>, <span class="keyword">function</span>(err, req, res){
-    res.writeHead(500, {
-        <span class="string">'content-type'</span>: <span class="string">'text/plain'</span>
-    });
-    console.log(err);
-    res.end(<span class="string">'Something went wrong. And we are reporting a custom error message.'</span>);
-});
-var server = http.createServer(<span class="keyword">function</span> (request, response) {
-    var pathname = url.parse(request.url).pathname;
-    //var realPath = path.join(<span class="string">"main-pages"</span>, pathname); // 指定根目录
-    var realPath = path.join(<span class="string">"./"</span>, pathname);
-    console.log(pathname);
-    console.log(realPath);
-    var ext = path.extname(realPath);
-    ext = ext ? ext.slice(1) : <span class="string">'unknown'</span>;
-    //判断如果是接口访问，则通过proxy转发
-    <span class="keyword">if</span>(pathname.indexOf(<span class="string">"meis"</span>) &gt; 0){
-        proxy.web(request, response);
-        <span class="built_in">return</span>;
-    }
-    fs.exists(realPath, <span class="keyword">function</span> (exists) {
-        <span class="keyword">if</span> (!exists) {
-            response.writeHead(404, {
-                <span class="string">'Content-Type'</span>: <span class="string">'text/plain'</span>
-            });
-
-            response.write(<span class="string">"This request URL "</span> + pathname + <span class="string">" was not found on this server."</span>);
-            response.end();
-        } <span class="keyword">else</span> {
-            fs.readFile(realPath, <span class="string">"binary"</span>, <span class="keyword">function</span> (err, file) {
-                <span class="keyword">if</span> (err) {
-                    response.writeHead(500, {
-                        <span class="string">'Content-Type'</span>: <span class="string">'text/plain'</span>
-                    });
-                    response.end(err);
-                } <span class="keyword">else</span> {
-                    var contentType = mine[ext] || <span class="string">"text/plain"</span>;
-                    response.writeHead(200, {
-                        <span class="string">'Content-Type'</span>: contentType
-                    });
-                    response.write(file, <span class="string">"binary"</span>);
-                    response.end();
-                }
-            });
-        }
-    });
-});
-server.listen(PORT);
-console.log(<span class="string">"Server runing at port: "</span> + PORT + <span class="string">"."</span>);
-</code></pre>
-<p>mime.js</p>
-<pre><code class="bash">exports.types = {
-    <span class="string">"css"</span>: <span class="string">"text/css"</span>,
-    <span class="string">"gif"</span>: <span class="string">"image/gif"</span>,
-    <span class="string">"html"</span>: <span class="string">"text/html"</span>,
-    <span class="string">"ico"</span>: <span class="string">"image/x-icon"</span>,
-    <span class="string">"jpeg"</span>: <span class="string">"image/jpeg"</span>,
-    <span class="string">"jpg"</span>: <span class="string">"image/jpeg"</span>,
-    <span class="string">"js"</span>: <span class="string">"text/javascript"</span>,
-    <span class="string">"json"</span>: <span class="string">"application/json"</span>,
-    <span class="string">"pdf"</span>: <span class="string">"application/pdf"</span>,
-    <span class="string">"png"</span>: <span class="string">"image/png"</span>,
-    <span class="string">"svg"</span>: <span class="string">"image/svg+xml"</span>,
-    <span class="string">"swf"</span>: <span class="string">"application/x-shockwave-flash"</span>,
-    <span class="string">"tiff"</span>: <span class="string">"image/tiff"</span>,
-    <span class="string">"txt"</span>: <span class="string">"text/plain"</span>,
-    <span class="string">"wav"</span>: <span class="string">"audio/x-wav"</span>,
-    <span class="string">"wma"</span>: <span class="string">"audio/x-ms-wma"</span>,
-    <span class="string">"wmv"</span>: <span class="string">"video/x-ms-wmv"</span>,
-    <span class="string">"xml"</span>: <span class="string">"text/xml"</span>,
-    <span class="string">"woff"</span>: <span class="string">"application/x-woff"</span>,
-    <span class="string">"woff2"</span>: <span class="string">"application/x-woff2"</span>,
-    <span class="string">"tff"</span>: <span class="string">"application/x-font-truetype"</span>,
-    <span class="string">"otf"</span>: <span class="string">"application/x-font-opentype"</span>,
-    <span class="string">"eot"</span>: <span class="string">"application/vnd.ms-fontobject"</span>
-};
-</code></pre>
+<p>proxy.js<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line">var PORT = 3000;</span><br><span class="line">var http = require(<span class="string">&#x27;http&#x27;</span>);</span><br><span class="line">var url=require(<span class="string">&#x27;url&#x27;</span>);</span><br><span class="line">var fs=require(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line">var mine=require(<span class="string">&#x27;./mime&#x27;</span>).types;</span><br><span class="line">var path=require(<span class="string">&#x27;path&#x27;</span>);</span><br><span class="line">var httpProxy = require(<span class="string">&#x27;http-proxy&#x27;</span>);</span><br><span class="line">var proxy = httpProxy.createProxyServer(&#123;</span><br><span class="line">    target: <span class="string">&#x27;http://192.168.2.18:8080/&#x27;</span>,   //接口地址</span><br><span class="line">    // 下面的设置用于https</span><br><span class="line">    // ssl: &#123;</span><br><span class="line">    //     key: fs.readFileSync(<span class="string">&#x27;server_decrypt.key&#x27;</span>, <span class="string">&#x27;utf8&#x27;</span>),</span><br><span class="line">    //     cert: fs.readFileSync(<span class="string">&#x27;server.crt&#x27;</span>, <span class="string">&#x27;utf8&#x27;</span>)</span><br><span class="line">    // &#125;,</span><br><span class="line">    // secure: <span class="literal">false</span></span><br><span class="line">&#125;);</span><br><span class="line">proxy.on(<span class="string">&#x27;error&#x27;</span>, <span class="keyword">function</span>(err, req, res)&#123;</span><br><span class="line">    res.writeHead(500, &#123;</span><br><span class="line">        <span class="string">&#x27;content-type&#x27;</span>: <span class="string">&#x27;text/plain&#x27;</span></span><br><span class="line">    &#125;);</span><br><span class="line">    console.log(err);</span><br><span class="line">    res.end(<span class="string">&#x27;Something went wrong. And we are reporting a custom error message.&#x27;</span>);</span><br><span class="line">&#125;);</span><br><span class="line">var server = http.createServer(<span class="keyword">function</span> (request, response) &#123;</span><br><span class="line">    var pathname = url.parse(request.url).pathname;</span><br><span class="line">    //var realPath = path.join(<span class="string">&quot;main-pages&quot;</span>, pathname); // 指定根目录</span><br><span class="line">    var realPath = path.join(<span class="string">&quot;./&quot;</span>, pathname);</span><br><span class="line">    console.log(pathname);</span><br><span class="line">    console.log(realPath);</span><br><span class="line">    var ext = path.extname(realPath);</span><br><span class="line">    ext = ext ? ext.slice(1) : <span class="string">&#x27;unknown&#x27;</span>;</span><br><span class="line">    //判断如果是接口访问，则通过proxy转发</span><br><span class="line">    <span class="keyword">if</span>(pathname.indexOf(<span class="string">&quot;meis&quot;</span>) &gt; 0)&#123;</span><br><span class="line">        proxy.web(request, response);</span><br><span class="line">        <span class="built_in">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    fs.exists(realPath, <span class="keyword">function</span> (exists) &#123;</span><br><span class="line">        <span class="keyword">if</span> (!exists) &#123;</span><br><span class="line">            response.writeHead(404, &#123;</span><br><span class="line">                <span class="string">&#x27;Content-Type&#x27;</span>: <span class="string">&#x27;text/plain&#x27;</span></span><br><span class="line">            &#125;);</span><br><span class="line"></span><br><span class="line">            response.write(<span class="string">&quot;This request URL &quot;</span> + pathname + <span class="string">&quot; was not found on this server.&quot;</span>);</span><br><span class="line">            response.end();</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            fs.readFile(realPath, <span class="string">&quot;binary&quot;</span>, <span class="keyword">function</span> (err, file) &#123;</span><br><span class="line">                <span class="keyword">if</span> (err) &#123;</span><br><span class="line">                    response.writeHead(500, &#123;</span><br><span class="line">                        <span class="string">&#x27;Content-Type&#x27;</span>: <span class="string">&#x27;text/plain&#x27;</span></span><br><span class="line">                    &#125;);</span><br><span class="line">                    response.end(err);</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    var contentType = mine[ext] || <span class="string">&quot;text/plain&quot;</span>;</span><br><span class="line">                    response.writeHead(200, &#123;</span><br><span class="line">                        <span class="string">&#x27;Content-Type&#x27;</span>: contentType</span><br><span class="line">                    &#125;);</span><br><span class="line">                    response.write(file, <span class="string">&quot;binary&quot;</span>);</span><br><span class="line">                    response.end();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br><span class="line">server.listen(PORT);</span><br><span class="line">console.log(<span class="string">&quot;Server runing at port: &quot;</span> + PORT + <span class="string">&quot;.&quot;</span>);</span><br></pre></td></tr></table></figure><br>mime.js<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">exports.types = &#123;</span><br><span class="line">    <span class="string">&quot;css&quot;</span>: <span class="string">&quot;text/css&quot;</span>,</span><br><span class="line">    <span class="string">&quot;gif&quot;</span>: <span class="string">&quot;image/gif&quot;</span>,</span><br><span class="line">    <span class="string">&quot;html&quot;</span>: <span class="string">&quot;text/html&quot;</span>,</span><br><span class="line">    <span class="string">&quot;ico&quot;</span>: <span class="string">&quot;image/x-icon&quot;</span>,</span><br><span class="line">    <span class="string">&quot;jpeg&quot;</span>: <span class="string">&quot;image/jpeg&quot;</span>,</span><br><span class="line">    <span class="string">&quot;jpg&quot;</span>: <span class="string">&quot;image/jpeg&quot;</span>,</span><br><span class="line">    <span class="string">&quot;js&quot;</span>: <span class="string">&quot;text/javascript&quot;</span>,</span><br><span class="line">    <span class="string">&quot;json&quot;</span>: <span class="string">&quot;application/json&quot;</span>,</span><br><span class="line">    <span class="string">&quot;pdf&quot;</span>: <span class="string">&quot;application/pdf&quot;</span>,</span><br><span class="line">    <span class="string">&quot;png&quot;</span>: <span class="string">&quot;image/png&quot;</span>,</span><br><span class="line">    <span class="string">&quot;svg&quot;</span>: <span class="string">&quot;image/svg+xml&quot;</span>,</span><br><span class="line">    <span class="string">&quot;swf&quot;</span>: <span class="string">&quot;application/x-shockwave-flash&quot;</span>,</span><br><span class="line">    <span class="string">&quot;tiff&quot;</span>: <span class="string">&quot;image/tiff&quot;</span>,</span><br><span class="line">    <span class="string">&quot;txt&quot;</span>: <span class="string">&quot;text/plain&quot;</span>,</span><br><span class="line">    <span class="string">&quot;wav&quot;</span>: <span class="string">&quot;audio/x-wav&quot;</span>,</span><br><span class="line">    <span class="string">&quot;wma&quot;</span>: <span class="string">&quot;audio/x-ms-wma&quot;</span>,</span><br><span class="line">    <span class="string">&quot;wmv&quot;</span>: <span class="string">&quot;video/x-ms-wmv&quot;</span>,</span><br><span class="line">    <span class="string">&quot;xml&quot;</span>: <span class="string">&quot;text/xml&quot;</span>,</span><br><span class="line">    <span class="string">&quot;woff&quot;</span>: <span class="string">&quot;application/x-woff&quot;</span>,</span><br><span class="line">    <span class="string">&quot;woff2&quot;</span>: <span class="string">&quot;application/x-woff2&quot;</span>,</span><br><span class="line">    <span class="string">&quot;tff&quot;</span>: <span class="string">&quot;application/x-font-truetype&quot;</span>,</span><br><span class="line">    <span class="string">&quot;otf&quot;</span>: <span class="string">&quot;application/x-font-opentype&quot;</span>,</span><br><span class="line">    <span class="string">&quot;eot&quot;</span>: <span class="string">&quot;application/vnd.ms-fontobject&quot;</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -660,8 +569,8 @@ console.log(<span class="string">"Server runing at port: "</span> + PORT + <span
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <p class="site-author-name" itemprop="name">Zyw</p>
-              <p class="site-description motion-element" itemprop="description">周艳伟的个人博客</p>
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
           <nav class="site-state motion-element">
@@ -669,7 +578,7 @@ console.log(<span class="string">"Server runing at port: "</span> + PORT + <span
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives/">
+                <a href="/archives/%20%7C%7C%20archive">
               
                   <span class="site-state-item-count">42</span>
                   <span class="site-state-item-name">日志</span>
@@ -757,7 +666,8 @@ console.log(<span class="string">"Server runing at port: "</span> + PORT + <span
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+        <div class="copyright"><a href="https://beian.miit.gov.cn" target="_blank">京ICP备17006226号-2</a> &copy;
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -780,7 +690,7 @@ console.log(<span class="string">"Server runing at port: "</span> + PORT + <span
   <div class="theme-info">
     <div class="powered-by"></div>
     <i class="fa fa-pencil"></i>
-    <span class="post-count">博客全站共37.8k字</span>
+    <span class="post-count">博客全站共38.8k字</span>
   </div>
 
 

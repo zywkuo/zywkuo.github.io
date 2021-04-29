@@ -97,25 +97,26 @@
   </script>
 
 
-<meta name="description" content="时间转时间戳1.Date.parse(new Date()) 不推荐这种办法，毫秒级别的数值被转化为00012var timestamp1 = Date.parse(new Date());console.log(timestamp1); //1531100204000 2.(new Date()).valueOf() 通过valueOf()函数返回指定对象的原始值获得准确的时间戳值12var t">
-<meta name="keywords" content="时间戳,当前时间">
+<meta name="description" content="时间转时间戳1.Date.parse(new Date()) 不推荐这种办法，毫秒级别的数值被转化为00012var timestamp1 &#x3D; Date.parse(new Date());console.log(timestamp1); &#x2F;&#x2F;1531100204000 2.(new Date()).valueOf() 通过valueOf()函数返回指定对象的原始值获得准确的时间戳值12var t">
 <meta property="og:type" content="article">
 <meta property="og:title" content="时间戳与时间获取">
 <meta property="og:url" content="http://zhouyanwei.cn/2018/07/09/timer/index.html">
 <meta property="og:site_name" content="zywkuo">
-<meta property="og:description" content="时间转时间戳1.Date.parse(new Date()) 不推荐这种办法，毫秒级别的数值被转化为00012var timestamp1 = Date.parse(new Date());console.log(timestamp1); //1531100204000 2.(new Date()).valueOf() 通过valueOf()函数返回指定对象的原始值获得准确的时间戳值12var t">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-03T06:53:26.240Z">
+<meta property="og:description" content="时间转时间戳1.Date.parse(new Date()) 不推荐这种办法，毫秒级别的数值被转化为00012var timestamp1 &#x3D; Date.parse(new Date());console.log(timestamp1); &#x2F;&#x2F;1531100204000 2.(new Date()).valueOf() 通过valueOf()函数返回指定对象的原始值获得准确的时间戳值12var t">
+<meta property="og:locale">
+<meta property="article:published_time" content="2018-07-08T16:00:00.000Z">
+<meta property="article:modified_time" content="2018-12-03T06:53:26.240Z">
+<meta property="article:author" content="Zyw">
+<meta property="article:tag" content="时间戳">
+<meta property="article:tag" content="当前时间">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="时间戳与时间获取">
-<meta name="twitter:description" content="时间转时间戳1.Date.parse(new Date()) 不推荐这种办法，毫秒级别的数值被转化为00012var timestamp1 = Date.parse(new Date());console.log(timestamp1); //1531100204000 2.(new Date()).valueOf() 通过valueOf()函数返回指定对象的原始值获得准确的时间戳值12var t">
 
 
 
 <script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: '/',
+    root: '',
     scheme: 'Gemini',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
@@ -154,7 +155,7 @@
 
 
 
-</head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -202,7 +203,7 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
+          <a href="/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
@@ -212,7 +213,7 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
+          <a href="/about/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
@@ -222,7 +223,7 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
+          <a href="/tags/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
@@ -232,7 +233,7 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
+          <a href="/categories/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
@@ -242,7 +243,7 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
+          <a href="/archives/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
@@ -320,7 +321,7 @@
     <link itemprop="mainEntityOfPage" href="http://zhouyanwei.cn/2018/07/09/timer/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zyw">
+      <meta itemprop="name" content="">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
@@ -411,7 +412,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  544
+                  549
                 </span>
               
 
@@ -453,15 +454,9 @@
 <h2 id="3-new-Date-getTime-通过原型方法直接获得当前时间的毫秒值，准确"><a href="#3-new-Date-getTime-通过原型方法直接获得当前时间的毫秒值，准确" class="headerlink" title="3.new Date().getTime() 通过原型方法直接获得当前时间的毫秒值，准确"></a>3.new Date().getTime() 通过原型方法直接获得当前时间的毫秒值，准确</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var timestamp3 = new Date().getTime();</span><br><span class="line">console.log(timestamp3); //1531100225639</span><br></pre></td></tr></table></figure>
 <h2 id="4-Number-new-Date-将时间转化为一个number类型的数值，即时间戳"><a href="#4-Number-new-Date-将时间转化为一个number类型的数值，即时间戳" class="headerlink" title="4.Number(new Date()) 将时间转化为一个number类型的数值，即时间戳"></a>4.Number(new Date()) 将时间转化为一个number类型的数值，即时间戳</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var timetamp4 = Number(new Date());</span><br><span class="line">console.log(timetamp4); //1531100238110</span><br></pre></td></tr></table></figure>
 <h2 id="5-Date-now-ES5给Date提供了一种获取时间戳的新特性"><a href="#5-Date-now-ES5给Date提供了一种获取时间戳的新特性" class="headerlink" title="5.Date.now() ES5给Date提供了一种获取时间戳的新特性"></a>5.Date.now() ES5给Date提供了一种获取时间戳的新特性</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var timetamp5 = Date.now();</span><br><span class="line">console.log(timetamp5); //1531100248079</span><br></pre></td></tr></table></figure>
-<h1 id="获取当前时间"><a href="#获取当前时间" class="headerlink" title="获取当前时间"></a>获取当前时间</h1><p>一个获取当前时间的函数，比较不错，好用。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">Date.prototype.pattern=<span class="keyword">function</span>(fmt) &#123;</span><br><span class="line">    var o = &#123;</span><br><span class="line">        <span class="string">"M+"</span> : this.getMonth()+1, //月份</span><br><span class="line">        <span class="string">"d+"</span> : this.getDate(), //日</span><br><span class="line">        <span class="string">"h+"</span> : this.getHours()%12 == 0 ? 12 : this.getHours()%12, //小时</span><br><span class="line">        <span class="string">"H+"</span> : this.getHours(), //小时</span><br><span class="line">        <span class="string">"m+"</span> : this.getMinutes(), //分</span><br><span class="line">        <span class="string">"s+"</span> : this.getSeconds(), //秒</span><br><span class="line">        <span class="string">"q+"</span> : Math.floor((this.getMonth()+3)/3), //季度</span><br><span class="line">        <span class="string">"S"</span> : this.getMilliseconds() //毫秒，</span><br><span class="line">    &#125;;</span><br><span class="line">    var week = &#123;</span><br><span class="line">        <span class="string">"0"</span> : <span class="string">"星期日"</span>,</span><br><span class="line">        <span class="string">"1"</span> : <span class="string">"星期一"</span>,</span><br><span class="line">        <span class="string">"2"</span> : <span class="string">"星期二"</span>,</span><br><span class="line">        <span class="string">"3"</span> : <span class="string">"星期三"</span>,</span><br><span class="line">        <span class="string">"4"</span> : <span class="string">"星期四"</span>,</span><br><span class="line">        <span class="string">"5"</span> : <span class="string">"星期五"</span>,</span><br><span class="line">        <span class="string">"6"</span> : <span class="string">"星期六"</span></span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">if</span>(/(y+)/.<span class="built_in">test</span>(fmt))&#123;</span><br><span class="line">        fmt=fmt.replace(RegExp.<span class="variable">$1</span>, (this.getFullYear()+<span class="string">""</span>).substr(4 - RegExp.<span class="variable">$1</span>.length));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(/(E+)/.<span class="built_in">test</span>(fmt))&#123;</span><br><span class="line">        fmt=fmt.replace(RegExp.<span class="variable">$1</span>, ((RegExp.<span class="variable">$1</span>.length&gt;1) ? (RegExp.<span class="variable">$1</span>.length&gt;2 ? <span class="string">"/u661f/u671f"</span> : <span class="string">"/u5468"</span>) : <span class="string">""</span>)+week[this.getDay()+<span class="string">""</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(var k <span class="keyword">in</span> o)&#123;</span><br><span class="line">        <span class="keyword">if</span>(new RegExp(<span class="string">"("</span>+ k +<span class="string">")"</span>).<span class="built_in">test</span>(fmt))&#123;</span><br><span class="line">            fmt = fmt.replace(RegExp.<span class="variable">$1</span>, (RegExp.<span class="variable">$1</span>.length==1) ? (o[k]) : ((<span class="string">"00"</span>+ o[k]).substr((<span class="string">""</span>+ o[k]).length)));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">return</span> fmt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>使用方法如下 yyyy(年) MM(月) dd(日) HH(时) mm(分) ss(秒) 随意搭配可以调换顺序使用</p>
-<pre><code class="bash">console.log(new Date().pattern(<span class="string">"HH:mm"</span>));//09:41
-console.log(new Date().pattern(<span class="string">"yyyy-MM-dd HH:mm"</span>));//2018-07-09 09:41
-console.log(new Date().pattern(<span class="string">"yyyy年MM月dd日 HH:mm"</span>));//2018年07月09日 09:41
-console.log(new Date().pattern(<span class="string">"yyyy年MM月dd日 HH:mm:ss"</span>));//2018年07月09日 09:41:55
-console.log(new Date().pattern(<span class="string">"HH:mm yyyy年MM月dd日 E"</span>));//09:41 2018年07月09日 星期一
-</code></pre>
-<h1 id="移动端比较不错的时间插件-lCalendar-js"><a href="#移动端比较不错的时间插件-lCalendar-js" class="headerlink" title="移动端比较不错的时间插件 lCalendar.js"></a>移动端比较不错的时间插件 lCalendar.js</h1><p>详情可以点击此链接查看 <a href="http://www.jq22.com/jquery-info13497" target="_blank" rel="noopener">手机端日期插件lCalendar.js</a></p>
+<h1 id="获取当前时间"><a href="#获取当前时间" class="headerlink" title="获取当前时间"></a>获取当前时间</h1><p>一个获取当前时间的函数，比较不错，好用。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">Date.prototype.pattern=<span class="keyword">function</span>(fmt) &#123;</span><br><span class="line">    var o = &#123;</span><br><span class="line">        <span class="string">&quot;M+&quot;</span> : this.getMonth()+1, //月份</span><br><span class="line">        <span class="string">&quot;d+&quot;</span> : this.getDate(), //日</span><br><span class="line">        <span class="string">&quot;h+&quot;</span> : this.getHours()%12 == 0 ? 12 : this.getHours()%12, //小时</span><br><span class="line">        <span class="string">&quot;H+&quot;</span> : this.getHours(), //小时</span><br><span class="line">        <span class="string">&quot;m+&quot;</span> : this.getMinutes(), //分</span><br><span class="line">        <span class="string">&quot;s+&quot;</span> : this.getSeconds(), //秒</span><br><span class="line">        <span class="string">&quot;q+&quot;</span> : Math.floor((this.getMonth()+3)/3), //季度</span><br><span class="line">        <span class="string">&quot;S&quot;</span> : this.getMilliseconds() //毫秒，</span><br><span class="line">    &#125;;</span><br><span class="line">    var week = &#123;</span><br><span class="line">        <span class="string">&quot;0&quot;</span> : <span class="string">&quot;星期日&quot;</span>,</span><br><span class="line">        <span class="string">&quot;1&quot;</span> : <span class="string">&quot;星期一&quot;</span>,</span><br><span class="line">        <span class="string">&quot;2&quot;</span> : <span class="string">&quot;星期二&quot;</span>,</span><br><span class="line">        <span class="string">&quot;3&quot;</span> : <span class="string">&quot;星期三&quot;</span>,</span><br><span class="line">        <span class="string">&quot;4&quot;</span> : <span class="string">&quot;星期四&quot;</span>,</span><br><span class="line">        <span class="string">&quot;5&quot;</span> : <span class="string">&quot;星期五&quot;</span>,</span><br><span class="line">        <span class="string">&quot;6&quot;</span> : <span class="string">&quot;星期六&quot;</span></span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">if</span>(/(y+)/.<span class="built_in">test</span>(fmt))&#123;</span><br><span class="line">        fmt=fmt.replace(RegExp.<span class="variable">$1</span>, (this.getFullYear()+<span class="string">&quot;&quot;</span>).substr(4 - RegExp.<span class="variable">$1</span>.length));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(/(E+)/.<span class="built_in">test</span>(fmt))&#123;</span><br><span class="line">        fmt=fmt.replace(RegExp.<span class="variable">$1</span>, ((RegExp.<span class="variable">$1</span>.length&gt;1) ? (RegExp.<span class="variable">$1</span>.length&gt;2 ? <span class="string">&quot;/u661f/u671f&quot;</span> : <span class="string">&quot;/u5468&quot;</span>) : <span class="string">&quot;&quot;</span>)+week[this.getDay()+<span class="string">&quot;&quot;</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(var k <span class="keyword">in</span> o)&#123;</span><br><span class="line">        <span class="keyword">if</span>(new RegExp(<span class="string">&quot;(&quot;</span>+ k +<span class="string">&quot;)&quot;</span>).<span class="built_in">test</span>(fmt))&#123;</span><br><span class="line">            fmt = fmt.replace(RegExp.<span class="variable">$1</span>, (RegExp.<span class="variable">$1</span>.length==1) ? (o[k]) : ((<span class="string">&quot;00&quot;</span>+ o[k]).substr((<span class="string">&quot;&quot;</span>+ o[k]).length)));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">return</span> fmt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>使用方法如下 yyyy(年) MM(月) dd(日) HH(时) mm(分) ss(秒) 随意搭配可以调换顺序使用</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">console.log(new Date().pattern(<span class="string">&quot;HH:mm&quot;</span>));//09:41</span><br><span class="line">console.log(new Date().pattern(<span class="string">&quot;yyyy-MM-dd HH:mm&quot;</span>));//2018-07-09 09:41</span><br><span class="line">console.log(new Date().pattern(<span class="string">&quot;yyyy年MM月dd日 HH:mm&quot;</span>));//2018年07月09日 09:41</span><br><span class="line">console.log(new Date().pattern(<span class="string">&quot;yyyy年MM月dd日 HH:mm:ss&quot;</span>));//2018年07月09日 09:41:55</span><br><span class="line">console.log(new Date().pattern(<span class="string">&quot;HH:mm yyyy年MM月dd日 E&quot;</span>));//09:41 2018年07月09日 星期一</span><br></pre></td></tr></table></figure>
+<h1 id="移动端比较不错的时间插件-lCalendar-js"><a href="#移动端比较不错的时间插件-lCalendar-js" class="headerlink" title="移动端比较不错的时间插件 lCalendar.js"></a>移动端比较不错的时间插件 lCalendar.js</h1><p>详情可以点击此链接查看 <a target="_blank" rel="noopener" href="http://www.jq22.com/jquery-info13497">手机端日期插件lCalendar.js</a></p>
 <p>多多记录，方便以后查看。</p>
 
       
@@ -480,9 +475,9 @@ console.log(new Date().pattern(<span class="string">"HH:mm yyyy年MM月dd日 E"<
       
         <div class="post-tags">
           
-            <a href="/tags/时间戳/" rel="tag"># 时间戳</a>
+            <a href="/tags/%E6%97%B6%E9%97%B4%E6%88%B3/" rel="tag"># 时间戳</a>
           
-            <a href="/tags/当前时间/" rel="tag"># 当前时间</a>
+            <a href="/tags/%E5%BD%93%E5%89%8D%E6%97%B6%E9%97%B4/" rel="tag"># 当前时间</a>
           
         </div>
       
@@ -578,8 +573,8 @@ console.log(new Date().pattern(<span class="string">"HH:mm yyyy年MM月dd日 E"<
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <p class="site-author-name" itemprop="name">Zyw</p>
-              <p class="site-description motion-element" itemprop="description">周艳伟的个人博客</p>
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
           <nav class="site-state motion-element">
@@ -587,7 +582,7 @@ console.log(new Date().pattern(<span class="string">"HH:mm yyyy年MM月dd日 E"<
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives/">
+                <a href="/archives/%20%7C%7C%20archive">
               
                   <span class="site-state-item-count">42</span>
                   <span class="site-state-item-name">日志</span>
@@ -671,7 +666,7 @@ console.log(new Date().pattern(<span class="string">"HH:mm yyyy年MM月dd日 E"<
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#时间转时间戳"><span class="nav-number">1.</span> <span class="nav-text">时间转时间戳</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Date-parse-new-Date-不推荐这种办法，毫秒级别的数值被转化为000"><span class="nav-number">1.1.</span> <span class="nav-text">1.Date.parse(new Date()) 不推荐这种办法，毫秒级别的数值被转化为000</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-new-Date-valueOf-通过valueOf-函数返回指定对象的原始值获得准确的时间戳值"><span class="nav-number">1.2.</span> <span class="nav-text">2.(new Date()).valueOf() 通过valueOf()函数返回指定对象的原始值获得准确的时间戳值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-new-Date-getTime-通过原型方法直接获得当前时间的毫秒值，准确"><span class="nav-number">1.3.</span> <span class="nav-text">3.new Date().getTime() 通过原型方法直接获得当前时间的毫秒值，准确</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-Number-new-Date-将时间转化为一个number类型的数值，即时间戳"><span class="nav-number">1.4.</span> <span class="nav-text">4.Number(new Date()) 将时间转化为一个number类型的数值，即时间戳</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-Date-now-ES5给Date提供了一种获取时间戳的新特性"><span class="nav-number">1.5.</span> <span class="nav-text">5.Date.now() ES5给Date提供了一种获取时间戳的新特性</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#获取当前时间"><span class="nav-number">2.</span> <span class="nav-text">获取当前时间</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#移动端比较不错的时间插件-lCalendar-js"><span class="nav-number">3.</span> <span class="nav-text">移动端比较不错的时间插件 lCalendar.js</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%97%B6%E9%97%B4%E8%BD%AC%E6%97%B6%E9%97%B4%E6%88%B3"><span class="nav-number">1.</span> <span class="nav-text">时间转时间戳</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Date-parse-new-Date-%E4%B8%8D%E6%8E%A8%E8%8D%90%E8%BF%99%E7%A7%8D%E5%8A%9E%E6%B3%95%EF%BC%8C%E6%AF%AB%E7%A7%92%E7%BA%A7%E5%88%AB%E7%9A%84%E6%95%B0%E5%80%BC%E8%A2%AB%E8%BD%AC%E5%8C%96%E4%B8%BA000"><span class="nav-number">1.1.</span> <span class="nav-text">1.Date.parse(new Date()) 不推荐这种办法，毫秒级别的数值被转化为000</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-new-Date-valueOf-%E9%80%9A%E8%BF%87valueOf-%E5%87%BD%E6%95%B0%E8%BF%94%E5%9B%9E%E6%8C%87%E5%AE%9A%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%8E%9F%E5%A7%8B%E5%80%BC%E8%8E%B7%E5%BE%97%E5%87%86%E7%A1%AE%E7%9A%84%E6%97%B6%E9%97%B4%E6%88%B3%E5%80%BC"><span class="nav-number">1.2.</span> <span class="nav-text">2.(new Date()).valueOf() 通过valueOf()函数返回指定对象的原始值获得准确的时间戳值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-new-Date-getTime-%E9%80%9A%E8%BF%87%E5%8E%9F%E5%9E%8B%E6%96%B9%E6%B3%95%E7%9B%B4%E6%8E%A5%E8%8E%B7%E5%BE%97%E5%BD%93%E5%89%8D%E6%97%B6%E9%97%B4%E7%9A%84%E6%AF%AB%E7%A7%92%E5%80%BC%EF%BC%8C%E5%87%86%E7%A1%AE"><span class="nav-number">1.3.</span> <span class="nav-text">3.new Date().getTime() 通过原型方法直接获得当前时间的毫秒值，准确</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-Number-new-Date-%E5%B0%86%E6%97%B6%E9%97%B4%E8%BD%AC%E5%8C%96%E4%B8%BA%E4%B8%80%E4%B8%AAnumber%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%95%B0%E5%80%BC%EF%BC%8C%E5%8D%B3%E6%97%B6%E9%97%B4%E6%88%B3"><span class="nav-number">1.4.</span> <span class="nav-text">4.Number(new Date()) 将时间转化为一个number类型的数值，即时间戳</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-Date-now-ES5%E7%BB%99Date%E6%8F%90%E4%BE%9B%E4%BA%86%E4%B8%80%E7%A7%8D%E8%8E%B7%E5%8F%96%E6%97%B6%E9%97%B4%E6%88%B3%E7%9A%84%E6%96%B0%E7%89%B9%E6%80%A7"><span class="nav-number">1.5.</span> <span class="nav-text">5.Date.now() ES5给Date提供了一种获取时间戳的新特性</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E5%BD%93%E5%89%8D%E6%97%B6%E9%97%B4"><span class="nav-number">2.</span> <span class="nav-text">获取当前时间</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A7%BB%E5%8A%A8%E7%AB%AF%E6%AF%94%E8%BE%83%E4%B8%8D%E9%94%99%E7%9A%84%E6%97%B6%E9%97%B4%E6%8F%92%E4%BB%B6-lCalendar-js"><span class="nav-number">3.</span> <span class="nav-text">移动端比较不错的时间插件 lCalendar.js</span></a></li></ol></div>
             
 
           </div>
@@ -691,7 +686,8 @@ console.log(new Date().pattern(<span class="string">"HH:mm yyyy年MM月dd日 E"<
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+        <div class="copyright"><a href="https://beian.miit.gov.cn" target="_blank">京ICP备17006226号-2</a> &copy;
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -714,7 +710,7 @@ console.log(new Date().pattern(<span class="string">"HH:mm yyyy年MM月dd日 E"<
   <div class="theme-info">
     <div class="powered-by"></div>
     <i class="fa fa-pencil"></i>
-    <span class="post-count">博客全站共37.8k字</span>
+    <span class="post-count">博客全站共38.8k字</span>
   </div>
 
 

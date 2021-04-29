@@ -98,21 +98,22 @@
 
 
 <meta name="description" content="默认的radio、checkbox的样式比较单一，往往达不到我们想要的效果，所以需要自定义我们需要的样子。">
-<meta name="keywords" content="radio,checkbox">
 <meta property="og:type" content="article">
 <meta property="og:title" content="radio、checkbox 自定义样式">
 <meta property="og:url" content="http://zhouyanwei.cn/2018/11/16/radioCheckbox/index.html">
 <meta property="og:site_name" content="zywkuo">
 <meta property="og:description" content="默认的radio、checkbox的样式比较单一，往往达不到我们想要的效果，所以需要自定义我们需要的样子。">
-<meta property="og:locale" content="zh-Hans">
+<meta property="og:locale">
 <meta property="og:image" content="http://zhouyanwei.cn/images/2018-11-16/1.gif">
 <meta property="og:image" content="http://zhouyanwei.cn/images/2018-11-16/2.png">
 <meta property="og:image" content="http://zhouyanwei.cn/images/2018-11-16/3.png">
 <meta property="og:image" content="http://zhouyanwei.cn/images/2018-11-16/4.gif">
-<meta property="og:updated_time" content="2018-11-16T03:14:32.611Z">
+<meta property="article:published_time" content="2018-11-15T16:00:00.000Z">
+<meta property="article:modified_time" content="2018-11-16T03:14:32.611Z">
+<meta property="article:author" content="Zyw">
+<meta property="article:tag" content="radio">
+<meta property="article:tag" content="checkbox">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="radio、checkbox 自定义样式">
-<meta name="twitter:description" content="默认的radio、checkbox的样式比较单一，往往达不到我们想要的效果，所以需要自定义我们需要的样子。">
 <meta name="twitter:image" content="http://zhouyanwei.cn/images/2018-11-16/1.gif">
 
 
@@ -120,7 +121,7 @@
 <script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: '/',
+    root: '',
     scheme: 'Gemini',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
@@ -159,7 +160,7 @@
 
 
 
-</head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -207,7 +208,7 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
+          <a href="/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
@@ -217,7 +218,7 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
+          <a href="/about/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
@@ -227,7 +228,7 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
+          <a href="/tags/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
@@ -237,7 +238,7 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
+          <a href="/categories/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
@@ -247,7 +248,7 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
+          <a href="/archives/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
@@ -325,7 +326,7 @@
     <link itemprop="mainEntityOfPage" href="http://zhouyanwei.cn/2018/11/16/radioCheckbox/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zyw">
+      <meta itemprop="name" content="">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
@@ -454,16 +455,15 @@
 
       
         <p>默认的radio、checkbox的样式比较单一，往往达不到我们想要的效果，所以需要自定义我们需要的样子。</p>
-<a id="more"></a>
+<span id="more"></span>
 <p>先来看一下最终效果图吧。<br><img src="/images/2018-11-16/1.gif" alt=""></p>
 <p>基础布局如下</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=<span class="string">"radioBox"</span>&gt;</span><br><span class="line">    &lt;label&gt;</span><br><span class="line">        &lt;input class=<span class="string">"radioInput"</span> <span class="built_in">type</span>=<span class="string">"radio"</span> name=<span class="string">"single"</span> value=<span class="string">"5"</span>&gt;</span><br><span class="line">        &lt;span class=<span class="string">"radioSpan"</span>&gt;&lt;/span&gt;5</span><br><span class="line">    &lt;/label&gt;</span><br><span class="line">    &lt;label&gt;</span><br><span class="line">        &lt;input class=<span class="string">"radioInput"</span> <span class="built_in">type</span>=<span class="string">"radio"</span> name=<span class="string">"single"</span> value=<span class="string">"4"</span>&gt;</span><br><span class="line">        &lt;span class=<span class="string">"radioSpan"</span>&gt;&lt;/span&gt;4</span><br><span class="line">    &lt;/label&gt;</span><br><span class="line">    &lt;label&gt;</span><br><span class="line">        &lt;input class=<span class="string">"radioInput"</span> <span class="built_in">type</span>=<span class="string">"radio"</span> name=<span class="string">"single"</span> value=<span class="string">"3"</span>&gt;</span><br><span class="line">        &lt;span class=<span class="string">"radioSpan"</span>&gt;&lt;/span&gt;3</span><br><span class="line">    &lt;/label&gt;</span><br><span class="line">    &lt;label&gt;</span><br><span class="line">        &lt;input class=<span class="string">"radioInput"</span> <span class="built_in">type</span>=<span class="string">"radio"</span> name=<span class="string">"single"</span> value=<span class="string">"2"</span>&gt;</span><br><span class="line">        &lt;span class=<span class="string">"radioSpan"</span>&gt;&lt;/span&gt;2</span><br><span class="line">    &lt;/label&gt;</span><br><span class="line">    &lt;label&gt;</span><br><span class="line">        &lt;input class=<span class="string">"radioInput"</span> <span class="built_in">type</span>=<span class="string">"radio"</span> name=<span class="string">"single"</span> value=<span class="string">"1"</span>&gt;</span><br><span class="line">        &lt;span class=<span class="string">"radioSpan"</span>&gt;&lt;/span&gt;1</span><br><span class="line">    &lt;/label&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;div class=<span class="string">"checkBox"</span>&gt;</span><br><span class="line">    &lt;label&gt;</span><br><span class="line">        &lt;input class=<span class="string">"checkInput"</span> <span class="built_in">type</span>=<span class="string">"checkbox"</span>&gt;</span><br><span class="line">        &lt;span class=<span class="string">"checkSpan"</span>&gt;&lt;/span&gt;喜欢</span><br><span class="line">    &lt;/label&gt;</span><br><span class="line">    &lt;label&gt;</span><br><span class="line">        &lt;input class=<span class="string">"checkInput"</span> <span class="built_in">type</span>=<span class="string">"checkbox"</span>&gt;</span><br><span class="line">        &lt;span class=<span class="string">"checkSpan"</span>&gt;&lt;/span&gt;好看</span><br><span class="line">    &lt;/label&gt;</span><br><span class="line">    &lt;label&gt;</span><br><span class="line">        &lt;input class=<span class="string">"checkInput"</span> <span class="built_in">type</span>=<span class="string">"checkbox"</span>&gt;</span><br><span class="line">        &lt;span class=<span class="string">"checkSpan"</span>&gt;&lt;/span&gt;耐用</span><br><span class="line">    &lt;/label&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=<span class="string">&quot;radioBox&quot;</span>&gt;</span><br><span class="line">    &lt;label&gt;</span><br><span class="line">        &lt;input class=<span class="string">&quot;radioInput&quot;</span> <span class="built_in">type</span>=<span class="string">&quot;radio&quot;</span> name=<span class="string">&quot;single&quot;</span> value=<span class="string">&quot;5&quot;</span>&gt;</span><br><span class="line">        &lt;span class=<span class="string">&quot;radioSpan&quot;</span>&gt;&lt;/span&gt;5</span><br><span class="line">    &lt;/label&gt;</span><br><span class="line">    &lt;label&gt;</span><br><span class="line">        &lt;input class=<span class="string">&quot;radioInput&quot;</span> <span class="built_in">type</span>=<span class="string">&quot;radio&quot;</span> name=<span class="string">&quot;single&quot;</span> value=<span class="string">&quot;4&quot;</span>&gt;</span><br><span class="line">        &lt;span class=<span class="string">&quot;radioSpan&quot;</span>&gt;&lt;/span&gt;4</span><br><span class="line">    &lt;/label&gt;</span><br><span class="line">    &lt;label&gt;</span><br><span class="line">        &lt;input class=<span class="string">&quot;radioInput&quot;</span> <span class="built_in">type</span>=<span class="string">&quot;radio&quot;</span> name=<span class="string">&quot;single&quot;</span> value=<span class="string">&quot;3&quot;</span>&gt;</span><br><span class="line">        &lt;span class=<span class="string">&quot;radioSpan&quot;</span>&gt;&lt;/span&gt;3</span><br><span class="line">    &lt;/label&gt;</span><br><span class="line">    &lt;label&gt;</span><br><span class="line">        &lt;input class=<span class="string">&quot;radioInput&quot;</span> <span class="built_in">type</span>=<span class="string">&quot;radio&quot;</span> name=<span class="string">&quot;single&quot;</span> value=<span class="string">&quot;2&quot;</span>&gt;</span><br><span class="line">        &lt;span class=<span class="string">&quot;radioSpan&quot;</span>&gt;&lt;/span&gt;2</span><br><span class="line">    &lt;/label&gt;</span><br><span class="line">    &lt;label&gt;</span><br><span class="line">        &lt;input class=<span class="string">&quot;radioInput&quot;</span> <span class="built_in">type</span>=<span class="string">&quot;radio&quot;</span> name=<span class="string">&quot;single&quot;</span> value=<span class="string">&quot;1&quot;</span>&gt;</span><br><span class="line">        &lt;span class=<span class="string">&quot;radioSpan&quot;</span>&gt;&lt;/span&gt;1</span><br><span class="line">    &lt;/label&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;div class=<span class="string">&quot;checkBox&quot;</span>&gt;</span><br><span class="line">    &lt;label&gt;</span><br><span class="line">        &lt;input class=<span class="string">&quot;checkInput&quot;</span> <span class="built_in">type</span>=<span class="string">&quot;checkbox&quot;</span>&gt;</span><br><span class="line">        &lt;span class=<span class="string">&quot;checkSpan&quot;</span>&gt;&lt;/span&gt;喜欢</span><br><span class="line">    &lt;/label&gt;</span><br><span class="line">    &lt;label&gt;</span><br><span class="line">        &lt;input class=<span class="string">&quot;checkInput&quot;</span> <span class="built_in">type</span>=<span class="string">&quot;checkbox&quot;</span>&gt;</span><br><span class="line">        &lt;span class=<span class="string">&quot;checkSpan&quot;</span>&gt;&lt;/span&gt;好看</span><br><span class="line">    &lt;/label&gt;</span><br><span class="line">    &lt;label&gt;</span><br><span class="line">        &lt;input class=<span class="string">&quot;checkInput&quot;</span> <span class="built_in">type</span>=<span class="string">&quot;checkbox&quot;</span>&gt;</span><br><span class="line">        &lt;span class=<span class="string">&quot;checkSpan&quot;</span>&gt;&lt;/span&gt;耐用</span><br><span class="line">    &lt;/label&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
 <p>样式是这样的<br><img src="/images/2018-11-16/2.png" alt=""></p>
 <p>然后我们把我们想要的样式赋予我们添加的span标签,添加css样式。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">.radioSpan &#123;</span><br><span class="line">    background-color:transparent;</span><br><span class="line">    border: 1px solid <span class="comment">#B5B5B5;</span></span><br><span class="line">    border-radius:100%;</span><br><span class="line">    display:inline-block;</span><br><span class="line">    width:13px;</span><br><span class="line">    height:13px;</span><br><span class="line">    vertical-align:middle;</span><br><span class="line">    line-height:0;</span><br><span class="line">    margin-right: 5px;</span><br><span class="line">&#125;</span><br><span class="line">.radioInput:checked + .radioSpan &#123;</span><br><span class="line">    border: 1px solid <span class="comment">#16A096;</span></span><br><span class="line">&#125;</span><br><span class="line">.radioInput:checked + .radioSpan:after &#123;</span><br><span class="line">    background-color:<span class="comment">#16A096;</span></span><br><span class="line">    border-radius:100%;</span><br><span class="line">    content:<span class="string">""</span>;</span><br><span class="line">    display:inline-block;</span><br><span class="line">    height:9px;</span><br><span class="line">    margin:2px;</span><br><span class="line">    width:9px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.checkSpan &#123;</span><br><span class="line">    background-color:transparent;</span><br><span class="line">    border: 1px solid <span class="comment">#B5B5B5;</span></span><br><span class="line">    display:inline-block;</span><br><span class="line">    width:13px;</span><br><span class="line">    height:13px;</span><br><span class="line">    vertical-align:middle;</span><br><span class="line">    line-height:0;</span><br><span class="line">    margin-right: 5px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.checkInput:checked + .checkSpan &#123;</span><br><span class="line">    width: 15px;</span><br><span class="line">    height: 15px;</span><br><span class="line">    background: url(<span class="string">'checkedSelect.png'</span>) no-repeat center center;</span><br><span class="line">    background-size: 15px 15px;</span><br><span class="line">    border: none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">.radioSpan &#123;</span><br><span class="line">    background-color:transparent;</span><br><span class="line">    border: 1px solid <span class="comment">#B5B5B5;</span></span><br><span class="line">    border-radius:100%;</span><br><span class="line">    display:inline-block;</span><br><span class="line">    width:13px;</span><br><span class="line">    height:13px;</span><br><span class="line">    vertical-align:middle;</span><br><span class="line">    line-height:0;</span><br><span class="line">    margin-right: 5px;</span><br><span class="line">&#125;</span><br><span class="line">.radioInput:checked + .radioSpan &#123;</span><br><span class="line">    border: 1px solid <span class="comment">#16A096;</span></span><br><span class="line">&#125;</span><br><span class="line">.radioInput:checked + .radioSpan:after &#123;</span><br><span class="line">    background-color:<span class="comment">#16A096;</span></span><br><span class="line">    border-radius:100%;</span><br><span class="line">    content:<span class="string">&quot;&quot;</span>;</span><br><span class="line">    display:inline-block;</span><br><span class="line">    height:9px;</span><br><span class="line">    margin:2px;</span><br><span class="line">    width:9px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.checkSpan &#123;</span><br><span class="line">    background-color:transparent;</span><br><span class="line">    border: 1px solid <span class="comment">#B5B5B5;</span></span><br><span class="line">    display:inline-block;</span><br><span class="line">    width:13px;</span><br><span class="line">    height:13px;</span><br><span class="line">    vertical-align:middle;</span><br><span class="line">    line-height:0;</span><br><span class="line">    margin-right: 5px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.checkInput:checked + .checkSpan &#123;</span><br><span class="line">    width: 15px;</span><br><span class="line">    height: 15px;</span><br><span class="line">    background: url(<span class="string">&#x27;checkedSelect.png&#x27;</span>) no-repeat center center;</span><br><span class="line">    background-size: 15px 15px;</span><br><span class="line">    border: none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>然后在看一下样式<br><img src="/images/2018-11-16/3.png" alt=""><br><img src="/images/2018-11-16/4.gif" alt=""></p>
-<p>然后我们在把原来的input标签隐藏就好了<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.radioInput &#123;</span><br><span class="line">    display: none;</span><br><span class="line">&#125;</span><br><span class="line">.checkInput &#123;</span><br><span class="line">    display: none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>这样就可以看到开始的效果了。</p>
+<p>然后我们在把原来的input标签隐藏就好了<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.radioInput &#123;</span><br><span class="line">    display: none;</span><br><span class="line">&#125;</span><br><span class="line">.checkInput &#123;</span><br><span class="line">    display: none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>这样就可以看到开始的效果了。</p>
 <p>这里样式全部是分开写的，方便理解。。</p>
 
       
@@ -571,8 +571,8 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <p class="site-author-name" itemprop="name">Zyw</p>
-              <p class="site-description motion-element" itemprop="description">周艳伟的个人博客</p>
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
           <nav class="site-state motion-element">
@@ -580,7 +580,7 @@
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives/">
+                <a href="/archives/%20%7C%7C%20archive">
               
                   <span class="site-state-item-count">42</span>
                   <span class="site-state-item-name">日志</span>
@@ -668,7 +668,8 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+        <div class="copyright"><a href="https://beian.miit.gov.cn" target="_blank">京ICP备17006226号-2</a> &copy;
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -691,7 +692,7 @@
   <div class="theme-info">
     <div class="powered-by"></div>
     <i class="fa fa-pencil"></i>
-    <span class="post-count">博客全站共37.8k字</span>
+    <span class="post-count">博客全站共38.8k字</span>
   </div>
 
 

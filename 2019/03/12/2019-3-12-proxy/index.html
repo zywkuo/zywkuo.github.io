@@ -98,24 +98,25 @@
 
 
 <meta name="description" content="最简单的双向数据绑定的实现，开始通过使用Object.defineProperty()，到ES6新增的Proxy的实现。">
-<meta name="keywords" content="Object.defineProperty(),Proxy">
 <meta property="og:type" content="article">
 <meta property="og:title" content="双向绑定">
 <meta property="og:url" content="http://zhouyanwei.cn/2019/03/12/2019-3-12-proxy/index.html">
 <meta property="og:site_name" content="zywkuo">
 <meta property="og:description" content="最简单的双向数据绑定的实现，开始通过使用Object.defineProperty()，到ES6新增的Proxy的实现。">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-12T06:11:50.082Z">
+<meta property="og:locale">
+<meta property="article:published_time" content="2019-03-11T16:00:00.000Z">
+<meta property="article:modified_time" content="2019-03-12T06:11:50.082Z">
+<meta property="article:author" content="Zyw">
+<meta property="article:tag" content="Object.defineProperty()">
+<meta property="article:tag" content="Proxy">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="双向绑定">
-<meta name="twitter:description" content="最简单的双向数据绑定的实现，开始通过使用Object.defineProperty()，到ES6新增的Proxy的实现。">
 
 
 
 <script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: '/',
+    root: '',
     scheme: 'Gemini',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
@@ -154,7 +155,7 @@
 
 
 
-</head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -202,7 +203,7 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
+          <a href="/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
@@ -212,7 +213,7 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
+          <a href="/about/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
@@ -222,7 +223,7 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
+          <a href="/tags/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
@@ -232,7 +233,7 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
+          <a href="/categories/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
@@ -242,7 +243,7 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
+          <a href="/archives/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
@@ -320,7 +321,7 @@
     <link itemprop="mainEntityOfPage" href="http://zhouyanwei.cn/2019/03/12/2019-3-12-proxy/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zyw">
+      <meta itemprop="name" content="">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
@@ -449,10 +450,10 @@
 
       
         <p>最简单的双向数据绑定的实现，开始通过使用Object.defineProperty()，到ES6新增的Proxy的实现。</p>
-<a id="more"></a>
-<p>HTML<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"app"</span>&gt;</span><br><span class="line">    &lt;input <span class="built_in">type</span>=<span class="string">"text"</span> id=<span class="string">"inputTxt"</span>&gt;</span><br><span class="line">    &lt;input <span class="built_in">type</span>=<span class="string">"text"</span> id=<span class="string">"showTxt"</span>&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
-<h1 id="Object-defineProperty"><a href="#Object-defineProperty" class="headerlink" title="Object.defineProperty()"></a>Object.defineProperty()</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;&#125;;</span><br><span class="line">Object.defineProperty(obj, <span class="string">'txt'</span>, &#123;</span><br><span class="line">    get: <span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">        <span class="built_in">return</span> obj;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="built_in">set</span>: <span class="keyword">function</span> (newValue) &#123;</span><br><span class="line">        document.getElementById(<span class="string">'inputTxt'</span>).value = newValue;</span><br><span class="line">        document.getElementById(<span class="string">'showTxt'</span>).value = newValue;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line">document.addEventListener(<span class="string">'keydown'</span>, <span class="keyword">function</span> (e) &#123;</span><br><span class="line">    obj.txt = e.target.value;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<h1 id="Proxy"><a href="#Proxy" class="headerlink" title="Proxy"></a>Proxy</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">const obj = &#123;&#125;;</span><br><span class="line">const aProxy = new Proxy(obj, &#123;</span><br><span class="line">    get: <span class="keyword">function</span>(target, key, receiver)&#123;</span><br><span class="line">        <span class="built_in">return</span> Reflect.get(target, key, receiver);</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="built_in">set</span>: <span class="keyword">function</span> (target, key, value, receiver) &#123;</span><br><span class="line">        <span class="keyword">if</span>(key === <span class="string">'txt'</span> &amp;&amp; value !== undefined) &#123;</span><br><span class="line">            document.getElementById(<span class="string">'inputTxt'</span>).value = value;</span><br><span class="line">            document.getElementById(<span class="string">'showTxt'</span>).value = value;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">return</span> Reflect.set(target, key, value, receiver);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">document.addEventListener(<span class="string">'keydown'</span>, <span class="keyword">function</span> (e) &#123;</span><br><span class="line">    aProxy.txt = e.target.value;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+<p>HTML<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">&quot;app&quot;</span>&gt;</span><br><span class="line">    &lt;input <span class="built_in">type</span>=<span class="string">&quot;text&quot;</span> id=<span class="string">&quot;inputTxt&quot;</span>&gt;</span><br><span class="line">    &lt;input <span class="built_in">type</span>=<span class="string">&quot;text&quot;</span> id=<span class="string">&quot;showTxt&quot;</span>&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<h1 id="Object-defineProperty"><a href="#Object-defineProperty" class="headerlink" title="Object.defineProperty()"></a>Object.defineProperty()</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;&#125;;</span><br><span class="line">Object.defineProperty(obj, <span class="string">&#x27;txt&#x27;</span>, &#123;</span><br><span class="line">    get: <span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">        <span class="built_in">return</span> obj;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="built_in">set</span>: <span class="keyword">function</span> (newValue) &#123;</span><br><span class="line">        document.getElementById(<span class="string">&#x27;inputTxt&#x27;</span>).value = newValue;</span><br><span class="line">        document.getElementById(<span class="string">&#x27;showTxt&#x27;</span>).value = newValue;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line">document.addEventListener(<span class="string">&#x27;keydown&#x27;</span>, <span class="keyword">function</span> (e) &#123;</span><br><span class="line">    obj.txt = e.target.value;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h1 id="Proxy"><a href="#Proxy" class="headerlink" title="Proxy"></a>Proxy</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">const obj = &#123;&#125;;</span><br><span class="line">const aProxy = new Proxy(obj, &#123;</span><br><span class="line">    get: <span class="keyword">function</span>(target, key, receiver)&#123;</span><br><span class="line">        <span class="built_in">return</span> Reflect.get(target, key, receiver);</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="built_in">set</span>: <span class="keyword">function</span> (target, key, value, receiver) &#123;</span><br><span class="line">        <span class="keyword">if</span>(key === <span class="string">&#x27;txt&#x27;</span> &amp;&amp; value !== undefined) &#123;</span><br><span class="line">            document.getElementById(<span class="string">&#x27;inputTxt&#x27;</span>).value = value;</span><br><span class="line">            document.getElementById(<span class="string">&#x27;showTxt&#x27;</span>).value = value;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">return</span> Reflect.set(target, key, value, receiver);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">document.addEventListener(<span class="string">&#x27;keydown&#x27;</span>, <span class="keyword">function</span> (e) &#123;</span><br><span class="line">    aProxy.txt = e.target.value;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -568,8 +569,8 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <p class="site-author-name" itemprop="name">Zyw</p>
-              <p class="site-description motion-element" itemprop="description">周艳伟的个人博客</p>
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
           <nav class="site-state motion-element">
@@ -577,7 +578,7 @@
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives/">
+                <a href="/archives/%20%7C%7C%20archive">
               
                   <span class="site-state-item-count">42</span>
                   <span class="site-state-item-name">日志</span>
@@ -681,7 +682,8 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+        <div class="copyright"><a href="https://beian.miit.gov.cn" target="_blank">京ICP备17006226号-2</a> &copy;
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -704,7 +706,7 @@
   <div class="theme-info">
     <div class="powered-by"></div>
     <i class="fa fa-pencil"></i>
-    <span class="post-count">博客全站共37.8k字</span>
+    <span class="post-count">博客全站共38.8k字</span>
   </div>
 
 

@@ -98,24 +98,24 @@
 
 
 <meta name="description" content="业务需求，移动端app需要一个单图片上传的功能，并且只允许照相，不允许从本地选取，本来想使用webUploader来做，配置好了，发现一个问题只能上传一次，在次上传，缩略图不替换（也有可能这个插件我没配置使用好，此处不做过多纠结），然后就参考写了一个。">
-<meta name="keywords" content="imgUpload">
 <meta property="og:type" content="article">
 <meta property="og:title" content="单图片上传">
 <meta property="og:url" content="http://zhouyanwei.cn/2018/11/28/imgupload/index.html">
 <meta property="og:site_name" content="zywkuo">
 <meta property="og:description" content="业务需求，移动端app需要一个单图片上传的功能，并且只允许照相，不允许从本地选取，本来想使用webUploader来做，配置好了，发现一个问题只能上传一次，在次上传，缩略图不替换（也有可能这个插件我没配置使用好，此处不做过多纠结），然后就参考写了一个。">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-28T02:49:33.073Z">
+<meta property="og:locale">
+<meta property="article:published_time" content="2018-11-27T16:00:00.000Z">
+<meta property="article:modified_time" content="2018-11-28T02:49:33.073Z">
+<meta property="article:author" content="Zyw">
+<meta property="article:tag" content="imgUpload">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="单图片上传">
-<meta name="twitter:description" content="业务需求，移动端app需要一个单图片上传的功能，并且只允许照相，不允许从本地选取，本来想使用webUploader来做，配置好了，发现一个问题只能上传一次，在次上传，缩略图不替换（也有可能这个插件我没配置使用好，此处不做过多纠结），然后就参考写了一个。">
 
 
 
 <script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: '/',
+    root: '',
     scheme: 'Gemini',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
@@ -154,7 +154,7 @@
 
 
 
-</head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -202,7 +202,7 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
+          <a href="/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
@@ -212,7 +212,7 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
+          <a href="/about/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
@@ -222,7 +222,7 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
+          <a href="/tags/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
@@ -232,7 +232,7 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
+          <a href="/categories/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
@@ -242,7 +242,7 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
+          <a href="/archives/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
@@ -320,7 +320,7 @@
     <link itemprop="mainEntityOfPage" href="http://zhouyanwei.cn/2018/11/28/imgupload/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zyw">
+      <meta itemprop="name" content="">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
@@ -411,7 +411,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  432
+                  433
                 </span>
               
 
@@ -449,11 +449,11 @@
 
       
         <p>业务需求，移动端app需要一个单图片上传的功能，并且只允许照相，不允许从本地选取，本来想使用webUploader来做，配置好了，发现一个问题只能上传一次，在次上传，缩略图不替换（也有可能这个插件我没配置使用好，此处不做过多纠结），然后就参考写了一个。</p>
-<a id="more"></a>
+<span id="more"></span>
 <p>代码如下（需要依赖jq）</p>
-<p>html<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"imgUpload"</span>&gt;</span><br><span class="line">    &lt;img src=<span class="string">"upload.png"</span> alt=<span class="string">""</span>&gt;&lt;!--upload.png为初始显示背景图--&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p>html<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">&quot;imgUpload&quot;</span>&gt;</span><br><span class="line">    &lt;img src=<span class="string">&quot;upload.png&quot;</span> alt=<span class="string">&quot;&quot;</span>&gt;&lt;!--upload.png为初始显示背景图--&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
 <p>css<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#imgUpload &#123;</span></span><br><span class="line">    width: 88px;</span><br><span class="line">    height: 88px;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">#imgUpload img &#123;</span></span><br><span class="line">    width: 100%;</span><br><span class="line">    height: 100%;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>js<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line">//图片上传</span><br><span class="line"><span class="keyword">function</span> ImgUpload(id, options) &#123;</span><br><span class="line">    this.me = $(id);</span><br><span class="line">    this.callback = options.callback;</span><br><span class="line">    this.init();</span><br><span class="line">&#125;</span><br><span class="line">ImgUpload.prototype = &#123;</span><br><span class="line">    init: <span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">        this.eventClickInit();</span><br><span class="line">    &#125;,</span><br><span class="line">    eventClickInit:<span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">        var self = this;</span><br><span class="line">        this.me.unbind().click(<span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">            self.createImageUploadDialog();</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;,</span><br><span class="line">    onChangeUploadFile: <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">        var fileInput = this.fileInput;</span><br><span class="line">        var files = fileInput.files;</span><br><span class="line">        <span class="keyword">if</span> (files.length == 0) &#123;</span><br><span class="line">            <span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        var file = files[0];</span><br><span class="line">        <span class="keyword">if</span> (file.type.indexOf(<span class="string">'image'</span>) === -1) &#123;</span><br><span class="line">            alert(<span class="string">"您上传的不是图片！"</span>);</span><br><span class="line">            <span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        var img = window.URL.createObjectURL(file);</span><br><span class="line">        var filename = file.name;</span><br><span class="line">        var filesize = Math.floor((file.size) / 1024);</span><br><span class="line">        <span class="keyword">if</span> (filesize &gt; 1024 * 20) &#123;</span><br><span class="line">            alert(<span class="string">"上传大小不能超过20M."</span>);</span><br><span class="line">            <span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        this.me.find(<span class="string">"img"</span>).attr(<span class="string">"src"</span>, img);</span><br><span class="line">        this.me.find(<span class="string">"img"</span>).attr(<span class="string">"title"</span>, filename);</span><br><span class="line">        <span class="keyword">if</span> (this.callback) &#123;</span><br><span class="line">            this.callback(files);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    createImageUploadDialog: <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">        var fileInput = this.fileInput;</span><br><span class="line">        <span class="keyword">if</span> (!fileInput) &#123;</span><br><span class="line">            fileInput = document.createElement(<span class="string">'input'</span>);</span><br><span class="line">            fileInput.type = <span class="string">'file'</span>;</span><br><span class="line">            fileInput.name = <span class="string">'ime-images'</span>;</span><br><span class="line">            fileInput.accept = <span class="string">'image/*'</span>;</span><br><span class="line">            fileInput.capture = <span class="string">'camera'</span>;//只允许照相</span><br><span class="line">            fileInput.multiple = <span class="literal">false</span>;//不允许多选</span><br><span class="line">            fileInput.onchange = this.onChangeUploadFile.bind(this);</span><br><span class="line">            this.fileInput = fileInput;</span><br><span class="line">        &#125;</span><br><span class="line">        fileInput.click();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//调用方法</span><br><span class="line">var dragImgUpload = new ImgUpload(<span class="string">"#imgUpload"</span>,&#123;</span><br><span class="line">    callback:<span class="keyword">function</span> (files) &#123;</span><br><span class="line">        var imgFile = files[0];</span><br><span class="line">        console.log(imgFile);</span><br><span class="line">        //<span class="keyword">do</span> something 调取接口进行上传等操作。</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>js<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line">//图片上传</span><br><span class="line"><span class="keyword">function</span> ImgUpload(id, options) &#123;</span><br><span class="line">    this.me = $(id);</span><br><span class="line">    this.callback = options.callback;</span><br><span class="line">    this.init();</span><br><span class="line">&#125;</span><br><span class="line">ImgUpload.prototype = &#123;</span><br><span class="line">    init: <span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">        this.eventClickInit();</span><br><span class="line">    &#125;,</span><br><span class="line">    eventClickInit:<span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">        var self = this;</span><br><span class="line">        this.me.unbind().click(<span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">            self.createImageUploadDialog();</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;,</span><br><span class="line">    onChangeUploadFile: <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">        var fileInput = this.fileInput;</span><br><span class="line">        var files = fileInput.files;</span><br><span class="line">        <span class="keyword">if</span> (files.length == 0) &#123;</span><br><span class="line">            <span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        var file = files[0];</span><br><span class="line">        <span class="keyword">if</span> (file.type.indexOf(<span class="string">&#x27;image&#x27;</span>) === -1) &#123;</span><br><span class="line">            alert(<span class="string">&quot;您上传的不是图片！&quot;</span>);</span><br><span class="line">            <span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        var img = window.URL.createObjectURL(file);</span><br><span class="line">        var filename = file.name;</span><br><span class="line">        var filesize = Math.floor((file.size) / 1024);</span><br><span class="line">        <span class="keyword">if</span> (filesize &gt; 1024 * 20) &#123;</span><br><span class="line">            alert(<span class="string">&quot;上传大小不能超过20M.&quot;</span>);</span><br><span class="line">            <span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        this.me.find(<span class="string">&quot;img&quot;</span>).attr(<span class="string">&quot;src&quot;</span>, img);</span><br><span class="line">        this.me.find(<span class="string">&quot;img&quot;</span>).attr(<span class="string">&quot;title&quot;</span>, filename);</span><br><span class="line">        <span class="keyword">if</span> (this.callback) &#123;</span><br><span class="line">            this.callback(files);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    createImageUploadDialog: <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">        var fileInput = this.fileInput;</span><br><span class="line">        <span class="keyword">if</span> (!fileInput) &#123;</span><br><span class="line">            fileInput = document.createElement(<span class="string">&#x27;input&#x27;</span>);</span><br><span class="line">            fileInput.type = <span class="string">&#x27;file&#x27;</span>;</span><br><span class="line">            fileInput.name = <span class="string">&#x27;ime-images&#x27;</span>;</span><br><span class="line">            fileInput.accept = <span class="string">&#x27;image/*&#x27;</span>;</span><br><span class="line">            fileInput.capture = <span class="string">&#x27;camera&#x27;</span>;//只允许照相</span><br><span class="line">            fileInput.multiple = <span class="literal">false</span>;//不允许多选</span><br><span class="line">            fileInput.onchange = this.onChangeUploadFile.bind(this);</span><br><span class="line">            this.fileInput = fileInput;</span><br><span class="line">        &#125;</span><br><span class="line">        fileInput.click();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//调用方法</span><br><span class="line">var dragImgUpload = new ImgUpload(<span class="string">&quot;#imgUpload&quot;</span>,&#123;</span><br><span class="line">    callback:<span class="keyword">function</span> (files) &#123;</span><br><span class="line">        var imgFile = files[0];</span><br><span class="line">        console.log(imgFile);</span><br><span class="line">        //<span class="keyword">do</span> something 调取接口进行上传等操作。</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">    </span><br></pre></td></tr></table></figure></p>
 <p><a href="../../../../link/2018-11-28/index.html">具体效果点击这里</a>;</p>
 
       
@@ -559,8 +559,8 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <p class="site-author-name" itemprop="name">Zyw</p>
-              <p class="site-description motion-element" itemprop="description">周艳伟的个人博客</p>
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
           <nav class="site-state motion-element">
@@ -568,7 +568,7 @@
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives/">
+                <a href="/archives/%20%7C%7C%20archive">
               
                   <span class="site-state-item-count">42</span>
                   <span class="site-state-item-name">日志</span>
@@ -656,7 +656,8 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+        <div class="copyright"><a href="https://beian.miit.gov.cn" target="_blank">京ICP备17006226号-2</a> &copy;
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -679,7 +680,7 @@
   <div class="theme-info">
     <div class="powered-by"></div>
     <i class="fa fa-pencil"></i>
-    <span class="post-count">博客全站共37.8k字</span>
+    <span class="post-count">博客全站共38.8k字</span>
   </div>
 
 

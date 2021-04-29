@@ -98,21 +98,21 @@
 
 
 <meta name="description" content="在写javascript的时候，有的时候需要判断盒子的当前位置，或者鼠标位置，在这里我就总结一下这些判断方法，先来一张直观图。1234567891011121314151617181920212223javascript原生写法BODY对象宽度：document.body.clientWidthBODY对象高度：document.body.clientHeight可见区域宽度：document.d">
-<meta name="keywords" content="js和jq判断位置">
 <meta property="og:type" content="article">
 <meta property="og:title" content="js和jq获取当前位置">
 <meta property="og:url" content="http://zhouyanwei.cn/2017/05/24/width+height/index.html">
 <meta property="og:site_name" content="zywkuo">
 <meta property="og:description" content="在写javascript的时候，有的时候需要判断盒子的当前位置，或者鼠标位置，在这里我就总结一下这些判断方法，先来一张直观图。1234567891011121314151617181920212223javascript原生写法BODY对象宽度：document.body.clientWidthBODY对象高度：document.body.clientHeight可见区域宽度：document.d">
-<meta property="og:locale" content="zh-Hans">
+<meta property="og:locale">
 <meta property="og:image" content="http://zhouyanwei.cn/images/2017-05-24/wh.gif">
 <meta property="og:image" content="http://zhouyanwei.cn/images/2017-05-24/2.png">
 <meta property="og:image" content="http://zhouyanwei.cn/images/2017-05-24/1.png">
 <meta property="og:image" content="http://zhouyanwei.cn/images/2017-05-24/3.png">
-<meta property="og:updated_time" content="2018-12-03T06:21:11.198Z">
+<meta property="article:published_time" content="2017-05-23T16:00:00.000Z">
+<meta property="article:modified_time" content="2018-12-03T06:21:11.198Z">
+<meta property="article:author" content="Zyw">
+<meta property="article:tag" content="js和jq判断位置">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="js和jq获取当前位置">
-<meta name="twitter:description" content="在写javascript的时候，有的时候需要判断盒子的当前位置，或者鼠标位置，在这里我就总结一下这些判断方法，先来一张直观图。1234567891011121314151617181920212223javascript原生写法BODY对象宽度：document.body.clientWidthBODY对象高度：document.body.clientHeight可见区域宽度：document.d">
 <meta name="twitter:image" content="http://zhouyanwei.cn/images/2017-05-24/wh.gif">
 
 
@@ -120,7 +120,7 @@
 <script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: '/',
+    root: '',
     scheme: 'Gemini',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
@@ -159,7 +159,7 @@
 
 
 
-</head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -207,7 +207,7 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
+          <a href="/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
@@ -217,7 +217,7 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
+          <a href="/about/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
@@ -227,7 +227,7 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
+          <a href="/tags/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
@@ -237,7 +237,7 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
+          <a href="/categories/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
@@ -247,7 +247,7 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
+          <a href="/archives/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
@@ -325,7 +325,7 @@
     <link itemprop="mainEntityOfPage" href="http://zhouyanwei.cn/2017/05/24/width+height/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zyw">
+      <meta itemprop="name" content="">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
@@ -456,8 +456,7 @@
         <p>在写javascript的时候，有的时候需要判断盒子的当前位置，或者鼠标位置，在这里我就总结一下这些判断方法，先来一张直观图。<br><img src="/images/2017-05-24/wh.gif" alt=""><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">javascript原生写法</span><br><span class="line">BODY对象宽度：document.body.clientWidth</span><br><span class="line">BODY对象高度：document.body.clientHeight</span><br><span class="line">可见区域宽度：document.documentElement.clientWidth</span><br><span class="line">可见区域高度：document.documentElement.clientHeight</span><br><span class="line">网页可见区域宽：document.body.offsetWidth (包括边线的宽)</span><br><span class="line">网页可见区域高：document.body.offsetHeight (包括边线的高)</span><br><span class="line">网页正文全文宽：document.body.scrollWidth</span><br><span class="line">网页正文全文高：document.body.scrollHeight</span><br><span class="line">网页被卷去的高：document.body.scrollTop</span><br><span class="line">网页被卷去的左：document.body.scrollLeft</span><br><span class="line">网页正文部分上：window.screenTop</span><br><span class="line">网页正文部分左：window.screenLeft</span><br><span class="line">屏幕分辨率的高：window.screen.height</span><br><span class="line">屏幕分辨率的宽：window.screen.width</span><br><span class="line">屏幕可用工作区高度：window.screen.availHeight</span><br><span class="line">屏幕可用工作区宽度：window.screen.availWidth</span><br><span class="line">获取元素的宽度：obj.clientWidth</span><br><span class="line">元素的高度：obj.clientHeight</span><br><span class="line">偏移坐标left：obj.offsetLeft</span><br><span class="line">偏移坐标top：obj.offsetTop</span><br><span class="line">元素的宽度：obj.offsetWidth</span><br><span class="line">元素的高度：obj.offsetHeight</span><br></pre></td></tr></table></figure></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">jquery写法</span><br><span class="line">偏移坐标left：$(selector).offset().left</span><br><span class="line">偏移坐标top：$(selector).offset().top</span><br><span class="line">宽度：$(w).height() //可试区域w=window、页面的文档w=documene、元素w=obj</span><br><span class="line">高度：$(h).width(); //可试区域h=window、页面的文档h=documene、元素h=obj</span><br><span class="line">滚动高度：$(document).scrollTop()</span><br><span class="line">滚动宽度：$(document).scrollTop()</span><br></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">js原生+jquery写法</span><br><span class="line">偏移坐标left：$(selector)[0].offsetLeft</span><br><span class="line">偏移坐标top：$(selector)[0].offsetTop</span><br></pre></td></tr></table></figure>
-<p><strong><code>2018-12-03更新</code></strong><br>今天发现一个新的js方法，可以直接返回好多东西，来看一下。<br>语法是<br>Element.getBoundingClientRect();<br>看一下取到的值<br><img src="/images/2017-05-24/2.png" alt=""><br>返回值是一个 DOMRect 对象，我们想使用哪个值直接点上哪个就好了。<br>比如<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const el =document.getElementById(<span class="string">'police_deviation'</span>)</span><br><span class="line">const bound=el.getBoundingClientRect()</span><br><span class="line">bound.left  //元素距离页面左侧值</span><br><span class="line">bound.right //元素距离页面右侧值</span><br></pre></td></tr></table></figure></p>
-<p>具体看下图<br><img src="/images/2017-05-24/1.png" alt=""><br>详细的也可以看这里<br><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Element/getBoundingClientRect" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/API/Element/getBoundingClientRect</a></p>
+<p><strong><code>2018-12-03更新</code></strong><br>今天发现一个新的js方法，可以直接返回好多东西，来看一下。<br>语法是<br>Element.getBoundingClientRect();<br>看一下取到的值<br><img src="/images/2017-05-24/2.png" alt=""><br>返回值是一个 DOMRect 对象，我们想使用哪个值直接点上哪个就好了。<br>比如<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const el =document.getElementById(<span class="string">&#x27;police_deviation&#x27;</span>)</span><br><span class="line">const bound=el.getBoundingClientRect()</span><br><span class="line">bound.left  //元素距离页面左侧值</span><br><span class="line">bound.right //元素距离页面右侧值</span><br></pre></td></tr></table></figure><br>具体看下图<br><img src="/images/2017-05-24/1.png" alt=""><br>详细的也可以看这里<br><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/Element/getBoundingClientRect">https://developer.mozilla.org/zh-CN/docs/Web/API/Element/getBoundingClientRect</a></p>
 <p>在看一下兼容性<br><img src="/images/2017-05-24/3.png" alt=""><br>good ！！！！！！可以直接拿来用了。</p>
 <blockquote>
 <p>持续更新。。。。。。</p>
@@ -479,7 +478,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/js和jq判断位置/" rel="tag"># js和jq判断位置</a>
+            <a href="/tags/js%E5%92%8Cjq%E5%88%A4%E6%96%AD%E4%BD%8D%E7%BD%AE/" rel="tag"># js和jq判断位置</a>
           
         </div>
       
@@ -492,7 +491,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/16/github pages+jekyll/" rel="next" title="github pages+jekyll搭建博客(windows)">
+              <a href="/2017/05/16/github%20pages+jekyll/" rel="next" title="github pages+jekyll搭建博客(windows)">
                 <i class="fa fa-chevron-left"></i> github pages+jekyll搭建博客(windows)
               </a>
             
@@ -566,8 +565,8 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <p class="site-author-name" itemprop="name">Zyw</p>
-              <p class="site-description motion-element" itemprop="description">周艳伟的个人博客</p>
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
           <nav class="site-state motion-element">
@@ -575,7 +574,7 @@
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives/">
+                <a href="/archives/%20%7C%7C%20archive">
               
                   <span class="site-state-item-count">42</span>
                   <span class="site-state-item-name">日志</span>
@@ -663,7 +662,8 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+        <div class="copyright"><a href="https://beian.miit.gov.cn" target="_blank">京ICP备17006226号-2</a> &copy;
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -686,7 +686,7 @@
   <div class="theme-info">
     <div class="powered-by"></div>
     <i class="fa fa-pencil"></i>
-    <span class="post-count">博客全站共37.8k字</span>
+    <span class="post-count">博客全站共38.8k字</span>
   </div>
 
 

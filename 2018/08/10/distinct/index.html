@@ -98,24 +98,25 @@
 
 
 <meta name="description" content="数组去重，老生常谈，记录我觉得比较好的方法">
-<meta name="keywords" content="js数组去重,ES6">
 <meta property="og:type" content="article">
 <meta property="og:title" content="js数组去重">
 <meta property="og:url" content="http://zhouyanwei.cn/2018/08/10/distinct/index.html">
 <meta property="og:site_name" content="zywkuo">
 <meta property="og:description" content="数组去重，老生常谈，记录我觉得比较好的方法">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-10T02:15:52.828Z">
+<meta property="og:locale">
+<meta property="article:published_time" content="2018-08-09T16:00:00.000Z">
+<meta property="article:modified_time" content="2018-08-10T02:15:52.828Z">
+<meta property="article:author" content="Zyw">
+<meta property="article:tag" content="js数组去重">
+<meta property="article:tag" content="ES6">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="js数组去重">
-<meta name="twitter:description" content="数组去重，老生常谈，记录我觉得比较好的方法">
 
 
 
 <script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: '/',
+    root: '',
     scheme: 'Gemini',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
@@ -154,7 +155,7 @@
 
 
 
-</head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -202,7 +203,7 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
+          <a href="/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
@@ -212,7 +213,7 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
+          <a href="/about/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
@@ -222,7 +223,7 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
+          <a href="/tags/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
@@ -232,7 +233,7 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
+          <a href="/categories/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
@@ -242,7 +243,7 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
+          <a href="/archives/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
@@ -320,7 +321,7 @@
     <link itemprop="mainEntityOfPage" href="http://zhouyanwei.cn/2018/08/10/distinct/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zyw">
+      <meta itemprop="name" content="">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
@@ -411,7 +412,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  379
+                  414
                 </span>
               
 
@@ -448,50 +449,10 @@
       
 
       
-        <p>数组去重，老生常谈，记录我觉得比较好的方法<br><a id="more"></a></p>
-<h1 id="ES5方法"><a href="#ES5方法" class="headerlink" title="ES5方法"></a>ES5方法</h1><h2 id="利用对象唯一属性进行去重"><a href="#利用对象唯一属性进行去重" class="headerlink" title="利用对象唯一属性进行去重"></a>利用对象唯一属性进行去重</h2><pre><code class="bash">var array = [1,1,2,3,4,5,5,6,6,7,8,8];
-Array.prototype.distinct = <span class="function"><span class="title">function</span></span> () {
-    var array = [];
-    var obj = {};
-    <span class="keyword">for</span>(var i=0;i&lt;this.length;i++){
-        <span class="keyword">if</span>(!obj[this[i]]){
-            array.push(this[i]);
-            obj[this[i]] = 1;
-        }
-    }
-    <span class="built_in">return</span> array;
-}
-console.log(array.distinct());//[1, 2, 3, 4, 5, 6, 7, 8]
-</code></pre>
-<h2 id="利用indexOf属性进行判断"><a href="#利用indexOf属性进行判断" class="headerlink" title="利用indexOf属性进行判断"></a>利用indexOf属性进行判断</h2><pre><code class="bash">var array = [1,1,2,3,4,5,5,6,6,7,8,8];
-Array.prototype.distinct = <span class="function"><span class="title">function</span></span> () {
-    var array = [this[0]];
-    <span class="keyword">for</span>(var i=0;i&lt;this.length;i++){
-        <span class="keyword">if</span>(array.indexOf(this[i]) == -1){
-            array.push(this[i])
-        }
-    }
-    <span class="built_in">return</span> array;
-}
-console.log(array.distinct());//[1, 2, 3, 4, 5, 6, 7, 8]
-</code></pre>
-<h1 id="ES6方法"><a href="#ES6方法" class="headerlink" title="ES6方法"></a>ES6方法</h1><p>ES6 提供了新的数据结构 Set。它类似于数组，但是成员的值都是唯一的，没有重复的值。利用他的唯一性就可以进行去重了。</p>
-<pre><code class="bash">const array = [1,1,2,3,4,5,5,6,6,7,8,8];
-console.log(new Set(array));//{1, 2, 3, 4, 5, 6, 7, 8}
-</code></pre>
-<p>此时可以看到原数组已经已经去重了，但是此时结构还不是数组的结构，因此我们还需要用到Array.from方法，Array.from方法可以将 Set 结构转为数组。</p>
-<pre><code class="bash">const array = [1,1,2,3,4,5,5,6,6,7,8,8];
-console.log(Array.from(new Set(array)));//[1, 2, 3, 4, 5, 6, 7, 8]
-</code></pre>
-<p>记录一个多个数组合并去重的好方法</p>
-<pre><code class="bash"><span class="keyword">function</span> <span class="function"><span class="title">distinct</span></span>(){
-    <span class="built_in">let</span> arr = [].concat.apply([], arguments);
-    console.log(arr);
-    <span class="built_in">return</span> Array.from(new Set(arr));
-}
-const a = [1,2,3,5],b = [2,5,8,6],c = [7,8,9];
-console.log(distinct(a,b,c));//[1, 2, 3, 5, 8, 6, 7, 9]
-</code></pre>
+        <p>数组去重，老生常谈，记录我觉得比较好的方法<br><span id="more"></span></p>
+<h1 id="ES5方法"><a href="#ES5方法" class="headerlink" title="ES5方法"></a>ES5方法</h1><h2 id="利用对象唯一属性进行去重"><a href="#利用对象唯一属性进行去重" class="headerlink" title="利用对象唯一属性进行去重"></a>利用对象唯一属性进行去重</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var array = [1,1,2,3,4,5,5,6,6,7,8,8];</span><br><span class="line">Array.prototype.distinct = <span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">    var array = [];</span><br><span class="line">    var obj = &#123;&#125;;</span><br><span class="line">    <span class="keyword">for</span>(var i=0;i&lt;this.length;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(!obj[this[i]])&#123;</span><br><span class="line">            array.push(this[i]);</span><br><span class="line">            obj[this[i]] = 1;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">return</span> array;</span><br><span class="line">&#125;</span><br><span class="line">console.log(array.distinct());//[1, 2, 3, 4, 5, 6, 7, 8]</span><br></pre></td></tr></table></figure>
+<h2 id="利用indexOf属性进行判断"><a href="#利用indexOf属性进行判断" class="headerlink" title="利用indexOf属性进行判断"></a>利用indexOf属性进行判断</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var array = [1,1,2,3,4,5,5,6,6,7,8,8];</span><br><span class="line">Array.prototype.distinct = <span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">    var array = [this[0]];</span><br><span class="line">    <span class="keyword">for</span>(var i=0;i&lt;this.length;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(array.indexOf(this[i]) == -1)&#123;</span><br><span class="line">            array.push(this[i])</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">return</span> array;</span><br><span class="line">&#125;</span><br><span class="line">console.log(array.distinct());//[1, 2, 3, 4, 5, 6, 7, 8]</span><br></pre></td></tr></table></figure>
+<h1 id="ES6方法"><a href="#ES6方法" class="headerlink" title="ES6方法"></a>ES6方法</h1><p>ES6 提供了新的数据结构 Set。它类似于数组，但是成员的值都是唯一的，没有重复的值。利用他的唯一性就可以进行去重了。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const array = [1,1,2,3,4,5,5,6,6,7,8,8];</span><br><span class="line">console.log(new Set(array));//&#123;1, 2, 3, 4, 5, 6, 7, 8&#125;</span><br></pre></td></tr></table></figure><br>此时可以看到原数组已经已经去重了，但是此时结构还不是数组的结构，因此我们还需要用到Array.from方法，Array.from方法可以将 Set 结构转为数组。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const array = [1,1,2,3,4,5,5,6,6,7,8,8];</span><br><span class="line">console.log(Array.from(new Set(array)));//[1, 2, 3, 4, 5, 6, 7, 8]</span><br></pre></td></tr></table></figure><br>记录一个多个数组合并去重的好方法<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">distinct</span></span>()&#123;</span><br><span class="line">    <span class="built_in">let</span> arr = [].concat.apply([], arguments);</span><br><span class="line">    console.log(arr);</span><br><span class="line">    <span class="built_in">return</span> Array.from(new Set(arr));</span><br><span class="line">&#125;</span><br><span class="line">const a = [1,2,3,5],b = [2,5,8,6],c = [7,8,9];</span><br><span class="line">console.log(distinct(a,b,c));//[1, 2, 3, 5, 8, 6, 7, 9]</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -509,7 +470,7 @@ console.log(distinct(a,b,c));//[1, 2, 3, 5, 8, 6, 7, 9]
       
         <div class="post-tags">
           
-            <a href="/tags/js数组去重/" rel="tag"># js数组去重</a>
+            <a href="/tags/js%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D/" rel="tag"># js数组去重</a>
           
             <a href="/tags/ES6/" rel="tag"># ES6</a>
           
@@ -607,8 +568,8 @@ console.log(distinct(a,b,c));//[1, 2, 3, 5, 8, 6, 7, 9]
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <p class="site-author-name" itemprop="name">Zyw</p>
-              <p class="site-description motion-element" itemprop="description">周艳伟的个人博客</p>
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
           <nav class="site-state motion-element">
@@ -616,7 +577,7 @@ console.log(distinct(a,b,c));//[1, 2, 3, 5, 8, 6, 7, 9]
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives/">
+                <a href="/archives/%20%7C%7C%20archive">
               
                   <span class="site-state-item-count">42</span>
                   <span class="site-state-item-name">日志</span>
@@ -700,7 +661,7 @@ console.log(distinct(a,b,c));//[1, 2, 3, 5, 8, 6, 7, 9]
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ES5方法"><span class="nav-number">1.</span> <span class="nav-text">ES5方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#利用对象唯一属性进行去重"><span class="nav-number">1.1.</span> <span class="nav-text">利用对象唯一属性进行去重</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#利用indexOf属性进行判断"><span class="nav-number">1.2.</span> <span class="nav-text">利用indexOf属性进行判断</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ES6方法"><span class="nav-number">2.</span> <span class="nav-text">ES6方法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ES5%E6%96%B9%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text">ES5方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%A9%E7%94%A8%E5%AF%B9%E8%B1%A1%E5%94%AF%E4%B8%80%E5%B1%9E%E6%80%A7%E8%BF%9B%E8%A1%8C%E5%8E%BB%E9%87%8D"><span class="nav-number">1.1.</span> <span class="nav-text">利用对象唯一属性进行去重</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%A9%E7%94%A8indexOf%E5%B1%9E%E6%80%A7%E8%BF%9B%E8%A1%8C%E5%88%A4%E6%96%AD"><span class="nav-number">1.2.</span> <span class="nav-text">利用indexOf属性进行判断</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ES6%E6%96%B9%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">ES6方法</span></a></li></ol></div>
             
 
           </div>
@@ -720,7 +681,8 @@ console.log(distinct(a,b,c));//[1, 2, 3, 5, 8, 6, 7, 9]
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+        <div class="copyright"><a href="https://beian.miit.gov.cn" target="_blank">京ICP备17006226号-2</a> &copy;
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -743,7 +705,7 @@ console.log(distinct(a,b,c));//[1, 2, 3, 5, 8, 6, 7, 9]
   <div class="theme-info">
     <div class="powered-by"></div>
     <i class="fa fa-pencil"></i>
-    <span class="post-count">博客全站共37.8k字</span>
+    <span class="post-count">博客全站共38.8k字</span>
   </div>
 
 

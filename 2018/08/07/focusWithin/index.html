@@ -98,20 +98,20 @@
 
 
 <meta name="description" content="看新闻看到了一个非常不错的选择器:focus-within，他可以做一些js的效果，focus是获取焦点，所以只能有focus状态的元素才可以使用。:focus-within选择器是在元素获取焦点的时候可以触发自身或者父元素的属性（冒泡）。">
-<meta name="keywords" content=":focus-within">
 <meta property="og:type" content="article">
 <meta property="og:title" content=":focus-within选择器">
 <meta property="og:url" content="http://zhouyanwei.cn/2018/08/07/focusWithin/index.html">
 <meta property="og:site_name" content="zywkuo">
 <meta property="og:description" content="看新闻看到了一个非常不错的选择器:focus-within，他可以做一些js的效果，focus是获取焦点，所以只能有focus状态的元素才可以使用。:focus-within选择器是在元素获取焦点的时候可以触发自身或者父元素的属性（冒泡）。">
-<meta property="og:locale" content="zh-Hans">
+<meta property="og:locale">
 <meta property="og:image" content="http://zhouyanwei.cn/images/2018-08-07/focus-within.gif">
 <meta property="og:image" content="http://zhouyanwei.cn/images/2018-08-07/focus-within-nav.gif">
 <meta property="og:image" content="http://zhouyanwei.cn/images/2018-08-07/focus-within.png">
-<meta property="og:updated_time" content="2018-08-09T06:58:00.204Z">
+<meta property="article:published_time" content="2018-08-06T16:00:00.000Z">
+<meta property="article:modified_time" content="2018-08-09T06:58:00.204Z">
+<meta property="article:author" content="Zyw">
+<meta property="article:tag" content=":focus-within">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content=":focus-within选择器">
-<meta name="twitter:description" content="看新闻看到了一个非常不错的选择器:focus-within，他可以做一些js的效果，focus是获取焦点，所以只能有focus状态的元素才可以使用。:focus-within选择器是在元素获取焦点的时候可以触发自身或者父元素的属性（冒泡）。">
 <meta name="twitter:image" content="http://zhouyanwei.cn/images/2018-08-07/focus-within.gif">
 
 
@@ -119,7 +119,7 @@
 <script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: '/',
+    root: '',
     scheme: 'Gemini',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
@@ -158,7 +158,7 @@
 
 
 
-</head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -206,7 +206,7 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
+          <a href="/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
@@ -216,7 +216,7 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
+          <a href="/about/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
@@ -226,7 +226,7 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
+          <a href="/tags/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
@@ -236,7 +236,7 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
+          <a href="/categories/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
@@ -246,7 +246,7 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
+          <a href="/archives/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
@@ -324,7 +324,7 @@
     <link itemprop="mainEntityOfPage" href="http://zhouyanwei.cn/2018/08/07/focusWithin/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zyw">
+      <meta itemprop="name" content="">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
@@ -415,7 +415,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  209
+                  230
                 </span>
               
 
@@ -452,33 +452,10 @@
       
 
       
-        <p>看新闻看到了一个非常不错的选择器:focus-within，他可以做一些js的效果，focus是获取焦点，所以只能有focus状态的元素才可以使用。<br>:focus-within选择器是在元素获取焦点的时候可以触发自身或者父元素的属性（冒泡）。<br><a id="more"></a></p>
-<p>举一个小例子<br>效果如图<br><img src="/images/2018-08-07/focus-within.gif" alt=""></p>
-<pre><code class="bash">css
-.parent{
-            width: 100%;
-            height: 200px;  
-            background: <span class="comment">#eeeeee;</span>
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .children{
-            width: 100px;
-            height: 60px;
-            background: <span class="comment">#999;</span>
-        }
-        .parent:focus-within{
-            background: <span class="comment">#f60;</span>
-        }&gt;
-</code></pre>
-<pre><code class="bash">html
-&lt;div class=<span class="string">"parent"</span>&gt;
-    &lt;button class=<span class="string">"children"</span>&gt;点我&lt;/button&gt;
-&lt;/div&gt;
-</code></pre>
-<p>写了一个选项卡的小例子效果可以看一下<br><img src="/images/2018-08-07/focus-within-nav.gif" alt=""><br><a href="https://codepen.io/zywkuo/pen/XBByzj" target="_blank" rel="noopener">具体代码可以点击此链接前往codepen查看，效果也有哦！</a></p>
-<p>在看一下兼容问题  数据来源于<a href="https://caniuse.com/" target="_blank" rel="noopener">https://caniuse.com/</a><br><img src="/images/2018-08-07/focus-within.png" alt=""></p>
+        <p>看新闻看到了一个非常不错的选择器:focus-within，他可以做一些js的效果，focus是获取焦点，所以只能有focus状态的元素才可以使用。<br>:focus-within选择器是在元素获取焦点的时候可以触发自身或者父元素的属性（冒泡）。<br><span id="more"></span></p>
+<p>举一个小例子<br>效果如图<br><img src="/images/2018-08-07/focus-within.gif" alt=""><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">css</span><br><span class="line">.parent&#123;</span><br><span class="line">            width: 100%;</span><br><span class="line">            height: 200px;  </span><br><span class="line">            background: <span class="comment">#eeeeee;</span></span><br><span class="line">            display: flex;</span><br><span class="line">            justify-content: center;</span><br><span class="line">            align-items: center;</span><br><span class="line">        &#125;</span><br><span class="line">        .children&#123;</span><br><span class="line">            width: 100px;</span><br><span class="line">            height: 60px;</span><br><span class="line">            background: <span class="comment">#999;</span></span><br><span class="line">        &#125;</span><br><span class="line">        .parent:focus-within&#123;</span><br><span class="line">            background: <span class="comment">#f60;</span></span><br><span class="line">        &#125;&gt;</span><br></pre></td></tr></table></figure><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">html</span><br><span class="line">&lt;div class=<span class="string">&quot;parent&quot;</span>&gt;</span><br><span class="line">    &lt;button class=<span class="string">&quot;children&quot;</span>&gt;点我&lt;/button&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p>写了一个选项卡的小例子效果可以看一下<br><img src="/images/2018-08-07/focus-within-nav.gif" alt=""><br><a target="_blank" rel="noopener" href="https://codepen.io/zywkuo/pen/XBByzj">具体代码可以点击此链接前往codepen查看，效果也有哦！</a></p>
+<p>在看一下兼容问题  数据来源于<a target="_blank" rel="noopener" href="https://caniuse.com/">https://caniuse.com/</a><br><img src="/images/2018-08-07/focus-within.png" alt=""></p>
 <p>虽然对浏览器的兼容效果还不是很好，希望快快普及吧。</p>
 
       
@@ -584,8 +561,8 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <p class="site-author-name" itemprop="name">Zyw</p>
-              <p class="site-description motion-element" itemprop="description">周艳伟的个人博客</p>
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
           <nav class="site-state motion-element">
@@ -593,7 +570,7 @@
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives/">
+                <a href="/archives/%20%7C%7C%20archive">
               
                   <span class="site-state-item-count">42</span>
                   <span class="site-state-item-name">日志</span>
@@ -681,7 +658,8 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+        <div class="copyright"><a href="https://beian.miit.gov.cn" target="_blank">京ICP备17006226号-2</a> &copy;
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -704,7 +682,7 @@
   <div class="theme-info">
     <div class="powered-by"></div>
     <i class="fa fa-pencil"></i>
-    <span class="post-count">博客全站共37.8k字</span>
+    <span class="post-count">博客全站共38.8k字</span>
   </div>
 
 

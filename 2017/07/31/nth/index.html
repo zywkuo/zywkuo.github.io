@@ -98,13 +98,12 @@
 
 
 <meta name="description" content="磨叨两句上来先磨叨两句，用这个选择器已经很久了，但是一直用的都是:nth-of-type这个，:nth-child只是记得，几乎没有用过，最开始知道这两个选择器的时候，肯定两个都用过，但最后一直就用:nth-of-type了，原因我也忘记了，前几天用到:nth-of-type这个选择器，突然忘了他和:nth-child的具体区别是什么了，所以在这里，在回顾一下。 child和of-type 家族1">
-<meta name="keywords" content=":nth-child,:nth-of-type">
 <meta property="og:type" content="article">
 <meta property="og:title" content="css3选择器">
 <meta property="og:url" content="http://zhouyanwei.cn/2017/07/31/nth/index.html">
 <meta property="og:site_name" content="zywkuo">
 <meta property="og:description" content="磨叨两句上来先磨叨两句，用这个选择器已经很久了，但是一直用的都是:nth-of-type这个，:nth-child只是记得，几乎没有用过，最开始知道这两个选择器的时候，肯定两个都用过，但最后一直就用:nth-of-type了，原因我也忘记了，前几天用到:nth-of-type这个选择器，突然忘了他和:nth-child的具体区别是什么了，所以在这里，在回顾一下。 child和of-type 家族1">
-<meta property="og:locale" content="zh-Hans">
+<meta property="og:locale">
 <meta property="og:image" content="http://zhouyanwei.cn/images/2017-07-31/look1.jpg">
 <meta property="og:image" content="http://zhouyanwei.cn/images/2017-07-31/look2.png">
 <meta property="og:image" content="http://zhouyanwei.cn/images/2017-07-31/look3.jpg">
@@ -113,10 +112,12 @@
 <meta property="og:image" content="http://zhouyanwei.cn/images/2017-07-31/look6.png">
 <meta property="og:image" content="http://zhouyanwei.cn/images/2017-07-31/look7.png">
 <meta property="og:image" content="http://zhouyanwei.cn/images/2017-07-31/look8.png">
-<meta property="og:updated_time" content="2018-12-03T06:31:32.262Z">
+<meta property="article:published_time" content="2017-07-30T16:00:00.000Z">
+<meta property="article:modified_time" content="2018-12-03T06:31:32.262Z">
+<meta property="article:author" content="Zyw">
+<meta property="article:tag" content=":nth-child">
+<meta property="article:tag" content=":nth-of-type">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="css3选择器">
-<meta name="twitter:description" content="磨叨两句上来先磨叨两句，用这个选择器已经很久了，但是一直用的都是:nth-of-type这个，:nth-child只是记得，几乎没有用过，最开始知道这两个选择器的时候，肯定两个都用过，但最后一直就用:nth-of-type了，原因我也忘记了，前几天用到:nth-of-type这个选择器，突然忘了他和:nth-child的具体区别是什么了，所以在这里，在回顾一下。 child和of-type 家族1">
 <meta name="twitter:image" content="http://zhouyanwei.cn/images/2017-07-31/look1.jpg">
 
 
@@ -124,7 +125,7 @@
 <script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: '/',
+    root: '',
     scheme: 'Gemini',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
@@ -163,7 +164,7 @@
 
 
 
-</head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -211,7 +212,7 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
+          <a href="/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
@@ -221,7 +222,7 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
+          <a href="/about/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
@@ -231,7 +232,7 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
+          <a href="/tags/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
@@ -241,7 +242,7 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
+          <a href="/categories/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
@@ -251,7 +252,7 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
+          <a href="/archives/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
@@ -329,7 +330,7 @@
     <link itemprop="mainEntityOfPage" href="http://zhouyanwei.cn/2017/07/31/nth/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zyw">
+      <meta itemprop="name" content="">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
@@ -459,22 +460,20 @@
       
         <h1 id="磨叨两句"><a href="#磨叨两句" class="headerlink" title="磨叨两句"></a>磨叨两句</h1><p>上来先磨叨两句，用这个选择器已经很久了，但是一直用的都是:nth-of-type这个，:nth-child只是记得，几乎没有用过，最开始知道这两个选择器的时候，肯定两个都用过，但最后一直就用:nth-of-type了，原因我也忘记了，前几天用到:nth-of-type这个选择器，突然忘了他和:nth-child的具体区别是什么了，所以在这里，在回顾一下。</p>
 <h1 id="child和of-type-家族"><a href="#child和of-type-家族" class="headerlink" title="child和of-type 家族"></a>child和of-type 家族</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">child 家族</span><br><span class="line">:first-child        p:first-child       选择属于父元素的第一个子元素的每个 &lt;p&gt; 元素。</span><br><span class="line">:nth-child(n)       p:nth-child(2)      选择属于其父元素的第二个子元素的每个 &lt;p&gt; 元素。</span><br><span class="line">:nth-last-child(n)  p:nth-last-child(2) 同上，从最后一个子元素开始计数。</span><br><span class="line">:last-child         p:last-child        选择属于其父元素最后一个子元素每个 &lt;p&gt; 元素。</span><br><span class="line">:only-child         p:only-child        选择属于其父元素的唯一子元素的每个 &lt;p&gt; 元素。</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">of-type 家族</span><br><span class="line">:first-of-type          p:first-of-type         选择属于其父元素的首个 &lt;p&gt; 元素的每个 &lt;p&gt; 元素。</span><br><span class="line">:nth-of-type(n)         p:nth-of-type(2)        选择属于其父元素第二个 &lt;p&gt; 元素的每个 &lt;p&gt; 元素。</span><br><span class="line">:nth-last-of-type(n)	p:nth-last-of-type(2)   同上，但是从最后一个子元素开始计数。</span><br><span class="line">:last-of-type           p:last-of-type          选择属于其父元素的最后 &lt;p&gt; 元素的每个 &lt;p&gt; 元素。</span><br><span class="line">:only-of-type           p:only-of-type          选择属于其父元素唯一的 &lt;p&gt; 元素的每个 &lt;p&gt; 元素。</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">of-type 家族</span><br><span class="line">:first-of-type          p:first-of-type         选择属于其父元素的首个 &lt;p&gt; 元素的每个 &lt;p&gt; 元素。</span><br><span class="line">:nth-of-type(n)         p:nth-of-type(2)        选择属于其父元素第二个 &lt;p&gt; 元素的每个 &lt;p&gt; 元素。</span><br><span class="line">:nth-last-of-type(n)	p:nth-last-of-type(2)   同上，但是从最后一个子元素开始计数。</span><br><span class="line">:last-of-type           p:last-of-type          选择属于其父元素的最后 &lt;p&gt; 元素的每个 &lt;p&gt; 元素。</span><br><span class="line">:only-of-type           p:only-of-type          选择属于其父元素唯一的 &lt;p&gt; 元素的每个 &lt;p&gt; 元素。	</span><br></pre></td></tr></table></figure>
 <h1 id="nth-of-type-n-和-nth-child-n-对比"><a href="#nth-of-type-n-和-nth-child-n-对比" class="headerlink" title=":nth-of-type(n)和:nth-child(n)对比"></a>:nth-of-type(n)和:nth-child(n)对比</h1><p>这两个家族别的选择器还好说，就:nth-of-type(n)和:nth-child(n)他们俩用的时候还会有一些问题，下面用具体例子来体会一下。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">p:nth-child(2)&#123;</span><br><span class="line">    background: red;</span><br><span class="line">&#125;</span><br><span class="line">p:nth-of-type(2)&#123;</span><br><span class="line">    background: red;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;div&gt;</span><br><span class="line">    &lt;p&gt;我是p1&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;我是p2&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
 <p>此时分别使用这两个css选择器进行渲染时，页面显示的效果是一样的，look<br><img src="/images/2017-07-31/look1.jpg" alt=""></p>
 <p>然后我们稍稍改一下再看一下效果</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">p:nth-child(2)&#123;</span><br><span class="line">    background: red;</span><br><span class="line">&#125;</span><br><span class="line">p:nth-of-type(2)&#123;</span><br><span class="line">    background: red;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;div&gt;</span><br><span class="line">    &lt;div&gt;我是div1&lt;/div&gt;</span><br><span class="line">    &lt;p&gt;我是p1&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;我是p2&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
-<p><img src="/images/2017-07-31/look2.png" alt=""><br>这一下就不友好了，字面理解一下啊，child儿子嘛，第二个儿子，还是个p标签，正好给你变个色吧。而p:nth-of-type(2)他就会去找p标签的第二个，这样我的心里感觉才是我想要的结果<br>我们在加一个div看看啊<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">p:nth-child(2)&#123;</span><br><span class="line">    background: red;</span><br><span class="line">&#125;</span><br><span class="line">/*p:nth-of-type(2)&#123;</span><br><span class="line">    background: red;</span><br><span class="line">&#125;*/</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;div&gt;</span><br><span class="line">    &lt;div&gt;我是div1&lt;/div&gt;</span><br><span class="line">    &lt;div&gt;我是div2&lt;/div&gt;</span><br><span class="line">    &lt;p&gt;我是p1&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;我是p2&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure></p>
-<p><img src="/images/2017-07-31/look3.jpg" alt=""><br>看吧，第二个儿子，没有p标签啊，那算了吧，谁也不给上色了。</p>
+<p><img src="/images/2017-07-31/look2.png" alt=""><br>这一下就不友好了，字面理解一下啊，child儿子嘛，第二个儿子，还是个p标签，正好给你变个色吧。而p:nth-of-type(2)他就会去找p标签的第二个，这样我的心里感觉才是我想要的结果<br>我们在加一个div看看啊<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">p:nth-child(2)&#123;</span><br><span class="line">    background: red;</span><br><span class="line">&#125;</span><br><span class="line">/*p:nth-of-type(2)&#123;</span><br><span class="line">    background: red;</span><br><span class="line">&#125;*/</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;div&gt;</span><br><span class="line">    &lt;div&gt;我是div1&lt;/div&gt;</span><br><span class="line">    &lt;div&gt;我是div2&lt;/div&gt;</span><br><span class="line">    &lt;p&gt;我是p1&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;我是p2&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure><br><img src="/images/2017-07-31/look3.jpg" alt=""><br>看吧，第二个儿子，没有p标签啊，那算了吧，谁也不给上色了。</p>
 <p>个人建议找元素，还是用:nth-of-type()，毕竟不用太费脑子，而且照的还快、准、稳。</p>
 <p>浏览器兼容情况：所有主流浏览器均支持，除了 IE8 及更早的版本。毕竟是css3新添加的嘛。</p>
 <p>上面详细的对比了一组，下面在简单对比一下别的</p>
 <h1 id="p-first-child和p-first-of-type"><a href="#p-first-child和p-first-of-type" class="headerlink" title="p:first-child和p:first-of-type"></a>p:first-child和p:first-of-type</h1><p><img src="/images/2017-07-31/look4.png" alt=""></p>
 <h1 id="p-nth-last-child-n-和p-nth-last-of-type-n"><a href="#p-nth-last-child-n-和p-nth-last-of-type-n" class="headerlink" title="p:nth-last-child(n)和p:nth-last-of-type(n)"></a>p:nth-last-child(n)和p:nth-last-of-type(n)</h1><p><img src="/images/2017-07-31/look5.png" alt=""><br><code>注意哦：last是从后往前数楼！！</code></p>
 <h1 id="p-last-child和p-last-of-type"><a href="#p-last-child和p-last-of-type" class="headerlink" title="p:last-child和p:last-of-type"></a>p:last-child和p:last-of-type</h1><p><img src="/images/2017-07-31/look6.png" alt=""></p>
-<h1 id="p-only-child和p-only-of-type"><a href="#p-only-child和p-only-of-type" class="headerlink" title="p:only-child和p:only-of-type"></a>p:only-child和p:only-of-type</h1><p><img src="/images/2017-07-31/look7.png" alt=""><br>因为他是only了，这里div和p都是两个所以不成立，就都不上色了。改成这样在看看，<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">p:only-child&#123;background: red;&#125;</span><br><span class="line">p:only-of-type&#123;background: red;&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;div&gt;</span><br><span class="line">    &lt;div&gt;我是唯一的div&lt;/div&gt;</span><br><span class="line">    &lt;p&gt;我是唯一的p&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
-<p><img src="/images/2017-07-31/look8.png" alt=""></p>
+<h1 id="p-only-child和p-only-of-type"><a href="#p-only-child和p-only-of-type" class="headerlink" title="p:only-child和p:only-of-type"></a>p:only-child和p:only-of-type</h1><p><img src="/images/2017-07-31/look7.png" alt=""><br>因为他是only了，这里div和p都是两个所以不成立，就都不上色了。改成这样在看看，<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">p:only-child&#123;background: red;&#125;</span><br><span class="line">p:only-of-type&#123;background: red;&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;div&gt;</span><br><span class="line">    &lt;div&gt;我是唯一的div&lt;/div&gt;</span><br><span class="line">    &lt;p&gt;我是唯一的p&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure><br><img src="/images/2017-07-31/look8.png" alt=""></p>
 <h1 id="总结一下"><a href="#总结一下" class="headerlink" title="总结一下"></a>总结一下</h1><p>是不是有点感觉了，小小的总结一下<br>child家的成员在进行选择的时候不仅要选择元素，而且还要选择当前位置对不对，only的话那就只能有p(拿p举一下例子啊)，div哥哥来了就不高兴了，就不给你显示。</p>
 <p>of-type家的成员在进行选择的时候不管你里面有哪个哥哥弟弟p、div、span，选择器元素写好了，他就会按照当前的元素进行查找。</p>
 <p>个人还是倾向于of-type家的。快、准、稳，哈哈，今天就到这了，忙了好久，终于有点时间了，上来晃一圈。</p>
@@ -594,8 +593,8 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <p class="site-author-name" itemprop="name">Zyw</p>
-              <p class="site-description motion-element" itemprop="description">周艳伟的个人博客</p>
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
           <nav class="site-state motion-element">
@@ -603,7 +602,7 @@
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives/">
+                <a href="/archives/%20%7C%7C%20archive">
               
                   <span class="site-state-item-count">42</span>
                   <span class="site-state-item-name">日志</span>
@@ -687,7 +686,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#磨叨两句"><span class="nav-number">1.</span> <span class="nav-text">磨叨两句</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#child和of-type-家族"><span class="nav-number">2.</span> <span class="nav-text">child和of-type 家族</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nth-of-type-n-和-nth-child-n-对比"><span class="nav-number">3.</span> <span class="nav-text">:nth-of-type(n)和:nth-child(n)对比</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#p-first-child和p-first-of-type"><span class="nav-number">4.</span> <span class="nav-text">p:first-child和p:first-of-type</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#p-nth-last-child-n-和p-nth-last-of-type-n"><span class="nav-number">5.</span> <span class="nav-text">p:nth-last-child(n)和p:nth-last-of-type(n)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#p-last-child和p-last-of-type"><span class="nav-number">6.</span> <span class="nav-text">p:last-child和p:last-of-type</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#p-only-child和p-only-of-type"><span class="nav-number">7.</span> <span class="nav-text">p:only-child和p:only-of-type</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结一下"><span class="nav-number">8.</span> <span class="nav-text">总结一下</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A3%A8%E5%8F%A8%E4%B8%A4%E5%8F%A5"><span class="nav-number">1.</span> <span class="nav-text">磨叨两句</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#child%E5%92%8Cof-type-%E5%AE%B6%E6%97%8F"><span class="nav-number">2.</span> <span class="nav-text">child和of-type 家族</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nth-of-type-n-%E5%92%8C-nth-child-n-%E5%AF%B9%E6%AF%94"><span class="nav-number">3.</span> <span class="nav-text">:nth-of-type(n)和:nth-child(n)对比</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#p-first-child%E5%92%8Cp-first-of-type"><span class="nav-number">4.</span> <span class="nav-text">p:first-child和p:first-of-type</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#p-nth-last-child-n-%E5%92%8Cp-nth-last-of-type-n"><span class="nav-number">5.</span> <span class="nav-text">p:nth-last-child(n)和p:nth-last-of-type(n)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#p-last-child%E5%92%8Cp-last-of-type"><span class="nav-number">6.</span> <span class="nav-text">p:last-child和p:last-of-type</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#p-only-child%E5%92%8Cp-only-of-type"><span class="nav-number">7.</span> <span class="nav-text">p:only-child和p:only-of-type</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%BB%E7%BB%93%E4%B8%80%E4%B8%8B"><span class="nav-number">8.</span> <span class="nav-text">总结一下</span></a></li></ol></div>
             
 
           </div>
@@ -707,7 +706,8 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+        <div class="copyright"><a href="https://beian.miit.gov.cn" target="_blank">京ICP备17006226号-2</a> &copy;
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -730,7 +730,7 @@
   <div class="theme-info">
     <div class="powered-by"></div>
     <i class="fa fa-pencil"></i>
-    <span class="post-count">博客全站共37.8k字</span>
+    <span class="post-count">博客全站共38.8k字</span>
   </div>
 
 

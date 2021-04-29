@@ -98,24 +98,24 @@
 
 
 <meta name="description" content="sql学习记录">
-<meta name="keywords" content="sql">
 <meta property="og:type" content="article">
 <meta property="og:title" content="sql语句学习">
 <meta property="og:url" content="http://zhouyanwei.cn/2018/08/03/sql/index.html">
 <meta property="og:site_name" content="zywkuo">
 <meta property="og:description" content="sql学习记录">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-02T05:50:55.876Z">
+<meta property="og:locale">
+<meta property="article:published_time" content="2018-08-02T16:00:00.000Z">
+<meta property="article:modified_time" content="2019-01-02T05:50:55.876Z">
+<meta property="article:author" content="Zyw">
+<meta property="article:tag" content="sql">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="sql语句学习">
-<meta name="twitter:description" content="sql学习记录">
 
 
 
 <script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: '/',
+    root: '',
     scheme: 'Gemini',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
@@ -154,7 +154,7 @@
 
 
 
-</head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -202,7 +202,7 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
+          <a href="/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
@@ -212,7 +212,7 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
+          <a href="/about/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
@@ -222,7 +222,7 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
+          <a href="/tags/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
@@ -232,7 +232,7 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
+          <a href="/categories/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
@@ -242,7 +242,7 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
+          <a href="/archives/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
@@ -320,7 +320,7 @@
     <link itemprop="mainEntityOfPage" href="http://zhouyanwei.cn/2018/08/03/sql/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zyw">
+      <meta itemprop="name" content="">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
@@ -411,7 +411,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,106
+                  1,149
                 </span>
               
 
@@ -427,7 +427,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4
+                  5
                 </span>
               
             </div>
@@ -448,91 +448,32 @@
       
 
       
-        <p>sql学习记录<br><a id="more"></a><br>从 “qc_record” 表中选取所有记录 (*qc_record为一个表的名称)</p>
-<pre><code class="bash">select * from qc_record;
-</code></pre>
-<p>一些最重要的 SQL 命令（*SQL 对大小写不敏感：SELECT 与 select 是相同的。）</p>
-<pre><code class="bash">SELECT                  - 从数据库中提取数据
-UPDATE                  - 更新数据库中的数据
-DELETE                  - 从数据库中删除数据
-INSERT INTO             - 向数据库中插入新数据
-CREATE DATABASE         - 创建新数据库
-ALTER DATABASE          - 修改数据库
-CREATE TABLE            - 创建新表
-ALTER TABLE             - 变更（改变）数据库表
-DROP TABLE              - 删除表
-CREATE INDEX            - 创建索引（搜索键）
-DROP INDEX              - 删除索引
-</code></pre>
+        <p>sql学习记录<br><span id="more"></span><br>从 “qc_record” 表中选取所有记录 (<em>qc_record为一个表的名称)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from qc_record;</span><br></pre></td></tr></table></figure><br>一些最重要的 SQL 命令（</em>SQL 对大小写不敏感：SELECT 与 select 是相同的。）<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">SELECT                  - 从数据库中提取数据</span><br><span class="line">UPDATE                  - 更新数据库中的数据</span><br><span class="line">DELETE                  - 从数据库中删除数据</span><br><span class="line">INSERT INTO             - 向数据库中插入新数据</span><br><span class="line">CREATE DATABASE         - 创建新数据库</span><br><span class="line">ALTER DATABASE          - 修改数据库</span><br><span class="line">CREATE TABLE            - 创建新表</span><br><span class="line">ALTER TABLE             - 变更（改变）数据库表</span><br><span class="line">DROP TABLE              - 删除表</span><br><span class="line">CREATE INDEX            - 创建索引（搜索键）</span><br><span class="line">DROP INDEX              - 删除索引</span><br></pre></td></tr></table></figure></p>
 <h1 id="SELECT-语句"><a href="#SELECT-语句" class="headerlink" title="SELECT 语句"></a>SELECT 语句</h1><p>SELECT 语句用于从数据库中选取数据。结果被存储在一个结果表中，称为结果集。</p>
-<p>SQL SELECT 语法</p>
-<pre><code class="bash">select * from qc_record;     查询整个表内容
-
-select column_name,column_name from qc_record;      -- column_name(查询表内某一列名称可查询多个)
-</code></pre>
+<p>SQL SELECT 语法<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">select * from qc_record;     查询整个表内容</span><br><span class="line"></span><br><span class="line">select column_name,column_name from qc_record;      -- column_name(查询表内某一列名称可查询多个)</span><br></pre></td></tr></table></figure></p>
 <h1 id="SELECT-DISTINCT-语句"><a href="#SELECT-DISTINCT-语句" class="headerlink" title="SELECT DISTINCT 语句"></a>SELECT DISTINCT 语句</h1><p>在表中，一个列可能会包含多个重复值，有时您也许希望仅仅列出不同（distinct）的值。DISTINCT 关键词用于返回唯一不同的值。</p>
-<p>SQL SELECT DISTINCT 语法</p>
-<pre><code class="bash">select distinct column_name,column_name from qc_record;     -- column_name(查询表内某一列名称可查询多个)
-</code></pre>
+<p>SQL SELECT DISTINCT 语法<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select distinct column_name,column_name from qc_record;     -- column_name(查询表内某一列名称可查询多个)</span><br></pre></td></tr></table></figure></p>
 <h1 id="WHERE-子句"><a href="#WHERE-子句" class="headerlink" title="WHERE 子句"></a>WHERE 子句</h1><p>WHERE 子句用于提取那些满足指定标准的记录。</p>
-<p>WHERE 语法</p>
-<pre><code class="bash">select * from qc_record <span class="built_in">where</span> column_name operator value;      -- 查找qc_record表中匹配column_name operator value（匹配表达式）的记录
-
-select column_name,column_name from qc_record <span class="built_in">where</span> column_name operator value;     -- 查找qc_record表中对应名称的匹配column_name operator value（匹配表达式）的记录
-</code></pre>
+<p>WHERE 语法<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">select * from qc_record <span class="built_in">where</span> column_name operator value;      -- 查找qc_record表中匹配column_name operator value（匹配表达式）的记录</span><br><span class="line"></span><br><span class="line">select column_name,column_name from qc_record <span class="built_in">where</span> column_name operator value;     -- 查找qc_record表中对应名称的匹配column_name operator value（匹配表达式）的记录</span><br></pre></td></tr></table></figure></p>
 <p>SQL 使用单引号来环绕文本值（大部分数据库系统也接受双引号）。如果是数值字段，请不要使用引号。</p>
-<p>WHERE 子句中的运算符</p>
-<pre><code class="bash">运算符        描述
-=            等于
-&lt;&gt;            不等于。注释：在 SQL 的一些版本中，该操作符可被写成 !=
-&gt;            大于
-&lt;            小于
-&gt;=            大于等于
-&lt;=            小于等于
-BETWEEN        在某个范围内
-LIKE        搜索某种模式
-IN            指定针对某个列的多个可能值
-</code></pre>
+<p>WHERE 子句中的运算符<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">运算符	    描述</span><br><span class="line">=	        等于</span><br><span class="line">&lt;&gt;	        不等于。注释：在 SQL 的一些版本中，该操作符可被写成 !=</span><br><span class="line">&gt;	        大于</span><br><span class="line">&lt;	        小于</span><br><span class="line">&gt;=	        大于等于</span><br><span class="line">&lt;=	        小于等于</span><br><span class="line">BETWEEN	    在某个范围内</span><br><span class="line">LIKE	    搜索某种模式</span><br><span class="line">IN	        指定针对某个列的多个可能值</span><br></pre></td></tr></table></figure></p>
 <p>后记，在查询语句的时候用到了模糊查询，</p>
 <p>LIKE 条件匹配模式</p>
-<pre><code class="bash">% 包含零个或更多字符的任意字符串。
-_（下划线） 任何单个字符。
-[ ] 指定范围（例如 [a<span class="_">-f</span>]）或集合（例如 [abcdef]）内的任何单个字符。
-[^] 不在指定范围（例如 [^a - f]）或集合（例如 [^abcdef]）内的任何单个字符。
-</code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">% 包含零个或更多字符的任意字符串。</span><br><span class="line">_（下划线） 任何单个字符。</span><br><span class="line">[ ] 指定范围（例如 [a-f]）或集合（例如 [abcdef]）内的任何单个字符。</span><br><span class="line">[^] 不在指定范围（例如 [^a - f]）或集合（例如 [^abcdef]）内的任何单个字符。</span><br></pre></td></tr></table></figure>
 <h1 id="AND-amp-OR-运算符"><a href="#AND-amp-OR-运算符" class="headerlink" title="AND &amp; OR 运算符"></a>AND &amp; OR 运算符</h1><p>AND &amp; OR 运算符用于基于一个以上的条件对记录进行过滤。<br>如果第一个条件和第二个条件都成立，则 AND 运算符显示一条记录。<br>如果第一个条件和第二个条件中只要有一个成立，则 OR 运算符显示一条记录。</p>
-<p>AND 语法</p>
-<pre><code class="bash">select * from qc_record <span class="built_in">where</span> test_user = <span class="string">'zyw'</span> and device_id = 19222;   -- 与的关系，and连接的两个名称匹配都<span class="literal">true</span>才显示
-</code></pre>
-<p>OR 语法</p>
-<pre><code class="bash">select * from qc_record <span class="built_in">where</span> test_user = <span class="string">'zyw'</span> or device_id = 19222;   -- 或的关系，or连接的两个名称有一个匹配的就显示
-</code></pre>
-<p>AND OR 语法</p>
-<pre><code class="bash">select * from qc_record <span class="built_in">where</span> test_user = <span class="string">'zyw'</span> and (device_id = 19121 or status = 1);   -- 也可以把 AND 和 OR 结合起来（使用圆括号来组成复杂的表达式）
-</code></pre>
+<p>AND 语法<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from qc_record <span class="built_in">where</span> test_user = <span class="string">&#x27;zyw&#x27;</span> and device_id = 19222;   -- 与的关系，and连接的两个名称匹配都<span class="literal">true</span>才显示</span><br></pre></td></tr></table></figure></p>
+<p>OR 语法<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from qc_record <span class="built_in">where</span> test_user = <span class="string">&#x27;zyw&#x27;</span> or device_id = 19222;   -- 或的关系，or连接的两个名称有一个匹配的就显示</span><br></pre></td></tr></table></figure></p>
+<p>AND OR 语法<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from qc_record <span class="built_in">where</span> test_user = <span class="string">&#x27;zyw&#x27;</span> and (device_id = 19121 or status = 1);   -- 也可以把 AND 和 OR 结合起来（使用圆括号来组成复杂的表达式）</span><br></pre></td></tr></table></figure></p>
 <h1 id="ORDER-BY-关键字"><a href="#ORDER-BY-关键字" class="headerlink" title="ORDER BY 关键字"></a>ORDER BY 关键字</h1><p>ORDER BY 关键字用于对结果集进行排序。<br>ORDER BY 关键字用于对结果集按照一个列或者多个列进行排序。<br>ORDER BY 关键字默认按照升序对记录进行排序。如果需要按照降序对记录进行排序，您可以使用 DESC 关键字。</p>
-<p>ORDER BY 语法</p>
-<pre><code class="bash">select * from qc_record order by create_date desc           -- ASC--&gt;升序排列默认    DESC--&gt;降序排列要写这个关键字
-</code></pre>
+<p>ORDER BY 语法<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from qc_record order by create_date desc           -- ASC--&gt;升序排列默认    DESC--&gt;降序排列要写这个关键字</span><br></pre></td></tr></table></figure></p>
 <h1 id="INSERT-INTO-语句"><a href="#INSERT-INTO-语句" class="headerlink" title="INSERT INTO 语句"></a>INSERT INTO 语句</h1><p>INSERT INTO 语句用于向表中插入新记录。</p>
 <p>INSERT INTO 语法(有两种编写形式)</p>
-<p>第一种形式无需指定要插入数据的列名，只需提供被插入的值即可：</p>
-<pre><code class="bash">insert into qc_record values (value1,value2,value3,...);
-</code></pre>
-<p>第二种形式需要指定列名及被插入的值：</p>
-<pre><code class="bash">insert into qc_record (column1,column2,column3,...) values (value1,value2,value3,...);
-</code></pre>
+<p>第一种形式无需指定要插入数据的列名，只需提供被插入的值即可：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">insert into qc_record values (value1,value2,value3,...);</span><br></pre></td></tr></table></figure><br>第二种形式需要指定列名及被插入的值：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">insert into qc_record (column1,column2,column3,...) values (value1,value2,value3,...);</span><br></pre></td></tr></table></figure></p>
 <h1 id="UPDATE-语句"><a href="#UPDATE-语句" class="headerlink" title="UPDATE 语句"></a>UPDATE 语句</h1><p>UPDATE 语句用于更新表中的记录。</p>
-<p>UPDATE 语句</p>
-<pre><code class="bash">update qc_record <span class="built_in">set</span> column1=value1,column2=value2,... <span class="built_in">where</span> some_column=some_value; -- WHERE 子句规定哪条记录或者哪些记录需要更新。如果您省略了 WHERE 子句，所有的记录都将被更新！
-</code></pre>
+<p>UPDATE 语句<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">update qc_record <span class="built_in">set</span> column1=value1,column2=value2,... <span class="built_in">where</span> some_column=some_value; -- WHERE 子句规定哪条记录或者哪些记录需要更新。如果您省略了 WHERE 子句，所有的记录都将被更新！</span><br></pre></td></tr></table></figure></p>
 <h1 id="DELETE-语句"><a href="#DELETE-语句" class="headerlink" title="DELETE 语句"></a>DELETE 语句</h1><p>DELETE 语句用于删除表中的记录。</p>
-<p>SQL DELETE 语法</p>
-<pre><code class="bash">delete from qc_record <span class="built_in">where</span> some_column=some_value;                                 -- 删除一条属性
-delete from qc_record <span class="built_in">where</span> some_column=some_value and some_column=some_value ...;      -- 删除多条属性
-delete from qc_record                                                               -- 删除所有
-</code></pre>
-<p>参考网址    <a href="http://www.runoob.com/sql/sql-tutorial.html" traget="_blank" target="_blank" rel="noopener">SQL教程|菜鸟教程</a></p>
+<p>SQL DELETE 语法<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">delete from qc_record <span class="built_in">where</span> some_column=some_value;                                 -- 删除一条属性</span><br><span class="line">delete from qc_record <span class="built_in">where</span> some_column=some_value and some_column=some_value ...;      -- 删除多条属性</span><br><span class="line">delete from qc_record                                                               -- 删除所有</span><br></pre></td></tr></table></figure></p>
+<p>参考网址    <a target="_blank" rel="noopener" href='http://www.runoob.com/sql/sql-tutorial.html' traget='_blank'>SQL教程|菜鸟教程</a></p>
 
       
     </div>
@@ -646,8 +587,8 @@ delete from qc_record                                                           
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <p class="site-author-name" itemprop="name">Zyw</p>
-              <p class="site-description motion-element" itemprop="description">周艳伟的个人博客</p>
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
           <nav class="site-state motion-element">
@@ -655,7 +596,7 @@ delete from qc_record                                                           
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives/">
+                <a href="/archives/%20%7C%7C%20archive">
               
                   <span class="site-state-item-count">42</span>
                   <span class="site-state-item-name">日志</span>
@@ -739,7 +680,7 @@ delete from qc_record                                                           
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SELECT-语句"><span class="nav-number">1.</span> <span class="nav-text">SELECT 语句</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SELECT-DISTINCT-语句"><span class="nav-number">2.</span> <span class="nav-text">SELECT DISTINCT 语句</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#WHERE-子句"><span class="nav-number">3.</span> <span class="nav-text">WHERE 子句</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#AND-amp-OR-运算符"><span class="nav-number">4.</span> <span class="nav-text">AND &amp; OR 运算符</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ORDER-BY-关键字"><span class="nav-number">5.</span> <span class="nav-text">ORDER BY 关键字</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#INSERT-INTO-语句"><span class="nav-number">6.</span> <span class="nav-text">INSERT INTO 语句</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#UPDATE-语句"><span class="nav-number">7.</span> <span class="nav-text">UPDATE 语句</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#DELETE-语句"><span class="nav-number">8.</span> <span class="nav-text">DELETE 语句</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SELECT-%E8%AF%AD%E5%8F%A5"><span class="nav-number">1.</span> <span class="nav-text">SELECT 语句</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SELECT-DISTINCT-%E8%AF%AD%E5%8F%A5"><span class="nav-number">2.</span> <span class="nav-text">SELECT DISTINCT 语句</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#WHERE-%E5%AD%90%E5%8F%A5"><span class="nav-number">3.</span> <span class="nav-text">WHERE 子句</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#AND-amp-OR-%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">4.</span> <span class="nav-text">AND &amp; OR 运算符</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ORDER-BY-%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-number">5.</span> <span class="nav-text">ORDER BY 关键字</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#INSERT-INTO-%E8%AF%AD%E5%8F%A5"><span class="nav-number">6.</span> <span class="nav-text">INSERT INTO 语句</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#UPDATE-%E8%AF%AD%E5%8F%A5"><span class="nav-number">7.</span> <span class="nav-text">UPDATE 语句</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#DELETE-%E8%AF%AD%E5%8F%A5"><span class="nav-number">8.</span> <span class="nav-text">DELETE 语句</span></a></li></ol></div>
             
 
           </div>
@@ -759,7 +700,8 @@ delete from qc_record                                                           
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+        <div class="copyright"><a href="https://beian.miit.gov.cn" target="_blank">京ICP备17006226号-2</a> &copy;
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -782,7 +724,7 @@ delete from qc_record                                                           
   <div class="theme-info">
     <div class="powered-by"></div>
     <i class="fa fa-pencil"></i>
-    <span class="post-count">博客全站共37.8k字</span>
+    <span class="post-count">博客全站共38.8k字</span>
   </div>
 
 

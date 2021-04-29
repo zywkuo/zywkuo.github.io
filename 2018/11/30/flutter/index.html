@@ -98,20 +98,21 @@
 
 
 <meta name="description" content="刚开始学些flutter，安装配置的时候遇到了点小问题，配置流程我就不发了，网上很多，我的学习地址是这个，可以参考。技术胖的这篇教程;我只要是记录我在使用Android Studio运行flutter的时候出现的问题。">
-<meta name="keywords" content="flutter,Android Studio">
 <meta property="og:type" content="article">
 <meta property="og:title" content="flutter Android Studio配置错误">
 <meta property="og:url" content="http://zhouyanwei.cn/2018/11/30/flutter/index.html">
 <meta property="og:site_name" content="zywkuo">
 <meta property="og:description" content="刚开始学些flutter，安装配置的时候遇到了点小问题，配置流程我就不发了，网上很多，我的学习地址是这个，可以参考。技术胖的这篇教程;我只要是记录我在使用Android Studio运行flutter的时候出现的问题。">
-<meta property="og:locale" content="zh-Hans">
+<meta property="og:locale">
 <meta property="og:image" content="http://zhouyanwei.cn/images/2018-11-30/1.png">
 <meta property="og:image" content="http://zhouyanwei.cn/images/2018-11-30/2.png">
 <meta property="og:image" content="http://zhouyanwei.cn/images/2018-11-30/3.png">
-<meta property="og:updated_time" content="2018-12-03T05:43:42.705Z">
+<meta property="article:published_time" content="2018-11-29T16:00:00.000Z">
+<meta property="article:modified_time" content="2018-12-03T05:43:42.705Z">
+<meta property="article:author" content="Zyw">
+<meta property="article:tag" content="flutter">
+<meta property="article:tag" content="Android Studio">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="flutter Android Studio配置错误">
-<meta name="twitter:description" content="刚开始学些flutter，安装配置的时候遇到了点小问题，配置流程我就不发了，网上很多，我的学习地址是这个，可以参考。技术胖的这篇教程;我只要是记录我在使用Android Studio运行flutter的时候出现的问题。">
 <meta name="twitter:image" content="http://zhouyanwei.cn/images/2018-11-30/1.png">
 
 
@@ -119,7 +120,7 @@
 <script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: '/',
+    root: '',
     scheme: 'Gemini',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
@@ -158,7 +159,7 @@
 
 
 
-</head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -206,7 +207,7 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
+          <a href="/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
@@ -216,7 +217,7 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
+          <a href="/about/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
@@ -226,7 +227,7 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
+          <a href="/tags/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
@@ -236,7 +237,7 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
+          <a href="/categories/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
@@ -246,7 +247,7 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
+          <a href="/archives/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
@@ -324,7 +325,7 @@
     <link itemprop="mainEntityOfPage" href="http://zhouyanwei.cn/2018/11/30/flutter/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zyw">
+      <meta itemprop="name" content="">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
@@ -452,8 +453,8 @@
       
 
       
-        <p>刚开始学些flutter，安装配置的时候遇到了点小问题，配置流程我就不发了，网上很多，我的学习地址是这个，可以参考。<a href="http://jspang.com/post/flutter1.html#toc-12d" target="_blank" rel="noopener">技术胖的这篇教程</a>;<br>我只要是记录我在使用Android Studio运行flutter的时候出现的问题。</p>
-<a id="more"></a>
+        <p>刚开始学些flutter，安装配置的时候遇到了点小问题，配置流程我就不发了，网上很多，我的学习地址是这个，可以参考。<a target="_blank" rel="noopener" href="http://jspang.com/post/flutter1.html#toc-12d">技术胖的这篇教程</a>;<br>我只要是记录我在使用Android Studio运行flutter的时候出现的问题。</p>
+<span id="more"></span>
 <p>出现问题如下图</p>
 <p><img src="/images/2018-11-30/1.png" alt=""></p>
 <p>我是没搞懂这是什么问题，然后就请教了一下我们公司做Android的大神，他来我这一看，就找到了问题。</p>
@@ -567,8 +568,8 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <p class="site-author-name" itemprop="name">Zyw</p>
-              <p class="site-description motion-element" itemprop="description">周艳伟的个人博客</p>
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
           <nav class="site-state motion-element">
@@ -576,7 +577,7 @@
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives/">
+                <a href="/archives/%20%7C%7C%20archive">
               
                   <span class="site-state-item-count">42</span>
                   <span class="site-state-item-name">日志</span>
@@ -664,7 +665,8 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+        <div class="copyright"><a href="https://beian.miit.gov.cn" target="_blank">京ICP备17006226号-2</a> &copy;
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -687,7 +689,7 @@
   <div class="theme-info">
     <div class="powered-by"></div>
     <i class="fa fa-pencil"></i>
-    <span class="post-count">博客全站共37.8k字</span>
+    <span class="post-count">博客全站共38.8k字</span>
   </div>
 
 

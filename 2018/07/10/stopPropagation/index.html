@@ -97,25 +97,27 @@
   </script>
 
 
-<meta name="description" content="这个布局div里有一个a链接，我们队div和a都添加点击事件（使用jq方法添加点击事件）来查看效果。1234567891011&amp;lt;div class=&quot;testBox&quot;&amp;gt;    &amp;lt;a href=&quot;https://www.baidu.com/&quot; target=&quot;_blank&quot;&amp;gt;百度一下&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt;$(&apos;.testBox&apos;).click(funct">
-<meta name="keywords" content="event.stopPropagation();,event.preventDefault();,return false;">
+<meta name="description" content="这个布局div里有一个a链接，我们队div和a都添加点击事件（使用jq方法添加点击事件）来查看效果。1234567891011&lt;div class&#x3D;&quot;testBox&quot;&gt;    &lt;a href&#x3D;&quot;https:&#x2F;&#x2F;www.baidu.com&#x2F;&quot; target&#x3D;&quot;_blank&quot;&gt;百度一下&lt;&#x2F;a&gt;&lt;&#x2F;di">
 <meta property="og:type" content="article">
 <meta property="og:title" content="event.stopPropagation()、event.stopPropagation()、 return false 理解与兼容">
 <meta property="og:url" content="http://zhouyanwei.cn/2018/07/10/stopPropagation/index.html">
 <meta property="og:site_name" content="zywkuo">
-<meta property="og:description" content="这个布局div里有一个a链接，我们队div和a都添加点击事件（使用jq方法添加点击事件）来查看效果。1234567891011&amp;lt;div class=&quot;testBox&quot;&amp;gt;    &amp;lt;a href=&quot;https://www.baidu.com/&quot; target=&quot;_blank&quot;&amp;gt;百度一下&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt;$(&apos;.testBox&apos;).click(funct">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-10T06:33:31.080Z">
+<meta property="og:description" content="这个布局div里有一个a链接，我们队div和a都添加点击事件（使用jq方法添加点击事件）来查看效果。1234567891011&lt;div class&#x3D;&quot;testBox&quot;&gt;    &lt;a href&#x3D;&quot;https:&#x2F;&#x2F;www.baidu.com&#x2F;&quot; target&#x3D;&quot;_blank&quot;&gt;百度一下&lt;&#x2F;a&gt;&lt;&#x2F;di">
+<meta property="og:locale">
+<meta property="article:published_time" content="2018-07-09T16:00:00.000Z">
+<meta property="article:modified_time" content="2018-07-10T06:33:31.080Z">
+<meta property="article:author" content="Zyw">
+<meta property="article:tag" content="event.stopPropagation();">
+<meta property="article:tag" content="event.preventDefault();">
+<meta property="article:tag" content="return false;">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="event.stopPropagation()、event.stopPropagation()、 return false 理解与兼容">
-<meta name="twitter:description" content="这个布局div里有一个a链接，我们队div和a都添加点击事件（使用jq方法添加点击事件）来查看效果。1234567891011&amp;lt;div class=&quot;testBox&quot;&amp;gt;    &amp;lt;a href=&quot;https://www.baidu.com/&quot; target=&quot;_blank&quot;&amp;gt;百度一下&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt;$(&apos;.testBox&apos;).click(funct">
 
 
 
 <script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: '/',
+    root: '',
     scheme: 'Gemini',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
@@ -154,7 +156,7 @@
 
 
 
-</head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -202,7 +204,7 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
+          <a href="/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
@@ -212,7 +214,7 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
+          <a href="/about/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
@@ -222,7 +224,7 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
+          <a href="/tags/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
@@ -232,7 +234,7 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
+          <a href="/categories/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
@@ -242,7 +244,7 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
+          <a href="/archives/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
@@ -320,7 +322,7 @@
     <link itemprop="mainEntityOfPage" href="http://zhouyanwei.cn/2018/07/10/stopPropagation/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zyw">
+      <meta itemprop="name" content="">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
@@ -448,15 +450,14 @@
       
 
       
-        <p>这个布局div里有一个a链接，我们队div和a都添加点击事件（使用jq方法添加点击事件）来查看效果。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=<span class="string">"testBox"</span>&gt;</span><br><span class="line">    &lt;a href=<span class="string">"https://www.baidu.com/"</span> target=<span class="string">"_blank"</span>&gt;百度一下&lt;/a&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">$(<span class="string">'.testBox'</span>).click(<span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">    console.log(1);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">$(<span class="string">'.testBox a'</span>).click(<span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">    console.log(2);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+        <p>这个布局div里有一个a链接，我们队div和a都添加点击事件（使用jq方法添加点击事件）来查看效果。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=<span class="string">&quot;testBox&quot;</span>&gt;</span><br><span class="line">    &lt;a href=<span class="string">&quot;https://www.baidu.com/&quot;</span> target=<span class="string">&quot;_blank&quot;</span>&gt;百度一下&lt;/a&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">$(<span class="string">&#x27;.testBox&#x27;</span>).click(<span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">    console.log(1);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">$(<span class="string">&#x27;.testBox a&#x27;</span>).click(<span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">    console.log(2);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
 <h1 id="默认情况下"><a href="#默认情况下" class="headerlink" title="默认情况下"></a>默认情况下</h1><p>控制台输出结果为2、1并且跳转打开链接。<br>因为事件冒泡原理，DOM上触发事件后，通过DOM树往上，在每一级父元素上触发。<br>有时候我们想先不执行跳转链接或者只执行当前DOM的事件，我们就用到下面的了。</p>
-<h1 id="event-preventDefault-阻止默认行为"><a href="#event-preventDefault-阻止默认行为" class="headerlink" title="event.preventDefault();//阻止默认行为"></a>event.preventDefault();//阻止默认行为</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'.testBox a'</span>).click(<span class="keyword">function</span> (event) &#123;</span><br><span class="line">    event.preventDefault();</span><br><span class="line">    console.log(2);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h1 id="event-preventDefault-阻止默认行为"><a href="#event-preventDefault-阻止默认行为" class="headerlink" title="event.preventDefault();//阻止默认行为"></a>event.preventDefault();//阻止默认行为</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&#x27;.testBox a&#x27;</span>).click(<span class="keyword">function</span> (event) &#123;</span><br><span class="line">    event.preventDefault();</span><br><span class="line">    console.log(2);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <p>控制台输出结果为2、1链接没有跳转。<br>阻止事件的默认行为，但不阻止冒泡。<br>如果考虑IE还需要进行兼容（用三元表达式进行兼容）<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">event.preventDefault ? event.preventDefault() : event.returnValue=<span class="literal">false</span>;</span><br></pre></td></tr></table></figure></p>
-<h1 id="event-stopPropagation-阻止事件冒泡"><a href="#event-stopPropagation-阻止事件冒泡" class="headerlink" title="event.stopPropagation();//阻止事件冒泡"></a>event.stopPropagation();//阻止事件冒泡</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'.testBox a'</span>).click(<span class="keyword">function</span> (event) &#123;</span><br><span class="line">    event.stopPropagation();</span><br><span class="line">    console.log(2);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h1 id="event-stopPropagation-阻止事件冒泡"><a href="#event-stopPropagation-阻止事件冒泡" class="headerlink" title="event.stopPropagation();//阻止事件冒泡"></a>event.stopPropagation();//阻止事件冒泡</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&#x27;.testBox a&#x27;</span>).click(<span class="keyword">function</span> (event) &#123;</span><br><span class="line">    event.stopPropagation();</span><br><span class="line">    console.log(2);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <p>控制台输出结果为2并且跳转打开链接。<br>阻止事件的冒泡，但不阻止事件的默认行为。<br>如果考虑IE还需要进行兼容（用三元表达式进行兼容）<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">event.stopPropagation ? event.stopPropagation() : event.cancelBubble=<span class="literal">true</span>;</span><br></pre></td></tr></table></figure></p>
-<h1 id="return-false"><a href="#return-false" class="headerlink" title="return false;"></a>return false;</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'.testBox a'</span>).get(0).addEventListener(<span class="string">"click"</span>,<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">    <span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">     console.log(2);</span><br><span class="line">&#125;,<span class="literal">false</span>);</span><br></pre></td></tr></table></figure>
-<p>控制台输出结果为1并且跳转打开链接。<br>若使用a.addEventListener,则return false 不会阻止默认行为；<br>使用原生js时，若要阻止默认行为，最好还是用event.preventDefault（针对非IE）或event.returnValue=false（针对IE）来设定。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'.testBox a'</span>).click(<span class="keyword">function</span> (event) &#123;</span><br><span class="line">    <span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">    console.log(2);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<p>控制台没有输出结果链接也咩有进行跳转。<br>使用a.onclick或a.attachEvent,则 return false会阻止默认行为；<br>使用jquery，return false 即会阻止默认行为，也会阻止事件的冒泡。在jquery中，一般使用return false.</p>
+<h1 id="return-false"><a href="#return-false" class="headerlink" title="return false;"></a>return false;</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&#x27;.testBox a&#x27;</span>).get(0).addEventListener(<span class="string">&quot;click&quot;</span>,<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">    <span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">     console.log(2);</span><br><span class="line">&#125;,<span class="literal">false</span>);</span><br></pre></td></tr></table></figure>
+<p>控制台输出结果为1并且跳转打开链接。<br>若使用a.addEventListener,则return false 不会阻止默认行为；<br>使用原生js时，若要阻止默认行为，最好还是用event.preventDefault（针对非IE）或event.returnValue=false（针对IE）来设定。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&#x27;.testBox a&#x27;</span>).click(<span class="keyword">function</span> (event) &#123;</span><br><span class="line">    <span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">    console.log(2);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><br>控制台没有输出结果链接也咩有进行跳转。<br>使用a.onclick或a.attachEvent,则 return false会阻止默认行为；<br>使用jquery，return false 即会阻止默认行为，也会阻止事件的冒泡。在jquery中，一般使用return false.</p>
 <p><strong><em>在使用的时候要注意return false;后面的代码不会执行。</em></strong></p>
 
       
@@ -575,8 +576,8 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <p class="site-author-name" itemprop="name">Zyw</p>
-              <p class="site-description motion-element" itemprop="description">周艳伟的个人博客</p>
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
           <nav class="site-state motion-element">
@@ -584,7 +585,7 @@
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives/">
+                <a href="/archives/%20%7C%7C%20archive">
               
                   <span class="site-state-item-count">42</span>
                   <span class="site-state-item-name">日志</span>
@@ -668,7 +669,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#默认情况下"><span class="nav-number">1.</span> <span class="nav-text">默认情况下</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#event-preventDefault-阻止默认行为"><span class="nav-number">2.</span> <span class="nav-text">event.preventDefault();//阻止默认行为</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#event-stopPropagation-阻止事件冒泡"><span class="nav-number">3.</span> <span class="nav-text">event.stopPropagation();//阻止事件冒泡</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#return-false"><span class="nav-number">4.</span> <span class="nav-text">return false;</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%BB%98%E8%AE%A4%E6%83%85%E5%86%B5%E4%B8%8B"><span class="nav-number">1.</span> <span class="nav-text">默认情况下</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#event-preventDefault-%E9%98%BB%E6%AD%A2%E9%BB%98%E8%AE%A4%E8%A1%8C%E4%B8%BA"><span class="nav-number">2.</span> <span class="nav-text">event.preventDefault();&#x2F;&#x2F;阻止默认行为</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#event-stopPropagation-%E9%98%BB%E6%AD%A2%E4%BA%8B%E4%BB%B6%E5%86%92%E6%B3%A1"><span class="nav-number">3.</span> <span class="nav-text">event.stopPropagation();&#x2F;&#x2F;阻止事件冒泡</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#return-false"><span class="nav-number">4.</span> <span class="nav-text">return false;</span></a></li></ol></div>
             
 
           </div>
@@ -688,7 +689,8 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+        <div class="copyright"><a href="https://beian.miit.gov.cn" target="_blank">京ICP备17006226号-2</a> &copy;
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -711,7 +713,7 @@
   <div class="theme-info">
     <div class="powered-by"></div>
     <i class="fa fa-pencil"></i>
-    <span class="post-count">博客全站共37.8k字</span>
+    <span class="post-count">博客全站共38.8k字</span>
   </div>
 
 

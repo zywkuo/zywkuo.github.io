@@ -31,24 +31,6 @@
       </tags>
   </entry>
   <entry>
-    <title>codepen</title>
-    <url>/2017/06/01/codepen/</url>
-    <content><![CDATA[<p>codepen, “代码笔”,前端开发很好用的一个网站，你可以把你的HTML、css、js代码放到上面看效果，也可以在上面直接写代码看结果。</p>
-<p>现在的css3的一些特效，像旋转，移动什么的都需要进行兼容性处理，在这里就介绍一下codepen如何进行兼容性处理。</p>
-<p>首先打开codepen网址，<a href="https://codepen.io/">www.codepen.io</a>点击creat新建一个newpen<br><img src="/images/2017-06-01/newpen.png" alt=""><br>把css代码粘贴到css框里，然后<br><img src="/images/2017-06-01/pen1.png" alt=""><br><img src="/images/2017-06-01/pen2.png" alt=""><br><img src="/images/2017-06-01/pen3.png" alt=""><br><img src="/images/2017-06-01/pen4.png" alt=""><br>这样css代码框里的兼容就处理好了，就可以替换原来的代码了。</p>
-<p>看一下兼容前后的效果！<br><img src="/images/2017-06-01/pen5.png" alt=""><br>看着很简单，但是一个页面有很多css动画，还有很多个页面，这个兼容就好用多了。</p>
-<blockquote>
-<p>codepen的实用之处。。。</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>css</category>
-      </categories>
-      <tags>
-        <tag>codepen兼容</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>github pages+jekyll搭建博客(windows)</title>
     <url>/2017/05/16/github%20pages+jekyll/</url>
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>先唠叨两句，说一下我的写博客经历，原来我就是在新浪写一写，后来发现对于程序员来说，并不是很好用，一些代码他会过滤，还会给你读出来，上次有一个input框，发布出去的时候居然出来一个搜索框，让我无言以对。代码高亮什么的效果都不好，还需要我把代码放到记事本里，在粘贴到博客里，很麻烦，也不美观，让后我就去博客园等一些地方，想在这些地方写写，后来想想觉得也不是很好，要不就自己做一套吧，我就用phpcms+bootstraps在本地搭建了一套，然后我觉得有点麻烦，写点什么也不方便，不直观，在加上还要去买服务器，然后就放弃了。后来发现了这个github pages感觉很不错，就像写txt是的，很方便，在加上一套jekyll模板，感觉还是很不错的，现在还很流行Hexo,下面有一块我会对比一下jekyll和Hexo的区别，优缺点。</p>
@@ -77,6 +59,24 @@
       </categories>
       <tags>
         <tag>github pages+jekyll</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>codepen</title>
+    <url>/2017/06/01/codepen/</url>
+    <content><![CDATA[<p>codepen, “代码笔”,前端开发很好用的一个网站，你可以把你的HTML、css、js代码放到上面看效果，也可以在上面直接写代码看结果。</p>
+<p>现在的css3的一些特效，像旋转，移动什么的都需要进行兼容性处理，在这里就介绍一下codepen如何进行兼容性处理。</p>
+<p>首先打开codepen网址，<a href="https://codepen.io/">www.codepen.io</a>点击creat新建一个newpen<br><img src="/images/2017-06-01/newpen.png" alt=""><br>把css代码粘贴到css框里，然后<br><img src="/images/2017-06-01/pen1.png" alt=""><br><img src="/images/2017-06-01/pen2.png" alt=""><br><img src="/images/2017-06-01/pen3.png" alt=""><br><img src="/images/2017-06-01/pen4.png" alt=""><br>这样css代码框里的兼容就处理好了，就可以替换原来的代码了。</p>
+<p>看一下兼容前后的效果！<br><img src="/images/2017-06-01/pen5.png" alt=""><br>看着很简单，但是一个页面有很多css动画，还有很多个页面，这个兼容就好用多了。</p>
+<blockquote>
+<p>codepen的实用之处。。。</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>css</category>
+      </categories>
+      <tags>
+        <tag>codepen兼容</tag>
       </tags>
   </entry>
   <entry>
@@ -826,21 +826,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello Hexo</title>
-    <url>/2018/06/28/hello-hexo/</url>
-    <content><![CDATA[<h1 id="Miss-Dad"><a href="#Miss-Dad" class="headerlink" title="Miss Dad"></a>Miss Dad</h1><p>感觉过了人生过了好久，哪怕在没有时间也要抽出时间陪陪家人，不要失去了才知道珍惜。好久没有写博客了，因为个人原因在加上换了电脑不想在用jekyll写了，觉得太麻烦，这几天工作不是很忙就像在把博客弄回来，选择了Hexo,还是比较方便的。</p>
-<p>下面只记录一下常用的Hexo命令，方便以后回看。</p>
-<h1 id="hexo-new"><a href="#hexo-new" class="headerlink" title="hexo new"></a>hexo new</h1><p>新建一篇标题为 My New Post 的文章，因为标题里有空格，所以加上了引号。文章标题可以在对应 md 文件里改，新建时标题可以写的简单些。<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure></p>
-<h1 id="hexo-server-hexo-s"><a href="#hexo-server-hexo-s" class="headerlink" title="hexo server/hexo s"></a>hexo server/hexo s</h1><p>启动本地服务器，用于预览主题。默认地址： <a href="http://localhost:4000/hexo">http://localhost:4000/hexo</a> s 是 hexo server 的缩写，命令效果一致；预览的同时可以修改文章内容或主题代码，保存后刷新页面即可；对 Hexo 根目录 _config.yml 的修改，需要重启本地服务器后才能预览效果。<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server/hexo s</span><br></pre></td></tr></table></figure></p>
-<h1 id="hexo-generate-hexo-g"><a href="#hexo-generate-hexo-g" class="headerlink" title="hexo generate/hexo g"></a>hexo generate/hexo g</h1><p>生成网站静态文件到默认设置的 public 文件夹。便于查看网站生成的静态文件或者手动部署网站；如果使用自动部署，不需要先执行该命令；hexo g 是 hexo generate 的缩写，命令效果一致。<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate/hexo g</span><br></pre></td></tr></table></figure></p>
-<h1 id="hexo-deploy-hexo-d"><a href="#hexo-deploy-hexo-d" class="headerlink" title="hexo deploy/hexo d"></a>hexo deploy/hexo d</h1><p>自动生成网站静态文件，并部署到设定的仓库。hexo d 是 hexo deploy 的缩写，命令效果一致。<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy/hexo d</span><br></pre></td></tr></table></figure></p>
-<h1 id="hexo-clean"><a href="#hexo-clean" class="headerlink" title="hexo clean"></a>hexo clean</h1><p>清除缓存文件 db.json 和已生成的静态文件 public 。网站显示异常时可以执行这条命令试试。<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo clean</span><br></pre></td></tr></table></figure></p>
-]]></content>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>append、appendto、prepend、prependto、after、before</title>
     <url>/2018/07/07/append/</url>
     <content><![CDATA[<h1 id="append"><a href="#append" class="headerlink" title="append()"></a>append()</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">在被选元素（里）的结尾插入内容</span><br><span class="line">表达式：$(selector).append(content);</span><br><span class="line">&lt;p&gt;Hello&lt;/p&gt;</span><br><span class="line">$(<span class="string">&#x27;p&#x27;</span>).append(<span class="string">&#x27;&lt;b&gt;Zyw&lt;/b&gt;&#x27;</span>);</span><br><span class="line">&lt;p&gt;</span><br><span class="line">    Hello</span><br><span class="line">    &lt;b&gt;Zyw&lt;/b&gt;</span><br><span class="line">&lt;/p&gt;</span><br></pre></td></tr></table></figure>
@@ -877,24 +862,18 @@
       </tags>
   </entry>
   <entry>
-    <title>时间戳与时间获取</title>
-    <url>/2018/07/09/timer/</url>
-    <content><![CDATA[<h1 id="时间转时间戳"><a href="#时间转时间戳" class="headerlink" title="时间转时间戳"></a>时间转时间戳</h1><h2 id="1-Date-parse-new-Date-不推荐这种办法，毫秒级别的数值被转化为000"><a href="#1-Date-parse-new-Date-不推荐这种办法，毫秒级别的数值被转化为000" class="headerlink" title="1.Date.parse(new Date()) 不推荐这种办法，毫秒级别的数值被转化为000"></a>1.Date.parse(new Date()) 不推荐这种办法，毫秒级别的数值被转化为000</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">var timestamp1 = Date.parse(new Date());</span><br><span class="line">console.log(timestamp1); //1531100204000</span><br></pre></td></tr></table></figure>
-<h2 id="2-new-Date-valueOf-通过valueOf-函数返回指定对象的原始值获得准确的时间戳值"><a href="#2-new-Date-valueOf-通过valueOf-函数返回指定对象的原始值获得准确的时间戳值" class="headerlink" title="2.(new Date()).valueOf() 通过valueOf()函数返回指定对象的原始值获得准确的时间戳值"></a>2.(new Date()).valueOf() 通过valueOf()函数返回指定对象的原始值获得准确的时间戳值</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">var timestamp2 = (new Date()).valueOf();</span><br><span class="line">console.log(timestamp2); //1531100216013</span><br></pre></td></tr></table></figure>
-<h2 id="3-new-Date-getTime-通过原型方法直接获得当前时间的毫秒值，准确"><a href="#3-new-Date-getTime-通过原型方法直接获得当前时间的毫秒值，准确" class="headerlink" title="3.new Date().getTime() 通过原型方法直接获得当前时间的毫秒值，准确"></a>3.new Date().getTime() 通过原型方法直接获得当前时间的毫秒值，准确</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">var timestamp3 = new Date().getTime();</span><br><span class="line">console.log(timestamp3); //1531100225639</span><br></pre></td></tr></table></figure>
-<h2 id="4-Number-new-Date-将时间转化为一个number类型的数值，即时间戳"><a href="#4-Number-new-Date-将时间转化为一个number类型的数值，即时间戳" class="headerlink" title="4.Number(new Date()) 将时间转化为一个number类型的数值，即时间戳"></a>4.Number(new Date()) 将时间转化为一个number类型的数值，即时间戳</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">var timetamp4 = Number(new Date());</span><br><span class="line">console.log(timetamp4); //1531100238110</span><br></pre></td></tr></table></figure>
-<h2 id="5-Date-now-ES5给Date提供了一种获取时间戳的新特性"><a href="#5-Date-now-ES5给Date提供了一种获取时间戳的新特性" class="headerlink" title="5.Date.now() ES5给Date提供了一种获取时间戳的新特性"></a>5.Date.now() ES5给Date提供了一种获取时间戳的新特性</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">var timetamp5 = Date.now();</span><br><span class="line">console.log(timetamp5); //1531100248079</span><br></pre></td></tr></table></figure>
-<h1 id="获取当前时间"><a href="#获取当前时间" class="headerlink" title="获取当前时间"></a>获取当前时间</h1><p>一个获取当前时间的函数，比较不错，好用。<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Date.prototype.pattern=<span class="keyword">function</span>(fmt) &#123;</span><br><span class="line">    var o = &#123;</span><br><span class="line">        <span class="string">&quot;M+&quot;</span> : this.getMonth()+1, //月份</span><br><span class="line">        <span class="string">&quot;d+&quot;</span> : this.getDate(), //日</span><br><span class="line">        <span class="string">&quot;h+&quot;</span> : this.getHours()%12 == 0 ? 12 : this.getHours()%12, //小时</span><br><span class="line">        <span class="string">&quot;H+&quot;</span> : this.getHours(), //小时</span><br><span class="line">        <span class="string">&quot;m+&quot;</span> : this.getMinutes(), //分</span><br><span class="line">        <span class="string">&quot;s+&quot;</span> : this.getSeconds(), //秒</span><br><span class="line">        <span class="string">&quot;q+&quot;</span> : Math.floor((this.getMonth()+3)/3), //季度</span><br><span class="line">        <span class="string">&quot;S&quot;</span> : this.getMilliseconds() //毫秒，</span><br><span class="line">    &#125;;</span><br><span class="line">    var week = &#123;</span><br><span class="line">        <span class="string">&quot;0&quot;</span> : <span class="string">&quot;星期日&quot;</span>,</span><br><span class="line">        <span class="string">&quot;1&quot;</span> : <span class="string">&quot;星期一&quot;</span>,</span><br><span class="line">        <span class="string">&quot;2&quot;</span> : <span class="string">&quot;星期二&quot;</span>,</span><br><span class="line">        <span class="string">&quot;3&quot;</span> : <span class="string">&quot;星期三&quot;</span>,</span><br><span class="line">        <span class="string">&quot;4&quot;</span> : <span class="string">&quot;星期四&quot;</span>,</span><br><span class="line">        <span class="string">&quot;5&quot;</span> : <span class="string">&quot;星期五&quot;</span>,</span><br><span class="line">        <span class="string">&quot;6&quot;</span> : <span class="string">&quot;星期六&quot;</span></span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">if</span>(/(y+)/.<span class="built_in">test</span>(fmt))&#123;</span><br><span class="line">        fmt=fmt.replace(RegExp.<span class="variable">$1</span>, (this.getFullYear()+<span class="string">&quot;&quot;</span>).substr(4 - RegExp.<span class="variable">$1</span>.length));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(/(E+)/.<span class="built_in">test</span>(fmt))&#123;</span><br><span class="line">        fmt=fmt.replace(RegExp.<span class="variable">$1</span>, ((RegExp.<span class="variable">$1</span>.length&gt;1) ? (RegExp.<span class="variable">$1</span>.length&gt;2 ? <span class="string">&quot;/u661f/u671f&quot;</span> : <span class="string">&quot;/u5468&quot;</span>) : <span class="string">&quot;&quot;</span>)+week[this.getDay()+<span class="string">&quot;&quot;</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(var k <span class="keyword">in</span> o)&#123;</span><br><span class="line">        <span class="keyword">if</span>(new RegExp(<span class="string">&quot;(&quot;</span>+ k +<span class="string">&quot;)&quot;</span>).<span class="built_in">test</span>(fmt))&#123;</span><br><span class="line">            fmt = fmt.replace(RegExp.<span class="variable">$1</span>, (RegExp.<span class="variable">$1</span>.length==1) ? (o[k]) : ((<span class="string">&quot;00&quot;</span>+ o[k]).substr((<span class="string">&quot;&quot;</span>+ o[k]).length)));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">return</span> fmt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>使用方法如下 yyyy(年) MM(月) dd(日) HH(时) mm(分) ss(秒) 随意搭配可以调换顺序使用</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">console.log(new Date().pattern(<span class="string">&quot;HH:mm&quot;</span>));//09:41</span><br><span class="line">console.log(new Date().pattern(<span class="string">&quot;yyyy-MM-dd HH:mm&quot;</span>));//2018-07-09 09:41</span><br><span class="line">console.log(new Date().pattern(<span class="string">&quot;yyyy年MM月dd日 HH:mm&quot;</span>));//2018年07月09日 09:41</span><br><span class="line">console.log(new Date().pattern(<span class="string">&quot;yyyy年MM月dd日 HH:mm:ss&quot;</span>));//2018年07月09日 09:41:55</span><br><span class="line">console.log(new Date().pattern(<span class="string">&quot;HH:mm yyyy年MM月dd日 E&quot;</span>));//09:41 2018年07月09日 星期一</span><br></pre></td></tr></table></figure>
-<h1 id="移动端比较不错的时间插件-lCalendar-js"><a href="#移动端比较不错的时间插件-lCalendar-js" class="headerlink" title="移动端比较不错的时间插件 lCalendar.js"></a>移动端比较不错的时间插件 lCalendar.js</h1><p>详情可以点击此链接查看 <a href="http://www.jq22.com/jquery-info13497">手机端日期插件lCalendar.js</a></p>
-<p>多多记录，方便以后查看。</p>
+    <title>Hello Hexo</title>
+    <url>/2018/06/28/hello-hexo/</url>
+    <content><![CDATA[<h1 id="Miss-Dad"><a href="#Miss-Dad" class="headerlink" title="Miss Dad"></a>Miss Dad</h1><p>感觉过了人生过了好久，哪怕在没有时间也要抽出时间陪陪家人，不要失去了才知道珍惜。好久没有写博客了，因为个人原因在加上换了电脑不想在用jekyll写了，觉得太麻烦，这几天工作不是很忙就像在把博客弄回来，选择了Hexo,还是比较方便的。</p>
+<p>下面只记录一下常用的Hexo命令，方便以后回看。</p>
+<h1 id="hexo-new"><a href="#hexo-new" class="headerlink" title="hexo new"></a>hexo new</h1><p>新建一篇标题为 My New Post 的文章，因为标题里有空格，所以加上了引号。文章标题可以在对应 md 文件里改，新建时标题可以写的简单些。<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure></p>
+<h1 id="hexo-server-hexo-s"><a href="#hexo-server-hexo-s" class="headerlink" title="hexo server/hexo s"></a>hexo server/hexo s</h1><p>启动本地服务器，用于预览主题。默认地址： <a href="http://localhost:4000/hexo">http://localhost:4000/hexo</a> s 是 hexo server 的缩写，命令效果一致；预览的同时可以修改文章内容或主题代码，保存后刷新页面即可；对 Hexo 根目录 _config.yml 的修改，需要重启本地服务器后才能预览效果。<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server/hexo s</span><br></pre></td></tr></table></figure></p>
+<h1 id="hexo-generate-hexo-g"><a href="#hexo-generate-hexo-g" class="headerlink" title="hexo generate/hexo g"></a>hexo generate/hexo g</h1><p>生成网站静态文件到默认设置的 public 文件夹。便于查看网站生成的静态文件或者手动部署网站；如果使用自动部署，不需要先执行该命令；hexo g 是 hexo generate 的缩写，命令效果一致。<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate/hexo g</span><br></pre></td></tr></table></figure></p>
+<h1 id="hexo-deploy-hexo-d"><a href="#hexo-deploy-hexo-d" class="headerlink" title="hexo deploy/hexo d"></a>hexo deploy/hexo d</h1><p>自动生成网站静态文件，并部署到设定的仓库。hexo d 是 hexo deploy 的缩写，命令效果一致。<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy/hexo d</span><br></pre></td></tr></table></figure></p>
+<h1 id="hexo-clean"><a href="#hexo-clean" class="headerlink" title="hexo clean"></a>hexo clean</h1><p>清除缓存文件 db.json 和已生成的静态文件 public 。网站显示异常时可以执行这条命令试试。<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo clean</span><br></pre></td></tr></table></figure></p>
 ]]></content>
-      <categories>
-        <category>js</category>
-      </categories>
       <tags>
-        <tag>时间戳</tag>
-        <tag>当前时间</tag>
+        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -917,6 +896,27 @@
         <tag>event.stopPropagation();</tag>
         <tag>event.preventDefault();</tag>
         <tag>return false;</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>时间戳与时间获取</title>
+    <url>/2018/07/09/timer/</url>
+    <content><![CDATA[<h1 id="时间转时间戳"><a href="#时间转时间戳" class="headerlink" title="时间转时间戳"></a>时间转时间戳</h1><h2 id="1-Date-parse-new-Date-不推荐这种办法，毫秒级别的数值被转化为000"><a href="#1-Date-parse-new-Date-不推荐这种办法，毫秒级别的数值被转化为000" class="headerlink" title="1.Date.parse(new Date()) 不推荐这种办法，毫秒级别的数值被转化为000"></a>1.Date.parse(new Date()) 不推荐这种办法，毫秒级别的数值被转化为000</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">var timestamp1 = Date.parse(new Date());</span><br><span class="line">console.log(timestamp1); //1531100204000</span><br></pre></td></tr></table></figure>
+<h2 id="2-new-Date-valueOf-通过valueOf-函数返回指定对象的原始值获得准确的时间戳值"><a href="#2-new-Date-valueOf-通过valueOf-函数返回指定对象的原始值获得准确的时间戳值" class="headerlink" title="2.(new Date()).valueOf() 通过valueOf()函数返回指定对象的原始值获得准确的时间戳值"></a>2.(new Date()).valueOf() 通过valueOf()函数返回指定对象的原始值获得准确的时间戳值</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">var timestamp2 = (new Date()).valueOf();</span><br><span class="line">console.log(timestamp2); //1531100216013</span><br></pre></td></tr></table></figure>
+<h2 id="3-new-Date-getTime-通过原型方法直接获得当前时间的毫秒值，准确"><a href="#3-new-Date-getTime-通过原型方法直接获得当前时间的毫秒值，准确" class="headerlink" title="3.new Date().getTime() 通过原型方法直接获得当前时间的毫秒值，准确"></a>3.new Date().getTime() 通过原型方法直接获得当前时间的毫秒值，准确</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">var timestamp3 = new Date().getTime();</span><br><span class="line">console.log(timestamp3); //1531100225639</span><br></pre></td></tr></table></figure>
+<h2 id="4-Number-new-Date-将时间转化为一个number类型的数值，即时间戳"><a href="#4-Number-new-Date-将时间转化为一个number类型的数值，即时间戳" class="headerlink" title="4.Number(new Date()) 将时间转化为一个number类型的数值，即时间戳"></a>4.Number(new Date()) 将时间转化为一个number类型的数值，即时间戳</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">var timetamp4 = Number(new Date());</span><br><span class="line">console.log(timetamp4); //1531100238110</span><br></pre></td></tr></table></figure>
+<h2 id="5-Date-now-ES5给Date提供了一种获取时间戳的新特性"><a href="#5-Date-now-ES5给Date提供了一种获取时间戳的新特性" class="headerlink" title="5.Date.now() ES5给Date提供了一种获取时间戳的新特性"></a>5.Date.now() ES5给Date提供了一种获取时间戳的新特性</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">var timetamp5 = Date.now();</span><br><span class="line">console.log(timetamp5); //1531100248079</span><br></pre></td></tr></table></figure>
+<h1 id="获取当前时间"><a href="#获取当前时间" class="headerlink" title="获取当前时间"></a>获取当前时间</h1><p>一个获取当前时间的函数，比较不错，好用。<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Date.prototype.pattern=<span class="keyword">function</span>(fmt) &#123;</span><br><span class="line">    var o = &#123;</span><br><span class="line">        <span class="string">&quot;M+&quot;</span> : this.getMonth()+1, //月份</span><br><span class="line">        <span class="string">&quot;d+&quot;</span> : this.getDate(), //日</span><br><span class="line">        <span class="string">&quot;h+&quot;</span> : this.getHours()%12 == 0 ? 12 : this.getHours()%12, //小时</span><br><span class="line">        <span class="string">&quot;H+&quot;</span> : this.getHours(), //小时</span><br><span class="line">        <span class="string">&quot;m+&quot;</span> : this.getMinutes(), //分</span><br><span class="line">        <span class="string">&quot;s+&quot;</span> : this.getSeconds(), //秒</span><br><span class="line">        <span class="string">&quot;q+&quot;</span> : Math.floor((this.getMonth()+3)/3), //季度</span><br><span class="line">        <span class="string">&quot;S&quot;</span> : this.getMilliseconds() //毫秒，</span><br><span class="line">    &#125;;</span><br><span class="line">    var week = &#123;</span><br><span class="line">        <span class="string">&quot;0&quot;</span> : <span class="string">&quot;星期日&quot;</span>,</span><br><span class="line">        <span class="string">&quot;1&quot;</span> : <span class="string">&quot;星期一&quot;</span>,</span><br><span class="line">        <span class="string">&quot;2&quot;</span> : <span class="string">&quot;星期二&quot;</span>,</span><br><span class="line">        <span class="string">&quot;3&quot;</span> : <span class="string">&quot;星期三&quot;</span>,</span><br><span class="line">        <span class="string">&quot;4&quot;</span> : <span class="string">&quot;星期四&quot;</span>,</span><br><span class="line">        <span class="string">&quot;5&quot;</span> : <span class="string">&quot;星期五&quot;</span>,</span><br><span class="line">        <span class="string">&quot;6&quot;</span> : <span class="string">&quot;星期六&quot;</span></span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">if</span>(/(y+)/.<span class="built_in">test</span>(fmt))&#123;</span><br><span class="line">        fmt=fmt.replace(RegExp.<span class="variable">$1</span>, (this.getFullYear()+<span class="string">&quot;&quot;</span>).substr(4 - RegExp.<span class="variable">$1</span>.length));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(/(E+)/.<span class="built_in">test</span>(fmt))&#123;</span><br><span class="line">        fmt=fmt.replace(RegExp.<span class="variable">$1</span>, ((RegExp.<span class="variable">$1</span>.length&gt;1) ? (RegExp.<span class="variable">$1</span>.length&gt;2 ? <span class="string">&quot;/u661f/u671f&quot;</span> : <span class="string">&quot;/u5468&quot;</span>) : <span class="string">&quot;&quot;</span>)+week[this.getDay()+<span class="string">&quot;&quot;</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(var k <span class="keyword">in</span> o)&#123;</span><br><span class="line">        <span class="keyword">if</span>(new RegExp(<span class="string">&quot;(&quot;</span>+ k +<span class="string">&quot;)&quot;</span>).<span class="built_in">test</span>(fmt))&#123;</span><br><span class="line">            fmt = fmt.replace(RegExp.<span class="variable">$1</span>, (RegExp.<span class="variable">$1</span>.length==1) ? (o[k]) : ((<span class="string">&quot;00&quot;</span>+ o[k]).substr((<span class="string">&quot;&quot;</span>+ o[k]).length)));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">return</span> fmt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>使用方法如下 yyyy(年) MM(月) dd(日) HH(时) mm(分) ss(秒) 随意搭配可以调换顺序使用</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">console.log(new Date().pattern(<span class="string">&quot;HH:mm&quot;</span>));//09:41</span><br><span class="line">console.log(new Date().pattern(<span class="string">&quot;yyyy-MM-dd HH:mm&quot;</span>));//2018-07-09 09:41</span><br><span class="line">console.log(new Date().pattern(<span class="string">&quot;yyyy年MM月dd日 HH:mm&quot;</span>));//2018年07月09日 09:41</span><br><span class="line">console.log(new Date().pattern(<span class="string">&quot;yyyy年MM月dd日 HH:mm:ss&quot;</span>));//2018年07月09日 09:41:55</span><br><span class="line">console.log(new Date().pattern(<span class="string">&quot;HH:mm yyyy年MM月dd日 E&quot;</span>));//09:41 2018年07月09日 星期一</span><br></pre></td></tr></table></figure>
+<h1 id="移动端比较不错的时间插件-lCalendar-js"><a href="#移动端比较不错的时间插件-lCalendar-js" class="headerlink" title="移动端比较不错的时间插件 lCalendar.js"></a>移动端比较不错的时间插件 lCalendar.js</h1><p>详情可以点击此链接查看 <a href="http://www.jq22.com/jquery-info13497">手机端日期插件lCalendar.js</a></p>
+<p>多多记录，方便以后查看。</p>
+]]></content>
+      <categories>
+        <category>js</category>
+      </categories>
+      <tags>
+        <tag>时间戳</tag>
+        <tag>当前时间</tag>
       </tags>
   </entry>
   <entry>
@@ -978,6 +978,22 @@
       </tags>
   </entry>
   <entry>
+    <title>:focus-within选择器</title>
+    <url>/2018/08/07/focusWithin/</url>
+    <content><![CDATA[<p>看新闻看到了一个非常不错的选择器:focus-within，他可以做一些js的效果，focus是获取焦点，所以只能有focus状态的元素才可以使用。<br>:focus-within选择器是在元素获取焦点的时候可以触发自身或者父元素的属性（冒泡）。<br><span id="more"></span></p>
+<p>举一个小例子<br>效果如图<br><img src="/images/2018-08-07/focus-within.gif" alt=""><br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">css</span><br><span class="line">.parent&#123;</span><br><span class="line">            width: 100%;</span><br><span class="line">            height: 200px;  </span><br><span class="line">            background: <span class="comment">#eeeeee;</span></span><br><span class="line">            display: flex;</span><br><span class="line">            justify-content: center;</span><br><span class="line">            align-items: center;</span><br><span class="line">        &#125;</span><br><span class="line">        .children&#123;</span><br><span class="line">            width: 100px;</span><br><span class="line">            height: 60px;</span><br><span class="line">            background: <span class="comment">#999;</span></span><br><span class="line">        &#125;</span><br><span class="line">        .parent:focus-within&#123;</span><br><span class="line">            background: <span class="comment">#f60;</span></span><br><span class="line">        &#125;&gt;</span><br></pre></td></tr></table></figure><br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">html</span><br><span class="line">&lt;div class=<span class="string">&quot;parent&quot;</span>&gt;</span><br><span class="line">    &lt;button class=<span class="string">&quot;children&quot;</span>&gt;点我&lt;/button&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p>写了一个选项卡的小例子效果可以看一下<br><img src="/images/2018-08-07/focus-within-nav.gif" alt=""><br><a href="https://codepen.io/zywkuo/pen/XBByzj">具体代码可以点击此链接前往codepen查看，效果也有哦！</a></p>
+<p>在看一下兼容问题  数据来源于<a href="https://caniuse.com/">https://caniuse.com/</a><br><img src="/images/2018-08-07/focus-within.png" alt=""></p>
+<p>虽然对浏览器的兼容效果还不是很好，希望快快普及吧。</p>
+]]></content>
+      <categories>
+        <category>css</category>
+      </categories>
+      <tags>
+        <tag>:focus-within</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>sql语句学习</title>
     <url>/2018/08/03/sql/</url>
     <content><![CDATA[<p>sql学习记录<br><span id="more"></span><br>从 “qc_record” 表中选取所有记录 (<em>qc_record为一个表的名称)<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">select * from qc_record;</span><br></pre></td></tr></table></figure><br>一些最重要的 SQL 命令（</em>SQL 对大小写不敏感：SELECT 与 select 是相同的。）<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">SELECT                  - 从数据库中提取数据</span><br><span class="line">UPDATE                  - 更新数据库中的数据</span><br><span class="line">DELETE                  - 从数据库中删除数据</span><br><span class="line">INSERT INTO             - 向数据库中插入新数据</span><br><span class="line">CREATE DATABASE         - 创建新数据库</span><br><span class="line">ALTER DATABASE          - 修改数据库</span><br><span class="line">CREATE TABLE            - 创建新表</span><br><span class="line">ALTER TABLE             - 变更（改变）数据库表</span><br><span class="line">DROP TABLE              - 删除表</span><br><span class="line">CREATE INDEX            - 创建索引（搜索键）</span><br><span class="line">DROP INDEX              - 删除索引</span><br></pre></td></tr></table></figure></p>
@@ -1012,22 +1028,6 @@
       </categories>
       <tags>
         <tag>sql</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>:focus-within选择器</title>
-    <url>/2018/08/07/focusWithin/</url>
-    <content><![CDATA[<p>看新闻看到了一个非常不错的选择器:focus-within，他可以做一些js的效果，focus是获取焦点，所以只能有focus状态的元素才可以使用。<br>:focus-within选择器是在元素获取焦点的时候可以触发自身或者父元素的属性（冒泡）。<br><span id="more"></span></p>
-<p>举一个小例子<br>效果如图<br><img src="/images/2018-08-07/focus-within.gif" alt=""><br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">css</span><br><span class="line">.parent&#123;</span><br><span class="line">            width: 100%;</span><br><span class="line">            height: 200px;  </span><br><span class="line">            background: <span class="comment">#eeeeee;</span></span><br><span class="line">            display: flex;</span><br><span class="line">            justify-content: center;</span><br><span class="line">            align-items: center;</span><br><span class="line">        &#125;</span><br><span class="line">        .children&#123;</span><br><span class="line">            width: 100px;</span><br><span class="line">            height: 60px;</span><br><span class="line">            background: <span class="comment">#999;</span></span><br><span class="line">        &#125;</span><br><span class="line">        .parent:focus-within&#123;</span><br><span class="line">            background: <span class="comment">#f60;</span></span><br><span class="line">        &#125;&gt;</span><br></pre></td></tr></table></figure><br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">html</span><br><span class="line">&lt;div class=<span class="string">&quot;parent&quot;</span>&gt;</span><br><span class="line">    &lt;button class=<span class="string">&quot;children&quot;</span>&gt;点我&lt;/button&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
-<p>写了一个选项卡的小例子效果可以看一下<br><img src="/images/2018-08-07/focus-within-nav.gif" alt=""><br><a href="https://codepen.io/zywkuo/pen/XBByzj">具体代码可以点击此链接前往codepen查看，效果也有哦！</a></p>
-<p>在看一下兼容问题  数据来源于<a href="https://caniuse.com/">https://caniuse.com/</a><br><img src="/images/2018-08-07/focus-within.png" alt=""></p>
-<p>虽然对浏览器的兼容效果还不是很好，希望快快普及吧。</p>
-]]></content>
-      <categories>
-        <category>css</category>
-      </categories>
-      <tags>
-        <tag>:focus-within</tag>
       </tags>
   </entry>
   <entry>
@@ -1267,6 +1267,27 @@
       </tags>
   </entry>
   <entry>
+    <title>flutter Android Studio配置错误</title>
+    <url>/2018/11/30/flutter/</url>
+    <content><![CDATA[<p>刚开始学些flutter，安装配置的时候遇到了点小问题，配置流程我就不发了，网上很多，我的学习地址是这个，可以参考。<a href="http://jspang.com/post/flutter1.html#toc-12d">技术胖的这篇教程</a>;<br>我只要是记录我在使用Android Studio运行flutter的时候出现的问题。</p>
+<span id="more"></span>
+<p>出现问题如下图</p>
+<p><img src="/images/2018-11-30/1.png" alt=""></p>
+<p>我是没搞懂这是什么问题，然后就请教了一下我们公司做Android的大神，他来我这一看，就找到了问题。</p>
+<p><img src="/images/2018-11-30/2.png" alt=""><br><img src="/images/2018-11-30/3.png" alt=""></p>
+<p>看着两个图，文件配置的版本号为27，虚拟机的版本号为28 两个版本号没有对上，然后我把27改成28，在debug一下就跑起来了。</p>
+<p>闻道有先后，术业有专攻。</p>
+<p>还是要多多学习。</p>
+]]></content>
+      <categories>
+        <category>flutter</category>
+      </categories>
+      <tags>
+        <tag>flutter</tag>
+        <tag>Android Studio</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>var() and mask</title>
     <url>/2018/10/19/cssstudy/</url>
     <content><![CDATA[<p>空闲时间看到俩CSS，var()、mask 没遇到过，比较好奇，学习一下。</p>
@@ -1334,6 +1355,24 @@
       </tags>
   </entry>
   <entry>
+    <title>单图片上传</title>
+    <url>/2018/11/28/imgupload/</url>
+    <content><![CDATA[<p>业务需求，移动端app需要一个单图片上传的功能，并且只允许照相，不允许从本地选取，本来想使用webUploader来做，配置好了，发现一个问题只能上传一次，在次上传，缩略图不替换（也有可能这个插件我没配置使用好，此处不做过多纠结），然后就参考写了一个。</p>
+<span id="more"></span>
+<p>代码如下（需要依赖jq）</p>
+<p>html<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&lt;div id=<span class="string">&quot;imgUpload&quot;</span>&gt;</span><br><span class="line">    &lt;img src=<span class="string">&quot;upload.png&quot;</span> alt=<span class="string">&quot;&quot;</span>&gt;&lt;!--upload.png为初始显示背景图--&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p>css<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#imgUpload &#123;</span></span><br><span class="line">    width: 88px;</span><br><span class="line">    height: 88px;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">#imgUpload img &#123;</span></span><br><span class="line">    width: 100%;</span><br><span class="line">    height: 100%;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>js<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">//图片上传</span><br><span class="line"><span class="keyword">function</span> ImgUpload(id, options) &#123;</span><br><span class="line">    this.me = $(id);</span><br><span class="line">    this.callback = options.callback;</span><br><span class="line">    this.init();</span><br><span class="line">&#125;</span><br><span class="line">ImgUpload.prototype = &#123;</span><br><span class="line">    init: <span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">        this.eventClickInit();</span><br><span class="line">    &#125;,</span><br><span class="line">    eventClickInit:<span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">        var self = this;</span><br><span class="line">        this.me.unbind().click(<span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">            self.createImageUploadDialog();</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;,</span><br><span class="line">    onChangeUploadFile: <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">        var fileInput = this.fileInput;</span><br><span class="line">        var files = fileInput.files;</span><br><span class="line">        <span class="keyword">if</span> (files.length == 0) &#123;</span><br><span class="line">            <span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        var file = files[0];</span><br><span class="line">        <span class="keyword">if</span> (file.type.indexOf(<span class="string">&#x27;image&#x27;</span>) === -1) &#123;</span><br><span class="line">            alert(<span class="string">&quot;您上传的不是图片！&quot;</span>);</span><br><span class="line">            <span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        var img = window.URL.createObjectURL(file);</span><br><span class="line">        var filename = file.name;</span><br><span class="line">        var filesize = Math.floor((file.size) / 1024);</span><br><span class="line">        <span class="keyword">if</span> (filesize &gt; 1024 * 20) &#123;</span><br><span class="line">            alert(<span class="string">&quot;上传大小不能超过20M.&quot;</span>);</span><br><span class="line">            <span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        this.me.find(<span class="string">&quot;img&quot;</span>).attr(<span class="string">&quot;src&quot;</span>, img);</span><br><span class="line">        this.me.find(<span class="string">&quot;img&quot;</span>).attr(<span class="string">&quot;title&quot;</span>, filename);</span><br><span class="line">        <span class="keyword">if</span> (this.callback) &#123;</span><br><span class="line">            this.callback(files);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    createImageUploadDialog: <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">        var fileInput = this.fileInput;</span><br><span class="line">        <span class="keyword">if</span> (!fileInput) &#123;</span><br><span class="line">            fileInput = document.createElement(<span class="string">&#x27;input&#x27;</span>);</span><br><span class="line">            fileInput.type = <span class="string">&#x27;file&#x27;</span>;</span><br><span class="line">            fileInput.name = <span class="string">&#x27;ime-images&#x27;</span>;</span><br><span class="line">            fileInput.accept = <span class="string">&#x27;image/*&#x27;</span>;</span><br><span class="line">            fileInput.capture = <span class="string">&#x27;camera&#x27;</span>;//只允许照相</span><br><span class="line">            fileInput.multiple = <span class="literal">false</span>;//不允许多选</span><br><span class="line">            fileInput.onchange = this.onChangeUploadFile.bind(this);</span><br><span class="line">            this.fileInput = fileInput;</span><br><span class="line">        &#125;</span><br><span class="line">        fileInput.click();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//调用方法</span><br><span class="line">var dragImgUpload = new ImgUpload(<span class="string">&quot;#imgUpload&quot;</span>,&#123;</span><br><span class="line">    callback:<span class="keyword">function</span> (files) &#123;</span><br><span class="line">        var imgFile = files[0];</span><br><span class="line">        console.log(imgFile);</span><br><span class="line">        //<span class="keyword">do</span> something 调取接口进行上传等操作。</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">    </span><br></pre></td></tr></table></figure></p>
+<p><a href="../../../../link/2018-11-28/index.html">具体效果点击这里</a>;</p>
+]]></content>
+      <categories>
+        <category>js</category>
+      </categories>
+      <tags>
+        <tag>imgUpload</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>radio、checkbox 自定义样式</title>
     <url>/2018/11/16/radioCheckbox/</url>
     <content><![CDATA[<p>默认的radio、checkbox的样式比较单一，往往达不到我们想要的效果，所以需要自定义我们需要的样子。</p>
@@ -1354,45 +1393,6 @@
       <tags>
         <tag>radio</tag>
         <tag>checkbox</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>单图片上传</title>
-    <url>/2018/11/28/imgupload/</url>
-    <content><![CDATA[<p>业务需求，移动端app需要一个单图片上传的功能，并且只允许照相，不允许从本地选取，本来想使用webUploader来做，配置好了，发现一个问题只能上传一次，在次上传，缩略图不替换（也有可能这个插件我没配置使用好，此处不做过多纠结），然后就参考写了一个。</p>
-<span id="more"></span>
-<p>代码如下（需要依赖jq）</p>
-<p>html<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&lt;div id=<span class="string">&quot;imgUpload&quot;</span>&gt;</span><br><span class="line">    &lt;img src=<span class="string">&quot;upload.png&quot;</span> alt=<span class="string">&quot;&quot;</span>&gt;&lt;!--upload.png为初始显示背景图--&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
-<p>css<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#imgUpload &#123;</span></span><br><span class="line">    width: 88px;</span><br><span class="line">    height: 88px;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">#imgUpload img &#123;</span></span><br><span class="line">    width: 100%;</span><br><span class="line">    height: 100%;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>js<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">//图片上传</span><br><span class="line"><span class="keyword">function</span> ImgUpload(id, options) &#123;</span><br><span class="line">    this.me = $(id);</span><br><span class="line">    this.callback = options.callback;</span><br><span class="line">    this.init();</span><br><span class="line">&#125;</span><br><span class="line">ImgUpload.prototype = &#123;</span><br><span class="line">    init: <span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">        this.eventClickInit();</span><br><span class="line">    &#125;,</span><br><span class="line">    eventClickInit:<span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">        var self = this;</span><br><span class="line">        this.me.unbind().click(<span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">            self.createImageUploadDialog();</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;,</span><br><span class="line">    onChangeUploadFile: <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">        var fileInput = this.fileInput;</span><br><span class="line">        var files = fileInput.files;</span><br><span class="line">        <span class="keyword">if</span> (files.length == 0) &#123;</span><br><span class="line">            <span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        var file = files[0];</span><br><span class="line">        <span class="keyword">if</span> (file.type.indexOf(<span class="string">&#x27;image&#x27;</span>) === -1) &#123;</span><br><span class="line">            alert(<span class="string">&quot;您上传的不是图片！&quot;</span>);</span><br><span class="line">            <span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        var img = window.URL.createObjectURL(file);</span><br><span class="line">        var filename = file.name;</span><br><span class="line">        var filesize = Math.floor((file.size) / 1024);</span><br><span class="line">        <span class="keyword">if</span> (filesize &gt; 1024 * 20) &#123;</span><br><span class="line">            alert(<span class="string">&quot;上传大小不能超过20M.&quot;</span>);</span><br><span class="line">            <span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        this.me.find(<span class="string">&quot;img&quot;</span>).attr(<span class="string">&quot;src&quot;</span>, img);</span><br><span class="line">        this.me.find(<span class="string">&quot;img&quot;</span>).attr(<span class="string">&quot;title&quot;</span>, filename);</span><br><span class="line">        <span class="keyword">if</span> (this.callback) &#123;</span><br><span class="line">            this.callback(files);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    createImageUploadDialog: <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">        var fileInput = this.fileInput;</span><br><span class="line">        <span class="keyword">if</span> (!fileInput) &#123;</span><br><span class="line">            fileInput = document.createElement(<span class="string">&#x27;input&#x27;</span>);</span><br><span class="line">            fileInput.type = <span class="string">&#x27;file&#x27;</span>;</span><br><span class="line">            fileInput.name = <span class="string">&#x27;ime-images&#x27;</span>;</span><br><span class="line">            fileInput.accept = <span class="string">&#x27;image/*&#x27;</span>;</span><br><span class="line">            fileInput.capture = <span class="string">&#x27;camera&#x27;</span>;//只允许照相</span><br><span class="line">            fileInput.multiple = <span class="literal">false</span>;//不允许多选</span><br><span class="line">            fileInput.onchange = this.onChangeUploadFile.bind(this);</span><br><span class="line">            this.fileInput = fileInput;</span><br><span class="line">        &#125;</span><br><span class="line">        fileInput.click();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//调用方法</span><br><span class="line">var dragImgUpload = new ImgUpload(<span class="string">&quot;#imgUpload&quot;</span>,&#123;</span><br><span class="line">    callback:<span class="keyword">function</span> (files) &#123;</span><br><span class="line">        var imgFile = files[0];</span><br><span class="line">        console.log(imgFile);</span><br><span class="line">        //<span class="keyword">do</span> something 调取接口进行上传等操作。</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">    </span><br></pre></td></tr></table></figure></p>
-<p><a href="../../../../link/2018-11-28/index.html">具体效果点击这里</a>;</p>
-]]></content>
-      <categories>
-        <category>js</category>
-      </categories>
-      <tags>
-        <tag>imgUpload</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>flutter Android Studio配置错误</title>
-    <url>/2018/11/30/flutter/</url>
-    <content><![CDATA[<p>刚开始学些flutter，安装配置的时候遇到了点小问题，配置流程我就不发了，网上很多，我的学习地址是这个，可以参考。<a href="http://jspang.com/post/flutter1.html#toc-12d">技术胖的这篇教程</a>;<br>我只要是记录我在使用Android Studio运行flutter的时候出现的问题。</p>
-<span id="more"></span>
-<p>出现问题如下图</p>
-<p><img src="/images/2018-11-30/1.png" alt=""></p>
-<p>我是没搞懂这是什么问题，然后就请教了一下我们公司做Android的大神，他来我这一看，就找到了问题。</p>
-<p><img src="/images/2018-11-30/2.png" alt=""><br><img src="/images/2018-11-30/3.png" alt=""></p>
-<p>看着两个图，文件配置的版本号为27，虚拟机的版本号为28 两个版本号没有对上，然后我把27改成28，在debug一下就跑起来了。</p>
-<p>闻道有先后，术业有专攻。</p>
-<p>还是要多多学习。</p>
-]]></content>
-      <categories>
-        <category>flutter</category>
-      </categories>
-      <tags>
-        <tag>flutter</tag>
-        <tag>Android Studio</tag>
       </tags>
   </entry>
   <entry>
@@ -1418,6 +1418,22 @@
       </categories>
       <tags>
         <tag>IntersectionObserver</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>blob兼容性问题</title>
+    <url>/2018/12/26/toBlob/</url>
+    <content><![CDATA[<p>接上一篇文章，图片在谷歌浏览器上使用的时候没有问题，但是在手机上测试的时候就卡在那不动了，然后我测试了安卓我们的app和手机自带浏览器都不行，又测试了苹果我们的app不行，微信和safari是可以的。</p>
+<p>然后我就和我们的安卓小哥说让他帮我看看log,结果发现canvas.toBlob is undefined。</p>
+<span id="more"></span>
+<p>原因：<br>blog方法兼容性不是很好，所以需要兼容一下<br>解决办法：<br>发现了这个网址解决了问题<br><a href="https://github.com/blueimp/JavaScript-Canvas-to-Blob">https://github.com/blueimp/JavaScript-Canvas-to-Blob</a>;<br>使用方法很简单，只需要把canvas-to-blob.js或者canvas-to-blob.min.js在之前引入就好了。然后下面原来的方法该怎么用就怎么用，就没有问题了。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">var canvas = document.createElement(<span class="string">&#x27;canvas&#x27;</span>);</span><br><span class="line"><span class="keyword">if</span> (canvas.toBlob) &#123;</span><br><span class="line">    canvas.toBlob(<span class="keyword">function</span> (blob) &#123;</span><br><span class="line">             //<span class="keyword">do</span> something</span><br><span class="line">         &#125;,</span><br><span class="line">         <span class="string">&#x27;image/jpeg&#x27;</span></span><br><span class="line">     );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>js</category>
+      </categories>
+      <tags>
+        <tag>blob</tag>
       </tags>
   </entry>
   <entry>
@@ -1453,22 +1469,6 @@
       </categories>
       <tags>
         <tag>qs</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>blob兼容性问题</title>
-    <url>/2018/12/26/toBlob/</url>
-    <content><![CDATA[<p>接上一篇文章，图片在谷歌浏览器上使用的时候没有问题，但是在手机上测试的时候就卡在那不动了，然后我测试了安卓我们的app和手机自带浏览器都不行，又测试了苹果我们的app不行，微信和safari是可以的。</p>
-<p>然后我就和我们的安卓小哥说让他帮我看看log,结果发现canvas.toBlob is undefined。</p>
-<span id="more"></span>
-<p>原因：<br>blog方法兼容性不是很好，所以需要兼容一下<br>解决办法：<br>发现了这个网址解决了问题<br><a href="https://github.com/blueimp/JavaScript-Canvas-to-Blob">https://github.com/blueimp/JavaScript-Canvas-to-Blob</a>;<br>使用方法很简单，只需要把canvas-to-blob.js或者canvas-to-blob.min.js在之前引入就好了。然后下面原来的方法该怎么用就怎么用，就没有问题了。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">var canvas = document.createElement(<span class="string">&#x27;canvas&#x27;</span>);</span><br><span class="line"><span class="keyword">if</span> (canvas.toBlob) &#123;</span><br><span class="line">    canvas.toBlob(<span class="keyword">function</span> (blob) &#123;</span><br><span class="line">             //<span class="keyword">do</span> something</span><br><span class="line">         &#125;,</span><br><span class="line">         <span class="string">&#x27;image/jpeg&#x27;</span></span><br><span class="line">     );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>js</category>
-      </categories>
-      <tags>
-        <tag>blob</tag>
       </tags>
   </entry>
   <entry>

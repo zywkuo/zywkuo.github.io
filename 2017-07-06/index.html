@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>calc()和car()一起来做响应式开发</title>
+</head>
+<style>
+    :root{
+        --columns: 3;
+    }
+    .box{
+        width:80%;
+        min-width: 300px;
+        margin:auto;
+        border: 2px solid #333;
+        overflow: hidden;
+    }
+    .calc{
+        width: calc(100% / var(--columns) - 10px * 2);
+        background: #aaa;
+        margin: 10px;
+        float: left;
+    }
+    *{
+        margin:0;
+        padding:0;
+    }
+    h1{
+        line-height:100px;
+        text-align: center;
+    }
+   h5{
+       width:100%;
+       height:60px;
+       text-align: center;
+       line-height:60px;
+       font-size: 26px;
+       color: #fff;
+   }
+   p{
+       padding-top:60px;
+       height: 140px;
+   }
+    img{
+        display: block;
+        margin: auto;
+    }
+    @media screen and ( max-width: 992px) {
+        :root{
+            --columns: 2;
+        }
+    }
+   @media screen and ( max-width: 768px) {
+       :root{
+           --columns: 1;
+       }
+   }
+</style>
+<body style="background: #666">
+    <h1>拖动浏览器窗口大小来看看效果吧！</h1>
+    <div class="box">
+        <div class="calc">
+            <h5>子鼠</h5>
+            <p><img src="./img/shu.png" alt=""></p>
+        </div>
+        <div class="calc">
+            <h5>丑牛</h5>
+            <p><img src="./img/niu.png" alt=""></p>
+        </div>
+        <div class="calc">
+            <h5>寅虎</h5>
+            <p><img src="./img/hu.png" alt=""></p>
+        </div>
+        <div class="calc">
+            <h5>卯兔</h5>
+            <p><img src="./img/tu.png" alt=""></p>
+        </div>
+        <div class="calc">
+            <h5>辰龙</h5>
+            <p><img src="./img/long.png" alt=""></p>
+        </div>
+        <div class="calc">
+            <h5>巳蛇</h5>
+            <p><img src="./img/she.png" alt=""></p>
+        </div>
+        <div class="calc">
+            <h5>午马</h5>
+            <p><img src="./img/ma.png" alt=""></p>
+        </div>
+        <div class="calc">
+            <h5>未羊</h5>
+            <p><img src="./img/yang.png" alt=""></p>
+        </div>
+        <div class="calc">
+            <h5>申猴</h5>
+            <p><img src="./img/hou.png" alt=""></p>
+        </div>
+        <div class="calc">
+            <h5>酉鸡</h5>
+            <p><img src="./img/ji.png" alt=""></p>
+        </div>
+        <div class="calc">
+            <h5>戌狗</h5>
+            <p><img src="./img/gou.png" alt=""></p>
+        </div>
+        <div class="calc">
+            <h5>亥猪</h5>
+            <p><img src="./img/zhu.png" alt=""></p>
+        </div>
+</body>
+</html>

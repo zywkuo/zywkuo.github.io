@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[6750],{9555:e=>{e.exports=JSON.parse('{"label":"vertical-align","permalink":"/blog/tags/vertical-align","allTagsPath":"/blog/tags","count":1}')}}]);

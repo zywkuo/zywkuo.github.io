@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[683],{3076:s=>{s.exports=JSON.parse('{"label":"css calc()","permalink":"/blog/tags/css-calc","allTagsPath":"/blog/tags","count":1}')}}]);

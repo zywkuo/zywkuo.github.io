@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[8499],{9529:e=>{e.exports=JSON.parse('{"label":"AJAX \u72b6\u6001\u7801","permalink":"/blog/tags/ajax-\u72b6\u6001\u7801","allTagsPath":"/blog/tags","count":1}')}}]);

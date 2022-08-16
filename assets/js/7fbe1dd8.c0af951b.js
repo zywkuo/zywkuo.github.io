@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[9108],{6064:t=>{t.exports=JSON.parse('{"label":"Object.prototype.toString.call()","permalink":"/blog/tags/object-prototype-to-string-call","allTagsPath":"/blog/tags","count":1}')}}]);

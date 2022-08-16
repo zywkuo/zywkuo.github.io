@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[617],{55029:e=>{e.exports=JSON.parse('{"label":"codepen\u517c\u5bb9","permalink":"/blog/tags/codepen\u517c\u5bb9","allTagsPath":"/blog/tags","count":1}')}}]);

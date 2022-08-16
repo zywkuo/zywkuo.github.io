@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[4795],{3943:e=>{e.exports=JSON.parse('{"label":":nth-child","permalink":"/blog/tags/nth-child","allTagsPath":"/blog/tags","count":1}')}}]);

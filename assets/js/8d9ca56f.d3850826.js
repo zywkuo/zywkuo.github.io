@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[8585],{4805:e=>{e.exports=JSON.parse('{"label":"Android Studio","permalink":"/blog/tags/android-studio","allTagsPath":"/blog/tags","count":1}')}}]);

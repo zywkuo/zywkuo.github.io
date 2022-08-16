@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[5154],{24008:e=>{e.exports=JSON.parse('{"label":"event.stopPropagation();","permalink":"/blog/tags/event-stop-propagation","allTagsPath":"/blog/tags","count":1}')}}]);

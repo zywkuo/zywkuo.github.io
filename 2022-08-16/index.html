@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PAG</title>
+    <style>
+      body {
+        padding: 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <canvas class="canvas" id="pag"></canvas>
+    </div>
+    <script src="https://unpkg.com/libpag@latest/lib/libpag.min.js"></script>
+    <script>
+      window.onload = async () => {
+        const pagUrl = "./like.pag";
+        // Initialize pag webassembly module.
+        const PAG = await window.libpag.PAGInit();
+        // Fetch pag file.
+        const buffer = await fetch(pagUrl).then((response) =>
+          response.arrayBuffer()
+        );
+        // Load the PAGFile from file.
+        const pagFile = await PAG.PAGFile.load(buffer);
+        // Set the width from the PAGFile.
+        const canvas = document.getElementById("pag");
+        canvas.width = pagFile.width();
+        canvas.height = pagFile.height();
+        // Create PAGView.
+        const pagView = await PAG.PAGView.init(pagFile, canvas);
+        // Set PAGView play infinity.
+        pagView.setRepeatCount(0);
+        await pagView.play();
+      };
+    </script>
+  </body>
+</html>
